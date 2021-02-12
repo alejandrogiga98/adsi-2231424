@@ -3,6 +3,6 @@
 ---
 ## List
 
-- **01** - [Emmet](emmet/)
+- **01** - [Emmet](https://www.youtube.com/watch?v=c0trGRJs_IU)
 - **02** - *HTML*
 - **03** - CSS
