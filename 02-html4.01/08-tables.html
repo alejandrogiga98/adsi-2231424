@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tables</title>
+</head>
+<body>
+<caption>Consumo de combustible de los autos</caption>
+
+	<h1>Table 01:</h1>
+	<table class="default">
+		<tr>
+			<td>Celda 1</td>
+			<td>Celda 2</td>
+			<td>Celda 3</td>
+		</tr>
+		
+		<tr>
+			<td>Celda 4</td>
+			<td>Celda 5</td>
+			<td>Celda 6</td>
+		</tr>
+	</table>
+
+	<br>
+	<h1>Table 02: (th)</h1>
+	<table class="default">
+		<tr>
+			<th>Ayer</th>
+			<th>Hoy</th>
+			<th>Mañana</th>
+		</tr>
+
+		<tr>
+			<td>Soleado</td>
+			<td>Nublado</td>
+			<td>Lluvioso</td>
+		</tr>
+
+		<tr>
+			<td>19°C</td>
+			<td>13°C</td>
+			<td>9°C</td>
+		</tr>
+
+		<tr>
+			<td>E 13 km/h</td>
+			<td>E 11 km/h</td>
+			<td>S 16 km/h</td>
+		</tr>
+	</table>
+
+	<br>
+	<h1>Table 03: (scope)</h1>
+	<table class="default">
+		<tr>
+			<th scope="row">Dia</th>
+			<th>Ayer</th>
+			<th>Hoy</th>
+			<th>Mañana</th>
+		</tr>
+
+		<tr>
+			<th>Condicion</th>
+			<td>Soleado</td>
+			<td>Nublado</td>
+			<td>Lluvioso</td>
+		</tr>
+
+		<tr>
+			<th>Temperatura</th>
+			<td>19°C</td>
+			<td>13°C</td>
+			<td>9°C</td>
+		</tr>
+
+		<tr>
+			<th>Vientos</th>
+			<td>E 13 km/h</td>
+			<td>E 11 km/h</td>
+			<td>S 16 km/h</td>
+		</tr>
+	</table>
+
+	<br>
+	<h1>Table 04: (colspan)</h1>
+	<table class="default">
+		<tr>
+		    <th></th>
+		    <th>Día 1</th>
+		    <th>Día 2</th>
+		    <th>Día 3</th>
+		    <th>Día 4</th>
+	  	</tr>
+
+  		<tr>
+		    <th>Mike (lastimado)</th>
+		    <td colspan="3">0 km</td>
+		    <td>4 km</td>
+	    </tr>
+
+  		<tr>
+		    <th>Susan</th>
+		    <td>23 km</td>
+		    <td>18 km</td>
+		    <td>19 km</td>
+		    <td>15 km</td>
+		</tr>
+	</table>
+
+	<br>
+	<h1>Table 05: (rowspan)</h1>
+	<table class="default">
+		<tr>
+			<th></th>
+			<th>Básico</th>
+			<th>Completo</th>
+		</tr>
+
+  		<tr>
+    		<th>Instalación</th>
+    		<td rowspan="2">Gratis!</td>
+    		<td>$49.99</td>
+  		</tr>
+
+  		<tr>
+    		<th>Primer año</th>
+    		<td>$19.99</td>
+  		</tr>
+
+  		<tr>
+    		<th>Segundo año</th>
+    		<td>$9.99</td>
+    		<td>$29.99</td>
+  		</tr>
+	</table>
+
+	<br>
+	<h1>Table 06: (thead, tbody, tfoot)</h1>
+	<table class="default">
+		<thead>
+			<tr>
+				<th></th>
+				<th colspan="2">Dante</th>
+				<th colspan="2">Marco</th>
+			</tr>
+
+			<tr>
+				<th scope="col">Fecha</th>
+				<th>Entrada</th>
+				<th>Salida</th>
+				<th>Entrada</th>
+				<th>Salida</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<th>enero</th>
+				<td>200</td>
+				<td>50</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+
+			<tr>
+				<th>febrero</th>
+				<td>0</td>
+				<td>100</td>
+				<td>100</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+
+		<tbody>
+			<tr>
+				<th>julio</th>
+				<td>40</td>
+				<td>0</td>
+				<td>0</td>
+				<td>110</td>
+			</tr>
+
+			<tr>
+				<th>agosto</th>
+				<td>0</td>
+				<td>20</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+
+		<tfoot>
+			<tr>
+				<th>Balance</th>
+				<td colspan="2">70</td>
+				<td colspan="2">-10</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>
+
+<xmp>
+	<td abbr="descripcion" headers="" scope="col" colspan="4" rowspan="3">
+			</td>
+</xmp>
