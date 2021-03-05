@@ -1,0 +1,29 @@
+/* Diseño visual de la tabla
+*/
+body{
+    background-color: #4EB0A0FF;
+    font-family: Arial;
+}
+
+div.main-container{
+    margin: auto;
+    width: 600px;
+}
+
+table{
+    background-color: #C0C0C0FF;
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+td:hover{
+    background-color: #D12D36FF;
+    color: white;
+    text-transform: upprcase;
+}
