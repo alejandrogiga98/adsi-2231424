@@ -1,0 +1,15 @@
+body {
+	background-color: #5B4;
+}
+article {
+	background-color: #966894;
+	margin: 100px auto;
+	padding: 20px;
+	width: 480px;
+}
+article h1 {
+	text-align: center;	
+}
+article p {
+	text-align: justify;
+}
