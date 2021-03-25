@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advanced Selectors</title>
+	<style>
+
+		ul > li{
+			background-color: cadetblue;
+			margin: 5px;
+			padding: 5px;
+		}
+
+		ul li + li + li{
+			background-color: yellowgreen;
+		}
+
+		li[class]{
+			background-color: orchid;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1>Advanced Selectors</h1>
+	<hr>
+
+	<h2>Children Selector: ul > li</h2>
+
+	<h2>Adjacent Selector: ul  li + li + li</h2>
+
+	<h2>Attribute Selector: li[class]</h2>
+
+	<ol>
+		<li>
+			S.cry.ed
+			<ul>
+				<li class="highlight">Kazuma the Shell Bullet</li>
+				<li>Ryuho owner of Zetsuei</li>
+				<li>Straight Cougar</li>
+				<li>Scheris Adjani</li>
+				<li>Kanami Yuta</li>
+			</ul>
+		</li>
+		<li>
+			The Witcher
+			<ul>
+				<li class="highlight">Geralt of Rivia</li>
+				<li>Triss Merigold</li>
+				<li>Yennefer of Vengerberg</li>
+				<li>Ciri</li>
+				<li>Vesemir</li>
+			</ul>
+		</li>
+	</ol>
+	
+
+</body>
+</html>

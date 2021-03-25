@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Selectors</title>
+	<style>
+		* {
+			background-color: #CEB930FF;
+			margin: 8px;
+			padding: 6px;
+			border: 2px solid black;
+		}
+
+		h1 span{
+			color: #F00EC5FF;
+		}
+		
+		p {
+			background-color: midnightblue;
+			color: lightblue;
+			border-style: solid;
+		}
+
+		p span{
+			background-color: green;
+			color: darkred;
+			border-style: solid;
+			border-color: white;
+		}
+
+		.destacado{
+			color: orangered;
+		}
+
+		#destacado{
+			color: peru;
+		}
+
+		div.aviso span.especial{
+			background-color: #3EBEC0FF;
+			color: #A60EF0FF;
+		}
+
+	</style>
+	
+</head>
+<body>
+
+	<h1>Basic Selectors:</h1>
+
+	<br><hr>
+	<h3>Universal Selector: *</h3>
+	<div>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa incidunt beatae placeat facere dignissimos delectus.
+		</p>
+	</div>
+
+	<br><hr>
+	<h3>Descending Selector: h1 span:</h3>
+	<h1>
+		<span>
+			Titulo
+		</span>
+	</h1>
+
+	<br><hr>
+	<h3>Type/label Selector: p:</h3>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil reiciendis autem quisquam quos ducimus voluptates a praesentium natus quae, eos.
+	</p>
+
+	<br><hr>
+	<h3>Descending Selector: p span:</h3>
+	<p>
+		<span>
+			Lorem ipsum dolor sit amet consectetur adipisicing, elit. Omnis iste ea adipisci ad pariatur, itaque similique, delectus rerum. Modi, doloremque.
+		</span>
+	</p>
+
+	<br><hr>
+	<h3>Class Selector: .destacado:</h3>
+	<p class="destacado">
+		Lorem ipsum dolor sit amet consectetur adipisicing, elit. Sed, itaque.
+	</p>
+
+	<br><hr>
+	<h3>ID Selector: #destacado:</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, nulla.</p>
+	<p id="destacado">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, provident?</p>
+	<p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Sapiente, quisquam.</p>
+
+	<br><hr>
+	<h3>Combine Selectors: div.aviso span.especial:</h3>
+	<div class="aviso">
+		<span class="especial">
+			Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Vel, iste!
+		</span>
+	</div>
+
+</body>
+</html>
