@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        main {
+            margin: 40px auto;
+            width: 494px;
+        }
+
+        main section {
+            border: 1px solid #800;
+            display: inline-block;
+            height: 180px;
+            padding: 10px;
+            vertical-align: top;
+            padding: 10px;
+            width: 140px;
+        }
+
+        main section h3{
+            background-color: #800;
+            margin: 0px;
+            padding: 4px;
+        }
+
+        main section.visible {overflow: visible}
+        main section.hidden {overflow: hidden}
+        main section.scroll {overflow: scroll}
+    </style>
+</head>
+<body>
+    <!-- main>(section>h3{overflow:visible}+p{lorem})*3 -->
+    <main>
+        <section class="visible">
+            <h3>overflow:visible</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore expedita facilis deserunt? Magnam enim accusantium porro sit distinctio consequatur, deleniti eos ab voluptatum culpa recusandae molestiae alias, autem doloremque sequi!</p>
+        </section>
+        <section class="hidden">
+            <h3>overflow:hidden</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore expedita facilis deserunt? Magnam enim accusantium porro sit distinctio consequatur, deleniti eos ab voluptatum culpa recusandae molestiae alias, autem doloremque sequi!</p>
+        </section>
+        <section class="scroll">
+            <h3>overflow:scroll</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore expedita facilis deserunt? Magnam enim accusantium porro sit distinctio consequatur, deleniti eos ab voluptatum culpa recusandae molestiae alias, autem doloremque sequi!</p>
+        </section>
+    </main>
+</body>
+</html>

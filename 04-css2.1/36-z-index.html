@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Index</title>
+    <style>
+        main {
+            margin: 40px auto;
+            width: 500px; /* 180 * 180 */
+        }
+
+        main div {
+            border: 2px solid #800;
+            font-size: 4em;
+            height: 100px;
+            padding: 10px;
+            position: relative;
+            left: 0px; top: 0px; 
+            width: 180px;
+        }
+
+        main div.box1 {
+            background-color: #04f;
+            color: #fff;
+            z-index: 1;
+        }
+
+        main div.box2 {
+            background-color: #0af;
+            color: #fff;
+            left: 50px; top: -50px;
+            z-index: 2;
+        }
+
+        main div.box3 {
+            background-color: #0ff;
+            color: #fff;
+            left: 100px; top: -100px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <!-- main>div.box${$}*3 -->
+    <main>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </main>
+</body>
+</html>
