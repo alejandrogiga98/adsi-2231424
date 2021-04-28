@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprites</title>
+    <style>
+        main {
+            margin: 200px auto;
+            width: 76px;
+        }
+
+        main div#sprite {
+            background: url(imgs/spriteSubZeroBlood.png) no-repeat;
+            height: 90px;
+            width: 76px;
+        }
+
+        main div#sprite.sp1 {background-position: 0px 0px;}
+        main div#sprite.sp2 {background-position: -76px 0px;}
+        main div#sprite.sp3 {background-position: -152px 0px;}
+        main div#sprite.sp4 {background-position: -228px 0px;}
+    </style>
+</head>
+<body>
+    <main>
+        <div id="sprite"></div>
+    </main>
+
+    <script>
+        let sp = document.getElementById('sprite');
+        let ct = 1;
+        let ns = 4;
+        let si = setInterval(function()
+            {
+                sp.className = '';
+                sp.classList.add('sp'+ct);
+                if(ct == ns){
+                    ct = 1;
+                } else {
+                    ct ++;
+                }
+            }, 250);
+    </script>
+</body>
+</html>

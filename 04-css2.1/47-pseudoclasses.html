@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Clasees</title>
+    <style>
+        main {
+            margin: 40px auto;
+            position: relative;
+            width: 400px
+        }
+
+        menu { padding-left: 0px}
+
+        menu ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        menu ul li {
+            display: inline-block;
+            vertical-align: top; 
+        }
+
+        menu ul li a:link,
+        menu ul li a:visited {
+            background-color: #5b0;
+            color: #fff;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        menu ul li a:hover {
+            background-color: #00f;
+        }
+
+        menu ul li a:active {
+            background-color: #800;
+        }
+
+        menu ul li:first-child a{
+            background-color: #150;
+            color: #bb0;
+        }
+
+        /* - - - */
+        input {
+            border: 1px solid #777;
+            padding: 10px 20px;
+            outline: none;
+        }
+
+        input:focus {
+            background-color: #bbb;
+            border: 1px solid #150;
+        }
+
+        /* - - - */
+        p:first-line {
+            background-color: #1a0;
+        }
+
+        p:first-letter { font-size: 4em }
+
+        /* - - - */
+        div.box {
+            background-color: #368;
+            height: 100px;
+            width: 100px;
+        }
+
+        div.box:after {
+            background-color: #d5b8;
+            content: "🎮";
+            height: 100px;
+            position: absolute;
+            left: 30px;
+            width: 100px;
+        }
+
+        div.box:before {
+            background-color: #7d58;
+            content: "Game";
+            height: 100px;
+            position: absolute;
+            left: 60px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- main>h3{(:link, :visited, :actived, :hover, :first-child)}+menu>ul>li*4>a -->
+    <main>
+        <h3>(:link, :visited, :actived, :hover, :first-child)</h3>
+        <menu>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </menu>
+        <h3>:focus</h3>
+        <input type="focus" placeholder="Ingresar Nombre y Apellidos">
+        <h3>:fisrt-line, :first-letter</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dolorem fugit dolores vel, eius optio dolore est. Tempora nulla, reprehenderit, voluptate unde rem, saepe id debitis provident cupiditate a similique?</p>
+        <h3>:after, :before</h3>
+        <div class="box">
+
+        </div>
+    </main>
+</body>
+</html>
