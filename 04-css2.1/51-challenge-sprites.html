@@ -7,11 +7,11 @@
     <title>Challenge Sprites</title>
     <style>
         body {           
-            border: 0px solid red;
+            border: 8px solid #fff;
             background-color: #16a054;
             margin: 0px;
             padding: 0px;
-            width: 100%;
+            font-family: Arial;
         }
 
         /* Seccion Logo */
@@ -109,7 +109,7 @@
             border: 0px solid #000;
             background-color: #fff;
             margin: 15px auto 0px auto;
-            height: 202px;
+            height: 218px;
             width: 756px;
         }
 
@@ -147,7 +147,7 @@
             border: 0px solid #f00;
             height: 155px;
             width: 150px;
-            left: 604px; top: -310px;
+            left: 604px; top: -300px;
             z-index:1;
         }
 
@@ -156,9 +156,11 @@
             text-decoration: none;
         }
 
-        a.seccionImagenCentral:hover {
+        div.seccionCentral:hover a.seccionImagenCentral{
             color: #0a3; 
         }
+
+        
 
          /* Seccion Inferior */
          section.seccionInferior {
@@ -210,12 +212,12 @@
 
 </head>
 <body>
-    <!-- <audio src="imgs/Magma.mp3" hidden controls autoplay loop></audio> -->
+    <!-- Seccion Logo -->
     <section class="logo">
         <div class="logo"></div>
     </section>
 
-    <!--  -->
+    <!-- Seccion Menu Superior -->
     <section class="menuSuperior">
         <li class="menuSuperior"><a href="" class="menuSuperior">INICIO</a></li>
         <li class="menuSuperior"><a href="" class="menuSuperior">NOSOTROS</a></li>
@@ -224,7 +226,7 @@
         <li class="menuSuperior"><a href="" class="menuSuperior">CONTACTO</a></li>
     </section>
 
-    <!--  -->
+    <!-- Seccion Imagenes Triples -->
     <!-- section.imagenCentral>div.imagenCentral*3>article.imagenCentral>a.imagenCentral{Sprite 0$} -->
     <section class="imagenCentral">
         <div class="imagenCentral"> 
@@ -244,7 +246,7 @@
         </div>
     </section>
 
-    <!--  -->
+    <!-- Seccion Texto Central -->
     <section class="seccionCentral">
         <div class="seccionCentral"> 
             <article class="central seccionImagenIzquierda"></article>
@@ -269,7 +271,7 @@
         </div>
     </section>
 
-    <!--  -->
+    <!-- Seccion Imagen y Menu Inferior -->
     <section class="seccionInferior">
         <div class="seccionInferior"></div>
         <section class="menuInferior">
