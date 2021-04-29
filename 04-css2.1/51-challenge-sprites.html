@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Sprites</title>
+    <style>
+        body {           
+            border: 0px solid red;
+            background-color: #16a054;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        /* Seccion Logo */
+        section.logo {
+            border: 0px solid black;
+            margin: 0px auto;
+            width: 835px;
+        }
+
+        div.logo {
+            border: 0px solid #fff;
+            background: url(imgs/spriteComplete.png) no-repeat;
+            background-position: -11px -399px;
+            margin: 0px auto;
+            height: 190px;
+            width: 190px;
+		}   
+
+        /* Seccion Menu Suoerior */
+        section.menuSuperior {
+            border: 0px solid #000;
+            margin: 20px auto;
+            width: 835px;
+        }
+
+        li.menuSuperior {
+            display: inline-block;
+            line-height: 3.5em;
+            text-align: center;
+            height: 62px;
+            width: 140px;
+            margin-left: 20px;
+        }
+
+        a.menuSuperior:link, a.menuSuperior:visited {
+            border-bottom: 6px solid #fff;
+            background-color: #006633;
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        a.menuSuperior:hover {
+            background-color: #033;
+            border-bottom: 6px solid #ddbb00;
+        }
+
+        /* Seccion Imagenes Centrales */
+        section.imagenCentral {
+            background-color: #006633;
+            border: 0px solid #000;
+            margin: 40px auto;
+            width: 796px;
+        }
+
+        div.imagenCentral {
+            background: url(imgs/spriteComplete.png) no-repeat;
+            background-position: -525px -7px;
+            border: 1px solid #fff;
+            display: inline-block;
+            height: 200px;
+            margin: 20px 0px 20px 20px;
+            width: 233px;
+        }
+
+        article.imagenCentral {
+            border: 0px solid #800;
+            text-align: center;
+            line-height: 3.5em;
+        }
+
+        a.imagenCentral:link, a.imagenCentral:visited {
+            background-color: #fff6;
+            color: #000;
+            display: block;
+            font-size: 1.5em;
+            font-weight: bolder;
+            text-decoration: none; 
+        }
+
+        a.imagenCentral:hover {
+            background-color: #fffc;
+        }
+
+        /* Seccion Texto Central */
+        section.seccionCentral {
+            border: 0px solid #fff;
+            background-color: #006633;
+            margin: 40px auto;
+            padding: 1px 0px 15px 0px;
+            width: 796px;
+        }
+
+        div.seccionCentral {
+            border: 0px solid #000;
+            background-color: #fff;
+            margin: 15px auto 0px auto;
+            height: 202px;
+            width: 756px;
+        }
+
+        article.central {
+            display:inline-block;
+            position: relative;
+            margin: 0px 0px;
+            height: 172px;
+        }
+
+        article.seccionImagenIzquierda {
+            background: url(imgs/spriteComplete.png) no-repeat;
+            background-position: -265px -490px;
+            border: 0px solid #f00;
+            height: 120px;
+            width: 150px;
+            top: 40px;
+            z-index: 1;
+        }
+
+        article.seccionImagenCentral {
+            border: 0px solid #00f;
+            text-align: justify;
+            line-height: 1.5em;
+            word-spacing: 2px;
+            padding: 15px 175px;
+            width: 405px;
+            left: 0px; top: -125px;
+            z-index: 2;
+        }
+
+        article.seccionImagenDerecha {
+            background: url(imgs/spriteComplete.png) no-repeat;
+            background-position: -70px -215px;
+            border: 0px solid #f00;
+            height: 155px;
+            width: 150px;
+            left: 604px; top: -310px;
+            z-index:1;
+        }
+
+        a.seccionImagenCentral:link, a.seccionImagenCentral:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        a.seccionImagenCentral:hover {
+            color: #0a3; 
+        }
+
+         /* Seccion Inferior */
+         section.seccionInferior {
+            background-color: #fff;
+            border: 0px solid black;
+            margin: 0px auto 20px auto;
+            height: 260px;
+            width: 796px;
+        }
+
+        div.seccionInferior {
+            border: 0px solid #000;
+            background: url(imgs/spriteComplete.png) no-repeat;
+            background-position: -520px -420px;
+            margin: 0px auto;
+            height: 185px;
+            width: 240px;
+		}  
+
+        section.menuInferior {
+            border: 0px solid #000;
+            margin: 0px auto;
+            width: 835px;
+        }
+
+        li.menuInferior {
+            border: 0px solid #000;
+            display: inline-block;
+            line-height: 3em;
+            text-align: center;
+            height: 42px;
+            width: 120px;
+            margin-left: 22px;
+        }
+
+        a.menuInferior:link, a.menuInferior:visited {
+            border: 0px solid red;
+            color: #000;
+            display: block;
+            font-size: 0.9em;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        a.menuInferior:hover {
+            border-bottom: 6px solid #006633;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <audio src="imgs/Magma.mp3" hidden controls autoplay loop></audio> -->
+    <section class="logo">
+        <div class="logo"></div>
+    </section>
+
+    <!--  -->
+    <section class="menuSuperior">
+        <li class="menuSuperior"><a href="" class="menuSuperior">INICIO</a></li>
+        <li class="menuSuperior"><a href="" class="menuSuperior">NOSOTROS</a></li>
+        <li class="menuSuperior"><a href="" class="menuSuperior">PORTAFOLIO</a></li>
+        <li class="menuSuperior"><a href="" class="menuSuperior">SERVICIOS</a></li>
+        <li class="menuSuperior"><a href="" class="menuSuperior">CONTACTO</a></li>
+    </section>
+
+    <!--  -->
+    <!-- section.imagenCentral>div.imagenCentral*3>article.imagenCentral>a.imagenCentral{Sprite 0$} -->
+    <section class="imagenCentral">
+        <div class="imagenCentral"> 
+            <article class="imagenCentral"> 
+                <a href="" class="imagenCentral">Sprite 01</a>
+            </article>
+        </div>
+        <div class="imagenCentral"> 
+            <article class="imagenCentral"> 
+                <a href="" class="imagenCentral">Sprite 02</a>
+            </article>
+        </div>
+        <div class="imagenCentral"> 
+            <article class="imagenCentral"> 
+                <a href="" class="imagenCentral">Sprite 03</a>
+            </article>
+        </div>
+    </section>
+
+    <!--  -->
+    <section class="seccionCentral">
+        <div class="seccionCentral"> 
+            <article class="central seccionImagenIzquierda"></article>
+            <article class="central seccionImagenCentral"> 
+                <a href="" class="seccionImagenCentral">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo! Nisi molestias pariatur quisquam nesciunt quaerat consectetur ullam quo modi minima distinctio, ad laudantium earum soluta tenetur nemo, voluptas, officia consequatur! Cum fugit eveniet modi numquam labore corporis! Voluptate optio similique dolor tempore, nam expedita natus blanditiis temporibus!!</a>
+            </article>
+            <article class="central seccionImagenDerecha"></article>
+        </div>
+        <div class="seccionCentral"> 
+            <article class="central seccionImagenIzquierda"></article>
+            <article class="central seccionImagenCentral"> 
+                <a href="" class="seccionImagenCentral">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo! Nisi molestias pariatur quisquam nesciunt quaerat consectetur ullam quo modi minima distinctio, ad laudantium earum soluta tenetur nemo, voluptas, officia consequatur! Cum fugit eveniet modi numquam labore corporis! Voluptate optio similique dolor tempore, nam expedita natus blanditiis temporibus!!</a>
+            </article>
+            <article class="central seccionImagenDerecha"></article>
+        </div>
+        <div class="seccionCentral"> 
+            <article class="central seccionImagenIzquierda"></article>
+            <article class="central seccionImagenCentral"> 
+                <a href="" class="seccionImagenCentral">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo! Nisi molestias pariatur quisquam nesciunt quaerat consectetur ullam quo modi minima distinctio, ad laudantium earum soluta tenetur nemo, voluptas, officia consequatur! Cum fugit eveniet modi numquam labore corporis! Voluptate optio similique dolor tempore, nam expedita natus blanditiis temporibus!!</a>
+            </article>
+            <article class="central seccionImagenDerecha"></article>
+        </div>
+    </section>
+
+    <!--  -->
+    <section class="seccionInferior">
+        <div class="seccionInferior"></div>
+        <section class="menuInferior">
+            <li class="menuInferior"><a href="" class="menuInferior">INICIO</a></li>
+            <li class="menuInferior"><a href="" class="menuInferior">NOSOTROS</a></li>
+            <li class="menuInferior"><a href="" class="menuInferior">PORTAFOLIO</a></li>
+            <li class="menuInferior"><a href="" class="menuInferior">SERVICIOS</a></li>
+            <li class="menuInferior"><a href="" class="menuInferior">CONTACTO</a></li>
+        </section>
+    </section>
+</body>
+</html>

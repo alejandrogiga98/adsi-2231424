@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Sprites</title>
+    <style>
+        body {           
+            background-color: #194;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        section {
+            margin: 20px auto;
+        }
+
+        section.logo {
+           /* border: 2px solid #000; */
+            width: 666px;
+		}
+
+        section.logo div.logo{
+            /* border: 2px solid #fff; */
+            width: 212px;
+            margin: 0px auto;
+		}
+
+        /* - - - */
+        menu {
+            /* border: 2px solid #000; */
+            margin: 0px auto;
+            padding: 0px;
+            width: 666px;
+        }
+
+        menu li {
+            display: inline-block;
+            border-bottom: 5px solid #fff;
+            line-height: 2.5em;
+            margin: 0px 5px;
+            height: 40px;
+            text-align: center;
+            width: 120px;
+        }
+
+        menu li a:link,  menu li a:visited {
+            background-color: #063;
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        menu li a:hover {
+            background-color: #033;
+            border-bottom: 5px solid #db0;
+        }
+
+        /* - - - */
+        section.personajes { 
+            background-color: #063;
+            border: 1px solid #000;
+            height: 164px;
+            width: 656px;
+        }
+
+        section.personajes div.personajes { 
+            border: 1px solid #fff;
+            display: inline-block;
+            margin: 8px 8px;
+            height: 147px;
+            width: 30%;
+        }
+
+        div.nombre {
+            background-color: #fff4;
+            line-height: 2.5em;
+            height: 40px;
+            text-align: center;
+            position: relative;
+            top: -152px;
+            width: 100%;
+        }
+
+        div.nombre a:link,  div.nombre a:visited {
+            background-color: #fff4;
+            color: #000;
+            font-weight: 600;
+            display: block;
+            text-decoration: none;
+        }
+
+        div.nombre a:hover {
+            background-color: #fffb;
+        }
+
+        img.personajes {
+            
+            width: 100%;
+        }
+
+        /* - - - */
+        section.parrafo { 
+            background-color: #063;
+            border: 1px solid #000;
+            width: 656px;
+        }
+
+        section.parrafo div.parrafo { 
+            background-color: #aaa;
+            text-align: justify;
+            line-height: 1.4em;
+            margin: 4px 4px;
+            height: 147px;
+            width: 98%;
+        }
+
+        section.parrafo div.parrafo p {
+            text-align: justify;
+            line-height: 1.4em;
+            margin: 4px 4px;
+            border: 2px solid red;
+            display: inline-block;
+            width: 180px;
+        }
+
+        section.parrafo div.parrafo p.enlace {
+            text-align: justify;
+            line-height: 1.4em;
+            font-size: 0.6em;
+        }
+
+        div.parrafo a:link,  div.parrafo a:visited {
+            color: #000;
+            font-weight: 600;      
+            text-decoration: none;
+        }
+
+        div.parrafo a:hover {
+            color: #063;
+        }
+
+        div.parrafo img.derecha {
+            float: right;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <!-- <audio src="imgs/Magma.mp3" hidden controls autoplay loop></audio> -->
+    <section class="logo">
+        <div class="logo">
+            <img src="imgs/scryedName.png" height="78" width="210" alt=""> 
+        </div>
+    </section>
+
+    <!--  -->
+    <menu>
+        <li><a href="https://scryed.fandom.com/wiki/S-CRY-ed_Wiki" target="#blank">SERIE</a></li>
+        <li><a href="https://scryed.fandom.com/wiki/Category:Characters" target="#blank">PERSONAJES</a></li>
+        <li><a href="https://scryed.fandom.com/wiki/Category:Alter_Users" target="#blank">ALTER'S</a></li>
+        <li><a href="https://scryed.fandom.com/wiki/Special:NewFiles" target="#blank">IMAGENES</a></li>
+        <li><a href="https://www.imdb.com/title/tt0307427/" target="#blank">INFO IMDb</a></li>
+    </menu>
+
+    <!--  -->
+    <section class="personajes">
+        <div class="personajes">
+            <img class="personajes" src="imgs/kazuma.jpg" alt="">
+            <div class="nombre">
+                <a href="#" target="">Kazuma</a>
+            </div>
+        </div>
+        <div class="personajes">
+            <img class="personajes" src="imgs/ryuho.jpg" alt="">
+            <div class="nombre">
+                <a href="#" target="">Ryuho</a>
+            </div>
+        </div>
+        <div class="personajes">
+            <img class="personajes" src="imgs/kanami.jpg" alt="">
+            <div class="nombre">
+                <a href="#" target="">Kanami</a>
+            </div>
+        </div>
+    </section>
+
+    <!--  -->
+    <section class="parrafo">
+        <div class="parrafo">
+            <p class="izquierda">HODAAAA
+                <!-- <img src="imgs/scryedIcon.png" alt=""> -->
+            </p>
+            <p class="enlace">
+                <a href="#">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque assumenda ullam obcaecati commodi mollitia inventore, natus eligendi numquam, harum explicabo illum dolorem possimus atque modi officiis delectus voluptate quos perferendis consequatur. Non corporis impedit cumque culpa architecto vitae tempora. Nostrum illo neque numquam temporibus!
+                </a>
+            </p>
+            <p class="derecha">NANDATOO
+                <!-- <img src="imgs/KazumaShellBulletSmall130.png" alt=""> -->
+            </p>
+        </div>
+ 
+    </section>
+
+    <!-- <section class="parrafo">
+        <div class="parrafo">
+            <img class="izquierda" src="imgs/scryedIcon.png" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque assumenda ullam obcaecati commodi mollitia inventore, natus eligendi numquam, harum explicabo illum dolorem possimus atque modi officiis delectus voluptate quos perferendis consequatur. Non corporis impedit cumque culpa architecto vitae tempora. Nostrum illo neque numquam temporibus!
+            </p>
+            <img class="derecha" src="imgs/KazumaShellBulletSmall130.png" alt="">
+        </div>
+        <div class="parrafo">
+            <img class="izquierda" src="imgs/scryedIcon.png" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque assumenda ullam obcaecati commodi mollitia inventore, natus eligendi numquam, harum explicabo illum dolorem possimus atque modi officiis delectus voluptate quos perferendis consequatur. Non corporis impedit cumque culpa architecto vitae tempora. Nostrum illo neque numquam temporibus!
+            </p>
+            <img class="derecha" src="imgs/KazumaShellBulletSmall130.png" alt="">
+        </div>
+        <div class="parrafo">
+            <img class="izquierda" src="imgs/scryedIcon.png" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque assumenda ullam obcaecati commodi mollitia inventore, natus eligendi numquam, harum explicabo illum dolorem possimus atque modi officiis delectus voluptate quos perferendis consequatur. Non corporis impedit cumque culpa architecto vitae tempora. Nostrum illo neque numquam temporibus!
+            </p>
+            <img class="derecha" src="imgs/KazumaShellBulletSmall130.png" alt="">
+        </div>
+    </section> -->
+
+</body>
+</html>
