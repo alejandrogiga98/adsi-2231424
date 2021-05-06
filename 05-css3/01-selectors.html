@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Selectors</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        ul { 
+            margin: 0px auto;
+            width: 200px 
+        }
+
+        ul li {padding: 4px;}
+        
+        ul.ul1 li:first-of-type {
+            background-color: #812525;
+        }
+
+        ul.ul1 li:last-of-type {
+            background-color: #814400;
+        }
+
+        ul.ul1 li:nth-child(3) {
+            background-color: #d3d62e;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0px auto;
+            width: 200px;
+        }
+
+        table td {
+            border: 0px solid #777;
+        }
+
+        /* table tr:nth-child(odd) */
+        table tr:nth-child(1n+1) {
+            background-color: #26991c;
+        }
+
+        /* table tr:nth-child(even) */
+        table tr:nth-child(2n+2) {
+            background-color: #198027;
+        }
+
+        /* - - - */
+        ul.menu {
+            list-style: none;
+            padding-left: 0px;
+            width: 260px; 
+        }
+
+        ul.menu li {
+            display: inline-block;
+        }
+
+        ul.menu li a:link, ul.menu li a:visited {
+            background-color: #7ac;
+            color: #fff;
+            padding: 4px 8px;
+            text-decoration: none;
+        }
+
+        ul.menu li.active {
+            opacity: 0.6;
+        }
+
+        article {
+            display: none;
+            margin: 0px auto;
+            width: 260px;
+        }
+
+        article p {
+            text-align: justify;
+        }
+
+        article#home:target, article#services:target, article#contact:target {
+            display: block;
+        }
+
+        p {
+            margin: 0px auto;
+            width: 260px;
+            text-align: justify;
+        }
+
+        p.sl1::selection { background-color: #dd0;}
+        p.sl2::selection { background-color: #00d;}
+        p.sl3::selection { background-color: #d00;}
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>New Selectors</h1>
+        <h3>li:first-of-type | li:last-of-type | li:nth-child(3)</h3>
+        <!-- ul.ul$>li{Text}*3 -->
+        <ul class="ul1">
+            <li>Python</li>
+            <li>Ruby</li>
+            <li>PHP</li>
+            <li>C#</li>
+            <li>Java</li>
+        </ul>
+        <h3> li:nth-child(n+1) | li:nth-child(n+2) </h3>
+        <!-- table>tr*6>td{ Lorem $ } -->
+        <table>
+            <tr>
+                <td> Lorem 1 </td>
+            </tr>
+            <tr>
+                <td> Lorem 2 </td>
+            </tr>
+            <tr>
+                <td> Lorem 3 </td>
+            </tr>
+            <tr>
+                <td> Lorem 4 </td>
+            </tr>
+            <tr>
+                <td> Lorem 5 </td>
+            </tr>
+            <tr>
+                <td> Lorem 6 </td>
+            </tr>
+        </table>
+
+        <h3>article#home:target</h3>
+        <ul class="menu">
+            <li class="link"><a href="#home">Home</a></li>
+            <li class="link"><a href="#services">Services</a></li>
+            <li class="link"><a href="#contact">Contact</a></li>
+        </ul>
+        <article id="home">
+            <h5>HOME</h5>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsa atque sequi nobis ipsam, blanditiis esse cupiditate maiores quas quasi illum enim deleniti non libero recusandae, minima maxime. Cupiditate, ab.
+            </p>
+        </article>    
+        <article id="services">
+            <h5>SERVICES</h5>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, blanditiis! Repudiandae est dolorum, consectetur, deserunt maiores in asperiores incidunt voluptas aspernatur, mollitia perferendis recusandae! Eveniet eos animi 
+            </p>
+        </article>    
+        <article id="contact">
+            <h5>CONTACT</h5>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi laboriosam distinctio in incidunt. Qui eligendi, ratione vel nihil necessitatibus dolores culpa eveniet expedita enim, veritatis, nemo beatae sit labore dolor!
+            </p>
+        </article>
+        
+        <h3>::selection</h3>
+        <p class="sl1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid architecto perspiciatis odit nobis aperiam animi maxime pariatur vel tempore doloremque dicta ipsa, corporis molestiae quis nam, tempora reprehenderit minima.
+        </p>
+        <p class="sl2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sed doloremque dolores illum minima optio ipsa eius sit, tempora delectus corrupti quibusdam excepturi incidunt nostrum ea, error atque officiis animi.
+        </p>
+        <p class="sl3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid possimus dolorum laudantium quod repudiandae, cupiditate beatae iusto magnam libero earum illo quasi distinctio. Quaerat dicta earum laboriosam fugiat architecto explicabo!
+        </p>
+    </main>
+
+    <script>
+        let lis = document.getElementsByClassName('link');
+        for (let i=0; i<lis.length; i++) {
+            lis[i].onclick = function() {
+                removeClasses();
+                this.classList.add('active');
+            }
+        }
+
+        function removeClasses() {
+            for (let i=0; i<lis.length; i++){
+                lis[i].classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
