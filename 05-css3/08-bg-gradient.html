@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Gradient</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        section {
+            border: 2px solid #000;
+            height: 250px;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        section.bgg1 { background: linear-gradient(to top,#15b, #800); }
+        section.bgg2 { background: linear-gradient(45deg,#15b, #800); }
+        section.bgg3 { background: linear-gradient(to bottom,#cc0 40%, #15b 40%, #15b 70%, #800 70%); }
+        section.bgg4 { 
+            background: linear-gradient(to right,#15b 50%, #800 0%); 
+            background-position: center;
+            background-size: 40px 100%;
+        }
+        section.bgg5 { background: radial-gradient(circle,#15b, #800); }
+        section.bgg6 { background: radial-gradient(circle,#15b 20%, #800 20%, #800 40%, #15b 40%, #15b 60%, #800 60%, #800 80%, #15b 80%, #15b 100%); }
+    </style>
+</head>
+<body>
+    <main>
+        <h1> <span> <a href="index.html">&larr;</a> </span> Background Gradient</h1>
+        <h3>background: linear-gradient(to top,#15b, #800)</h3>
+        <section class="bgg1"></section>
+        <h3>background: linear-gradient(45deg,#15b, #800)</h3>
+        <section class="bgg2"></section>
+        <h3>background: linear-gradient(to bottom,#cc0 40%, #15b 40%, #15b 70%, #800 70%)</h3>
+        <section class="bgg3"></section>
+        <h3>background: linear-gradient(to right,#15b 50%, #800 0%)</h3>
+        <section class="bgg4"></section>
+        <h3>background: radial-gradient(circle,#15b, #800)</h3>
+        <section class="bgg5"></section>
+        <h3> background: radial-gradient(circle,#15b 20%, #800 20%, #800 40%, #15b 40%, #15b 60%, #800 60%, #800 80%, #15b 80%, #15b 100%)</h3>
+        <section class="bgg6"></section>
+    </main>
+</body>
+</html>

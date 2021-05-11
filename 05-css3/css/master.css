@@ -23,3 +23,9 @@ main h1 {
 main h3 {
     text-align: center;
 }
+
+h1 span a:link, h1 span a:visited {
+    color: #fff;
+    float:left;
+    text-decoration: none;
+}
