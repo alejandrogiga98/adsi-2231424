@@ -20,7 +20,7 @@ main h1 {
     text-align: center;
 }
 
-main h3 {
+main h2, main h3 {
     text-align: center;
 }
 
