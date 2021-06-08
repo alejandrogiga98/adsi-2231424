@@ -8,4 +8,6 @@
 - **03** - [HTML5](03-html5/)
 - **04** - [CSS2.1](04-css2.1/)
 - **05** - [CSS3](05-css3/)
-- **05** - [PUG](06-pug/)
+- **06** - [PUG](06-pug/)
+- **07** - [SASS](07-sass/)
+- **07** - [JavaScript](08-javascript/)
