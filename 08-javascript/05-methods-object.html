@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Object Methods</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Background Size</h1>
+        </header>
+        <section>
+            <h2>Actions</h2>
+            <ol id="output"></ol>
+        </section>
+    </main>
+
+    <script>
+        //ID
+       var output = document.getElementById('output');
+
+       //Object
+       var character = {
+            //Attributes
+            name: 'Kazuma',
+            type: 'Impact',
+            strength: 80,
+            health: 75,
+            
+            //Methods
+            boost: function(){
+                this.strength += 15;
+            },
+            defense: function(){
+                if(this.health<=0)
+                    return this.name + " is dead!";
+                else
+                    this.health -= 20;
+                    return "Under Attack - Health: -20";
+            }
+       }
+       output.innerHTML = "<li> Name: " + character.name + "</li>";
+       output.innerHTML += "<li> Type: " + character.type + "</li>";
+       output.innerHTML += "<li> Health: " + character.health + "</li>";
+       output.innerHTML += "<li> Strength: " + character.strength + "</li>";
+       character.boost();
+       output.innerHTML += "<li> Status: Boost - Strength: +15 </li>";
+       output.innerHTML += "<li> Strength: " + character.strength + "</li>";
+
+       output.innerHTML += "<li> Status: " + character.defense() + "</li>";
+       output.innerHTML += "<li> Health: " + character.health + "</li>";
+
+       output.innerHTML += "<li> Status: " + character.defense() + "</li>";
+       output.innerHTML += "<li> Health: " + character.health + "</li>";
+
+       output.innerHTML += "<li> Status: " + character.defense() + "</li>";
+       output.innerHTML += "<li> Health:" + character.health + "</li>";
+
+       output.innerHTML += "<li> Status: " + character.defense() + "</li>";
+       output.innerHTML += "<li> Health: " + character.health + "</li>";
+
+       output.innerHTML += "<li> Status: " + character.defense() + "</li>";
+       character.name = "Ryuho";
+       output.innerHTML += "<li> New Character: " + character.name + "</li>"
+       character.strength = 68;
+       character.type = "Distance";
+       character.health = 110;
+       output.innerHTML += "<li> Type: " + character.type + "</li>";
+       output.innerHTML += "<li> Health: " + character.health + "</li>";
+       output.innerHTML += "<li> Strength: " + character.strength + "</li>";
+
+    </script>
+</body>
+</html>

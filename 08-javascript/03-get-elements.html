@@ -15,13 +15,26 @@
         <section>
             <h2>Get Id</h2>
             <strong id="year"></strong>
+            <!--  -->
             <h2>Get TagName</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, doloremque!</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, itaque.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, alias!</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, assrum.</p>
             <strong id="tags"></strong>
+            <!--  -->
             <h2>Get ClassName</h2>
+            <ul>
+                <li class="element">Element 1</li>
+                <li class="element">Element 2</li>
+                <li class="element">Element 3</li>
+                <li class="element">Element 4</li>
+                <li class="element">Element 5</li>
+            </ul>
+            <!--  -->
+            <h2>Query Selector / Selector All</h2>
+            <button class="btn">Button</button>
+            <button class="btn">Button</button>
         </section>
     </main>
 
@@ -36,13 +49,22 @@
         let today = new Date();
         year.innerText = "Current year: " + today.getFullYear();
         
-        //Get Element By TagName
+        //Get Elements By TagName
         let ntags = document.getElementsByTagName('p');
         tags.innerText = "There are " + ntags.length + " paragraphs.";
 
-        //Get Element By ClassName
+        //Get Elements By ClassName
+        let elements = document.getElementsByClassName('element');
+        elements[2].style.backgroundColor = '#15d';
+        elements[2].style.color = '#800';
+        elements[2].style.width = '200px';
+        elements[2].style.fontWeight = '800';
 
-        //Query Selector
+        //Query Selector / Selector All
+        let btn = document.querySelector('section button.btn');
+        let btns = document.querySelectorAll('section button.btn');
+        btn.style.color = '#15b';
+        btns[1].style.color = '#f00';
     </script>
 </body>
 </html>

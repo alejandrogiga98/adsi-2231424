@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Typs JS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Background Size</h1>
+        </header>
+        <section>
+            <ul id="types"></ul>
+        </section>
+    </main>
+
+    <script>
+        let types = document.getElementById('types');
+        let objString = new String;
+        let objNumber = new Number;
+        let objBoolean = new Boolean;
+        let objObject = new Object;
+        let objArray = new Array;
+        let objDate = new Date;
+
+        types.innerHTML = "<li>" + objString.constructor.name + " </li>";
+        types.innerHTML += "<li>" + objNumber.constructor.name + " </li>";
+        types.innerHTML += "<li>" + objBoolean.constructor.name + " </li>";
+        types.innerHTML += "<li>" + objObject.constructor.name + " </li>";
+        types.innerHTML += "<li>" + objArray.constructor.name + " </li>";
+        types.innerHTML += "<li>" + objDate.constructor.name + " </li>";
+    </script>
+</body>
+</html>
