@@ -5,20 +5,421 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Vehicle JS</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /*  */
+        section.container {
+        max-height: 750px;
+        }
+
+        /* Skin */
+        div.skin {
+            background: url(imgs/skin.png) no-repeat;
+            height: 740px;
+            margin: 0px auto;
+            position: relative;
+            transition: all 0.5s ease-in;
+            width: 394px;
+            z-index: 2;
+        }
+
+        div.skinBack {
+            border: 0px solid red;
+            height: 740px;
+            margin: 0px auto;
+            position: relative;
+            top: -740px;
+            transition: all 0.5s ease-in;
+            width: 394px;
+            z-index: 1;
+        }
+
+
+        /* Attributes */
+        section.attributes {
+            padding: 0;
+            position: relative;
+            left: 30px;
+            top:115px;
+        }
+
+        section.attributes h4 {
+            color: #B49F27;
+            font-size: 32px;
+            font-family: 'Gentium+Book+Basic';
+            margin: 0;
+            position: absolute;
+        }
+
+        section.attributes h4#txt-reference {
+            left: 200px;
+        }
+
+        section.attributes h4#txt-model {
+            top: 88px;
+        }
+
+        section.attributes h4#txt-color {
+            left: 200px;
+            top: 88px;
+        }
+
+        /*  */
+        button {
+            border: none;
+            display: block;
+            text-indent: 999px;
+            transition: all 0.3s ease-in;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        div.skin button#bt-dark {
+            border: 0px solid red;
+            background: url(imgs/bt-dark.png) no-repeat;
+            background-position: -4px 0;
+            height: 56px;
+            position: absolute;
+            right: 20px;
+
+            top: 15px;
+            width: 53px;
+        }
+
+        /* Methods (Controls) */
+        section.controls {
+            border: 0px solid red;
+            padding: 0;
+            position: relative;
+            left: 15px;
+            top: 660px;
+        }
+
+        section.controls button {
+            border: 0px solid black;
+            display: inline-block;
+            vertical-align: text-top;
+            height: 74px;
+            width: 70px;
+            
+        }
+
+        section.controls button#bt-on {
+            background: url(imgs/bt-on.png) no-repeat;
+            background-position: -4px 0px;
+        }
+
+        section.controls button#bt-off {
+            background: url(imgs/bt-off.png) no-repeat;
+            background-position: -4px 0px;
+        }
+
+        section.controls button#bt-stop {
+            background: url(imgs/bt-stop.png) no-repeat;
+            background-position: -4px 0px;
+        }
+
+        section.controls button#bt-fw {
+            background: url(imgs/bt-fw.png) no-repeat;
+            background-position: -4px 0px;
+        }
+
+        section.controls button#bt-bw {
+            background: url(imgs/bt-bw.png) no-repeat;
+            background-position: -4px 0px;
+        }
+
+        /* Landscape */
+        section.landscape {
+            border: 0px solid red;
+            height: 342px;
+            overflow: hidden;
+            padding: 0px;
+            width: 374px;
+            position: absolute;
+            left: 10px;
+            top: 262px;
+            z-index: 1;
+        }
+
+        section.landscape div {
+            position: absolute;
+        }
+
+        section.landscape div.sky {
+            background: url(imgs/sky.png) repeat-x;
+            height: 267px;
+            width: 746px;
+        }
+        /* -------------------------------------------------------------------- */
+        /* para manejar el solo por aparte deberia de trabajarse por aparte las nubes,
+        para no tener un extraño efecto del sol por delante de las nubes
+        div.satelite {
+            border: 0px solid blue;
+            background: url(imgs/sun.png) no-repeat;
+            height: 75px;
+            width: 75px;
+            position: absolute;
+            top: 274px;
+            left: 310px;
+            z-index: 1;
+        } */
+
+        section.landscape div.montainSea {
+            background: url(imgs/montainSea.png) repeat-x;
+            height: 267px;
+            width: 746px;
+            top: 124px;
+        }
+
+        section.landscape div.road {
+            background: url(imgs/road.png) repeat-x;
+            height: 267px;
+            width: 746px;
+            top: 200px;
+        }
+
+        /* Dark Mode */
+        div.skin.dark {
+            background: url(imgs/skin-dark.png) no-repeat;
+        }
+
+        div.skin.dark button#bt-dark {
+            background: url(imgs/bt-light.png) no-repeat;
+            background-position: -4px 0;
+        }
+
+        div.skin.dark section.attributes h4 {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        div.skin.dark figure#porsche {
+            background: url(imgs/porsche-dark.png) no-repeat;
+        }
+
+        div.skin.dark + div.skinBack section.landscape div.sky  {
+            background: url(imgs/skyDark.png) repeat-x;
+        }
+
+        div.skin.dark + div.skinBack section.landscape div.montainSea  {
+            background: url(imgs/montainSeaDark.png) repeat-x;
+        }
+
+        div.skin.dark + div.skinBack section.landscape div.road  {
+            background: url(imgs/roadDark.png) repeat-x;
+        }
+
+        /* Porsche */
+        figure#porsche {
+            border: 0px solid black;
+            background: url(imgs/porsche.png) no-repeat;
+            height: 134px;
+            position: absolute;
+            left: 60px;
+            top: 520px;
+            width: 195px;
+            z-index: 3;
+        }
+
+        figure#porsche.on {
+            animation: animOn 0.9s infinite;
+        }
+
+        @keyframes animOn {
+            0%, 100% { top: 520px; }
+            50% { top: 515px; }
+        }
+
+        /* Parallax */
+        section.landscape.forward div.sky {
+            animation: animParallax 15s linear infinite;
+        }
+
+        section.landscape.forward div.montainSea {
+            animation: animParallax 9s linear infinite;
+        }
+
+        section.landscape.forward div.road {
+            animation: animParallax 3.5s linear infinite;
+        }
+
+        @keyframes animParallax {
+            0% {background-position: 0px 0px;}
+            100% {background-position: -746px 0px;}
+        }
+
+        /* Pause */
+        section.landscape.pause div.sky,
+        section.landscape.pause div.montainSea,
+        section.landscape.pause div.road {
+            animation-play-state: paused;
+        }
+
+        /* Backward */
+        section.landscape.backward div.sky,
+        section.landscape.backward div.montainSea,
+        section.landscape.backward div.road {
+            animation-direction: reverse;
+        }
+
+    </style>
 </head>
 <body>
     <main>
         <header>
             <h1> <span> <a href="index.html">&larr;</a> </span> Background Size</h1>
         </header>
-        <section>
-           
+        <section class="container">
+           <div class="skin">
+               <button id="bt-dark"></button>
+               
+               <section class="attributes">
+                   <h4 id="txt-brand"></h4>
+                   <h4 id="txt-reference"></h4>
+                   <h4 id="txt-model"></h4>
+                   <h4 id="txt-color"></h4>
+               </section>
+
+               <figure id="porsche"></figure>
+               <section class="controls">
+                   <button id="bt-on"></button>
+                   <button id="bt-off"></button>
+                   <button id="bt-stop"></button>
+                   <button id="bt-fw"></button>
+                   <button id="bt-bw"></button>
+               </section>
+           </div>
+           <div class="skinBack">
+               <section class="landscape">
+                   <div class="sky"></div>
+                   <div class="montainSea"></div>
+                   <div class="road"></div>
+                </section>
+                <!-- <div class="satelite"></div> -->
+            </div>
         </section>
+
+
+        
     </main>
 
     <script>
-        
+        //Variables
+        var tbrand = document.getElementById('txt-brand');
+        var treference = document.getElementById('txt-reference');
+        var tmodel = document.getElementById('txt-model');
+        var tcolor = document.getElementById('txt-color');
+
+        var btdark = document.getElementById('bt-dark');
+        var bton = document.getElementById('bt-on');
+        var btoff = document.getElementById('bt-off');
+        var btstop = document.getElementById('bt-stop');
+        var btfw = document.getElementById('bt-fw');
+        var btbw = document.getElementById('bt-bw');
+
+        var porsche = document.getElementById('porsche');
+        var skin = document.querySelector('div.skin');
+        var landscape = document.querySelector('section.landscape');
+        var dmode = false;
+        var engine = false;
+        var move = false;
+
+        var vehicle = {
+            // Attributes
+            brand: 'Porsche',
+            reference: 911,
+            model: 2019,
+            color: 'Blue',
+
+            // Methods
+            showAttributes: function() {
+                tbrand.innerText = this.brand;
+                treference.innerText = this.reference;
+                tmodel.innerText = this.model;
+                tcolor.innerText = this.color;
+            },
+            darkmode: function(){
+                if (dmode == false) {
+                    skin.classList.add('dark');
+                    dmode = true;
+                } else {
+                    skin.classList.remove('dark');
+                    dmode = false;
+                }
+            },
+            on: function(){
+                if (engine == false) {
+                    porsche.classList.add('on');
+                    engine = true;
+                }
+            },
+            off: function(){
+                if (engine == true || move == false) {
+                    porsche.classList.remove('on');
+                    landscape.classList.remove('forward');
+                    landscape.classList.remove('backward');
+                    landscape.classList.remove('pause');
+                    engine = false;
+                    move = false;
+                }
+            },
+            stop: function(){
+                if (move == true) {
+                    landscape.classList.add('pause');
+                    move = false;
+                }
+            },
+            forward: function(){
+                if (engine == true && move == false) {
+                    landscape.classList.add('forward');
+                    landscape.classList.remove('pause');
+                    landscape.classList.remove('backward');
+                    move = true;
+                }
+            },
+            backward: function(){
+                if (engine == true && move == false) {
+                    landscape.classList.add('forward');
+                    landscape.classList.add('backward');
+                    landscape.classList.remove('pause');
+                    move = true;
+                }
+            },
+        }
+
+        // Events
+        vehicle.showAttributes();
+
+        btdark.onclick = function() {
+            vehicle.darkmode();
+        }
+
+        bton.onclick = function() {
+            vehicle.on();
+        }
+
+        btoff.onclick = function() {
+            vehicle.off();
+        }
+
+        btstop.onclick = function() {
+            vehicle.stop();
+        }
+
+        btfw.onclick = function() {
+            vehicle.forward();
+        }
+
+        btbw.onclick = function() {
+            vehicle.backward();
+        }        
+
     </script>
 </body>
 </html>
