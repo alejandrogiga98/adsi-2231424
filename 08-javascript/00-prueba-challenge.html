@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <style>
         div.calculator {
-            background: url(imgs/calculator/skin2.svg) no-repeat center;
+            background: url(imgs/calculator/skin.svg) no-repeat center;
             height: 736px;
             margin: 0px auto;
             position: relative;
@@ -18,9 +18,9 @@
 
         /* Mode */
         div.calculator nav.mode{
-            left: 10px;
+            left: 145px;
             position: absolute;
-            top: 100px;
+            top: 22px;
             width: 120px;
         }
 
@@ -60,8 +60,8 @@
             text-align: center;
             width: 350px;
             position: absolute;
-            left: 20px;
-            top: 10px;
+            left: 30px;
+            top: 100px;
         }
 
         div.calculator div.display p#operation{
@@ -70,12 +70,13 @@
             color: #770000;
             font-size: 24px;
             font-weight: 400;
-            height: 30px;
-            line-height: 30px;
+            height: 35px;
+            line-height: 35px;
             margin: 0px;
-            width: 320px;
+            width: 380px;
             position: absolute;
             left: -10px;
+            
         }
 
         div.calculator div.display h4#answer{
@@ -85,13 +86,12 @@
             font-size: 44px;
             font-style: italic;
             font-weight: 700;
-            height: 40px;
-            line-height: 42px;
-            margin: 3px 0px 0px 0px;
-            width: 230px;
+            height: 50px;
+            margin: 10px 0px 0px 0px;
+            width: 380px;
             position: absolute;
             left: -10px;
-            top: 32px;
+            top: 35px;
         }
 
         /* Buttons */
@@ -204,7 +204,7 @@
 
         /* Dark Mode */
         div.calculator.dark {
-            background: url(imgs/calculator/skin-dark2.svg) no-repeat center;
+            background: url(imgs/calculator/skin-dark.svg) no-repeat center;
         }
         div.calculator.dark nav.mode a#dark {
             background: url(imgs/calculator/bt-dark-active.svg) no-repeat center;
@@ -291,14 +291,14 @@
         </header>
         <section>
             <div class="calculator">
-                <div class="display">
-                    <p id="operation"></p>
-                    <h4 id="answer"></h4>
-                </div>
                 <nav class="mode">
                     <a href="javascript:;" id="light"></a>
                     <a href="javascript:;" id="dark"></a>
                 </nav>
+                <div class="display">
+                    <p id="operation"></p>
+                    <h4 id="answer"></h4>
+                </div>
                 <nav class="buttons">
                     <ul>
                         <li id="bt-c"></li>
@@ -334,12 +334,9 @@
         var operation = document.getElementById('operation');
         var answer = document.getElementById('answer');
         var num1;
-        var numTemp = '';
         var num2;
-        var numTotal;
-        var operator = '';
-        var numOperator = 0;
-        var resultado = '';
+        var operator;
+        var verification = false;
         
 
         const skin = document.querySelector('div.calculator');
@@ -381,40 +378,9 @@
             }
         }
 
-        function addNumber(num){
+        function addCharacter(num){
             if (validateLength()){
                 operation.innerText += num;
-                numTemp += num;
-                console.log("temporal = " + numTemp);
-                /*  kano = num.toString(); //convertir a cadena el numero num
-                    resultado += kano;     //sumar el valor cadena de kano a la cadena resultado
-                    console.log(num);
-                    console.log(kano);
-                    console.log(resultado);  
-                */
-            }
-        }
-
-        function addOperator(op){
-            if(validateLength){
-                if (numOperator==0){
-                    num1 = numTemp;
-                    numTotal = num1;
-                    console.log("entre a addOperator 0, con num1 con "+ num1);
-                }/* else {
-                    num1 = numTotal;
-                    num2 = numTemp;
-                    console.log("entre a addOperator !=0, con num1 con "+ num1 + " y num2 con "+ num2);
-                    resolver(); 
-                } */
-                operation.innerText += op;
-                numOperator++;
-                operator = op;
-                if(operator=="%"){
-                    num2= numTemp;
-                }
-                numTemp = '';
-                
             }
         }
 
@@ -422,9 +388,7 @@
             operation.innerText = '';
             answer.innerText = '';
             nchars = 0;
-            numTemp = '';
-            operator = '';
-            numOperator = 0;
+            verification = false;
         }
 
         function delCharacter(){
@@ -432,45 +396,49 @@
             nchars--; 
         }
 
-        function resolver(){
-            console.log("Entre a resolver");
-            num1 = numTotal;
-            if(operator=="%"){
-                console.log("log bien");
-            } else if(numTemp == ''){
-                num2 = 0;
-            }else {
-                num2 = numTemp;
+        function comprobacion(){
+            if(verification){
+                num1 = answer.textContent;
+            }else{
+                num1 = operation.textContent
             }
-            console.log("num1 es = "+num1);
-            console.log("num2 es = "+num2);
-            numTemp = '';
+        }
+
+        function resolver(){
             switch(operator){
                 case "+":
-                    numTotal =  parseFloat(num1) + parseFloat(num2);                    
+                    answer.innerText = parseFloat(num1) + parseFloat(num2);
+                    operation.innerText = num1 + operator + num2;
+                    verification= true;
                     break;
                 case "-":
-                    numTotal =  parseFloat(num1) - parseFloat(num2);                    
+                    answer.innerText = parseFloat(num1) - parseFloat(num2);
+                    operation.innerText = num1 + operator + num2;
+                    verification= true;
                     break;
                 case "x":
-                    numTotal =  parseFloat(num1) * parseFloat(num2);                    
+                    answer.innerText = parseFloat(num1) * parseFloat(num2);
+                    operation.innerText = num1 + operator + num2;
+                    verification= true;
                     break;
                 case "/":
-                    numTotal =  parseFloat(num1) / parseFloat(num2);
+                    answer.innerText = parseFloat(num1) / parseFloat(num2);
+                    operation.innerText = num1 + operator + num2;
+                    verification= true;
                     break;
                 case "^":
-                    numTotal = Math.pow(num1, num2)
+                    answer.innerText = Math.pow(num1, num2)
+                    operation.innerText = num1 + operator + num2;
+                    verification= true;
                     break;
                 case "%":
-                    numTotal = parseFloat(num1) *parseFloat(num2) / 100; 
+                    answer.innerText = parseFloat(num1) / 100; 
+                    operation.innerText = num1 + operator;
+                    verification= true;
                     break;
             }
-            console.log("numTotal es = " + numTotal);
-            console.log("cadena de operation = " + operation.textContent.length);
-            answer.innerText = numTotal;
             if (answer.textContent.length>15){
-                //maximo 10 de tamaño
-                answer.innerText = answer.textContent.slice(0,10);
+                answer.innerText = answer.textContent.toString().slice(0,-4);
             }
             
         }
@@ -495,62 +463,81 @@
             delCharacter();
         }
         btPow.onclick = function() {
-            addOperator('^');
+            comprobacion();
+            addCharacter('^');
+            operator = "^"
+            clearCharacters();
         }
         btDiv.onclick = function(){
-            addOperator('/');
+            comprobacion();
+            addCharacter('/');
+            operator = "/"
+            clearCharacters();
         }
 
 
         bt7.onclick = function(){
-            addNumber(7);
+            addCharacter(7);
         }
         bt8.onclick = function(){
-            addNumber(8);
+            addCharacter(8);
         }
         bt9.onclick = function(){
-            addNumber(9);
+            addCharacter(9);
         }
         btPro.onclick = function(){
-            addOperator('x');
+            comprobacion();
+            addCharacter('x');
+            operator = "x"
+            clearCharacters();
         }
 
         bt4.onclick = function(){
-            addNumber(4);
+            addCharacter(4);
         }
         bt5.onclick = function(){
-            addNumber(5);
+            addCharacter(5);
         }
         bt6.onclick = function(){
-            addNumber(6);
+            addCharacter(6);
         }
         btSub.onclick = function(){
-            addOperator("-");
+            comprobacion();
+            addCharacter("-");
+            operator = "-"
+            clearCharacters();
         }
 
         bt1.onclick = function(){
-            addNumber(1);
+            addCharacter(1);
         }
         bt2.onclick = function(){
-            addNumber(2);
+            addCharacter(2);
         }
         bt3.onclick = function(){
-            addNumber(3);
+            addCharacter(3);
         }
         btAdd.onclick = function(){
-            addOperator("+");
+            comprobacion();
+            addCharacter("+");
+            operator = "+"
+            clearCharacters();
         }
 
         btPer.onclick = function(){
-            addOperator("%");
+            num1 = operation.textContent;
+            addCharacter("%");
+            operator = "%"
+            clearCharacters();
         }
         bt0.onclick = function(){
-            addNumber(0);
+            addCharacter(0);
         }
         btPoint.onclick = function(){
-            addNumber(".");
+            addCharacter(".");
         }
         btEqual.onclick = function(){
+            num2 = operation.textContent;
             resolver()
         }
 
