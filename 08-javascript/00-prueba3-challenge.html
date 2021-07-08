@@ -88,21 +88,9 @@
             height: 40px;
             line-height: 42px;
             margin: 3px 0px 0px 0px;
-            width: 200px;
+            width: 230px;
             position: absolute;
-            left: 20px;
-            top: 32px;
-        }
-
-        div.calculator div.display h4#equal{
-            color: #fff;
-            font-size: 60px;
-            font-weight: 900;
-            height: 40px;
-            line-height: 42px;
-            margin: 3px 0px 0px 0px;
-            position: absolute;
-            left: -9px;
+            left: -10px;
             top: 32px;
         }
 
@@ -302,10 +290,9 @@
             <h1> <span> <a href="index.html">&larr;</a> </span> Background Size</h1>
         </header>
         <section>
-            <div class="calculator dark">
+            <div class="calculator">
                 <div class="display">
                     <p id="operation"></p>
-                    <h4 id="equal">=</h4>
                     <h4 id="answer"></h4>
                 </div>
                 <nav class="mode">
@@ -346,12 +333,14 @@
         var nchars = 0;
         var operation = document.getElementById('operation');
         var answer = document.getElementById('answer');
-        var number1;
+        var num1;
         var numTemp = '';
-        var number2;
+        var num2;
         var numTotal;
         var operator = '';
         var numOperator = 0;
+        var resultado = '';
+        
 
         const skin = document.querySelector('div.calculator');
         const light = document.getElementById('light');
@@ -396,24 +385,36 @@
             if (validateLength()){
                 operation.innerText += num;
                 numTemp += num;
-                //console.log("temporal = " + numTemp);
+                console.log("temporal = " + numTemp);
+                /*  kano = num.toString(); //convertir a cadena el numero num
+                    resultado += kano;     //sumar el valor cadena de kano a la cadena resultado
+                    console.log(num);
+                    console.log(kano);
+                    console.log(resultado);  
+                */
             }
         }
 
         function addOperator(op){
             if(validateLength()){
                 if (numOperator==0){
-                    number1 = numTemp;
-                    numTotal = number1;
-                    //console.log("entre a addOperator 0, con number1 con "+ number1);
-                }
+                    num1 = numTemp;
+                    numTotal = num1;
+                    console.log("entre a addOperator 0, con num1 con "+ num1);
+                }/* else {
+                    num1 = numTotal;
+                    num2 = numTemp;
+                    console.log("entre a addOperator !=0, con num1 con "+ num1 + " y num2 con "+ num2);
+                    resolver(); 
+                } */
                 operation.innerText += op;
                 numOperator++;
                 operator = op;
                 if(operator=="%"){
-                    number2= numTemp;
+                    num2= numTemp;
                 }
                 numTemp = '';
+                
             }
         }
 
@@ -428,69 +429,61 @@
 
         function delCharacter(){
             operation.innerText = operation.textContent.toString().slice(0,-1);
+            var xyz = operation.textContent;
+            console.log(xyz);
+            xyz *=1;
+            console.log(xyz);
             numTemp = parseInt(numTemp/10);
+            console.log("temporal es: " + numTemp)
             nchars--; 
-            //console.log("temporal es: " + numTemp)
         }
 
-
-        /* Inicialmente todas las operaciones fueron pensadas para realizarse
-           en la funcion "resolver", pero solo funciona para resolver (darle al boton igual)
-           una operacion, luego agregar otra operacion y resolverla... asi sucesivamente, 
-           operacion por operacion.
-           Con este metodo no podemos colocar una linea de varias operaciones y
-           resolverlas todas de golpe */
         function resolver(){
-            //console.log("Entre a resolver");
-            number1 = numTotal;
+            console.log("Entre a resolver");
+            num1 = numTotal;
             if(operator=="%"){
-                //console.log("log bien");
+                console.log("log bien");
             } else if(numTemp == ''){
-                number2 = 0;
+                num2 = 0;
             }else {
-                number2 = numTemp;
+                num2 = numTemp;
             }
-            //console.log("number1 es = "+number1);
-            //console.log("number2 es = "+number2);
+            console.log("num1 es = "+num1);
+            console.log("num2 es = "+num2);
             numTemp = '';
             switch(operator){
                 case "+":
-                    numTotal =  parseFloat(number1) + parseFloat(number2);                    
+                    numTotal =  parseFloat(num1) + parseFloat(num2);                    
                     break;
                 case "-":
-                    numTotal =  parseFloat(number1) - parseFloat(number2);                    
+                    numTotal =  parseFloat(num1) - parseFloat(num2);                    
                     break;
-                case "*":
-                    numTotal =  parseFloat(number1) * parseFloat(number2);                    
+                case "x":
+                    numTotal =  parseFloat(num1) * parseFloat(num2);                    
                     break;
                 case "/":
-                    numTotal =  parseFloat(number1) / parseFloat(number2);
+                    numTotal =  parseFloat(num1) / parseFloat(num2);
                     break;
                 case "^":
-                    numTotal = Math.pow(number1, number2)
+                    numTotal = Math.pow(num1, num2)
                     break;
                 case "%":
-                    numTotal = parseFloat(number1) * parseFloat(number2) / 100; 
+                    numTotal = parseFloat(num1) *parseFloat(num2) / 100; 
                     break;
             }
-            //console.log("numTotal es = " + numTotal);
-            //console.log("cadena de operation = " + operation.textContent.length);
+            console.log("numTotal es = " + numTotal);
+            console.log("cadena de operation = " + operation.textContent.length);
             answer.innerText = numTotal;
-            if (answer.textContent.length>8){//maximo 10 de tamaño
-                answer.innerText = answer.textContent.slice(0,8);
+            
+            answer.innerText=eval(operation.textContent);
+            if (answer.textContent.length>15){
+                //maximo 10 de tamaño
+                answer.innerText = answer.textContent.slice(0,10);
             }
         }
 
-
-        /* Con la funcion "eval" resolvemos una linea de varias operaciones de 
-           manera directa y teniendo en cuenta la prioridad operativa; pero parece no
-           funcionar con mi manera de agregar el operador de porcentaje y de potencia;
-           es por ello que esas dos operaciones son evaluadas en la funcion "resolver" */
-        function resolverSencillo(){
+        function resolver2(){
             answer.innerText=eval(operation.textContent);
-            if (answer.textContent.length>8){//maximo 10 de tamaño
-                answer.innerText = answer.textContent.slice(0,8);
-            }
         }
 
         //Events
@@ -568,11 +561,7 @@
             addNumber(".");
         }
         btEqual.onclick = function(){
-            if(operator=="%" || operator=="^"){
-                resolver();
-            }else {
-                resolverSencillo();
-            }
+            resolver();
         }
 
     </script>
