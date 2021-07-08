@@ -476,7 +476,7 @@
             //console.log("numTotal es = " + numTotal);
             //console.log("cadena de operation = " + operation.textContent.length);
             answer.innerText = numTotal;
-            if (answer.textContent.length>8){//maximo 10 de tamaño
+            if (answer.textContent.length>8){//maximo 8 de tamaño
                 answer.innerText = answer.textContent.slice(0,8);
             }
         }
@@ -488,7 +488,7 @@
            es por ello que esas dos operaciones son evaluadas en la funcion "resolver" */
         function resolverSencillo(){
             answer.innerText=eval(operation.textContent);
-            if (answer.textContent.length>8){//maximo 10 de tamaño
+            if (answer.textContent.length>8){//maximo 8 de tamaño
                 answer.innerText = answer.textContent.slice(0,8);
             }
         }
