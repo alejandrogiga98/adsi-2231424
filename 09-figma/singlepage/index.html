@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Kano</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #458fb5;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        body main{
+            border: 1px solid #0000;
+            *border-color: #458fb5;
+            *background: #15b;
+            margin: 0px auto;
+            width: 800px;
+        }
+
+        main section {
+            border: 0px solid red;
+            margin: 90px auto;
+            width: 700px;
+        }
+
+        /* Section Menu Superior */
+        main section.menu{
+            border: 0px solid red;
+            background: #84A9BC;
+            height: 46px;
+            width: 800px;
+            margin-top: 0px;
+            position: fixed;
+            z-index: 99999;
+            
+        }
+
+        main section.menu div.menu{
+            height: 46px;
+            border: 0px solid white;
+            display:inline-block;
+            margin: 0px 15px;
+            transition: transform 0.3s ease-in;
+        }
+
+        main section.menu div.menu:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        main section.menu div.menuJuegos{
+            background: url(imgs/botonJuegos.svg) no-repeat right;
+            margin-left: 118px;
+            width: 108px;
+        }
+
+        main section.menu div.menuPlay{
+            background: url(imgs/botonPlay.svg) no-repeat left;
+            width: 150px;
+        }
+
+        main section.menu div.menuXbox{
+            background: url(imgs/botonXbox.svg) no-repeat center;
+            width: 85px;
+        }
+
+        main section.menu div.menuNintendo{
+            background: url(imgs/botonNintendo.svg) no-repeat left;
+            width: 120px;
+        }
+
+        div.menu a{
+            border: 0px solid black;
+            display: block;
+            position: relative;
+            height: 42px;
+            *width: 200px;
+        }
+
+        /* Seccion Juegos */
+        main section.juegos, main section.playStation, main section.nintendo {
+            position: relative;
+            border-radius: 30px;
+            background: #84a9bc;
+            height: 375px;
+        }
+
+        main section.juegos div.textos{
+            border: 0px solid #fff;
+            height: 375px;
+            width: 390px;
+        }
+
+        section.juegos div.textos div.titulo {
+            border: 1px solid #0000;
+        }
+
+        section.juegos div.textos div h1 {
+            font-size: 50px;
+            margin: 30px;
+            line-height: 0px;
+            text-shadow: 3px 3px 3px #800d;
+        }
+
+        section.juegos div.textos h2{
+            border: 0px solid pink;
+            padding: 0px;
+            margin-top: -4px;
+            font-size: 36px;
+            text-align: center; 
+            text-shadow: 3px 3px 3px #15bd;
+        }
+
+        section.juegos div.textos div.parrafo {
+            border: 0px solid black;
+            font-size: 18px;
+            font-weight:bold;
+            height: 225px;
+            text-align: justify;
+            padding: 0px 10px 0px 10px;
+            width: 94%;
+            position: relative;
+            top: -20px;
+            left: 0px;
+        }
+
+        section.juegos div.textos div.boton {
+            border: 0px solid white;
+            background: url(imgs/botonJuegosVerMas.svg);
+            border-radius: 20px;
+            height: 40px;
+            width: 145px;
+            position: relative;
+            left: 127px;
+            top: -35px;
+            transition: transform 0.3s ease-in;
+        }
+
+        section.juegos div.textos div.boton:hover {
+            cursor: pointer;
+            opacity: 0.9;
+            transform: scale(1.2);
+        }
+
+        section.juegos div.textos div.boton a{
+            border: 0px solid black;
+            display: block;
+            position: relative;
+            height: 38px;
+            *width: 200px;
+
+        }
+
+        section.juegos div.imagen{
+            background: url(imgs/imagenesJuegos.svg) no-repeat center;
+            border: 0px solid pink;
+            height: 375px;
+            width: 310px;
+            position: relative;
+            left: 390px;
+            bottom: 405px;
+        }
+
+        /* Seccion PlayStation */
+        main section.playStation {
+            background: #3170B4;
+        }
+
+        section.playStation div.imagen{
+            *display: inline-block;
+            background: url(imgs/imagenesPlayStation.svg) no-repeat center;
+            border: 0px solid pink;
+            height: 375px;
+            width: 310px;
+            position: relative;
+            left: 0px;
+            bottom: 5px;
+        } 
+
+        section.playStation div.textos {
+            border: 0px solid white;
+            *margin-left: 310px;
+            height: 335px;
+            width: 390px;
+            position: relative;
+            top: -395px;
+            left: 310px;
+        }
+
+        section.playStation div.textos h2 {
+            border: 0px solid black;
+            color:white;
+            text-shadow: 4px 5px 3px #111;
+            padding-top: 35px;
+            margin-top: -8px;
+            font-size: 36px;
+            text-align: center; 
+        }
+
+        section.playStation div.textos div.parrafo {
+            border: 0px solid black;
+            font-size: 20px;
+            height: 225px;
+            text-align: justify;
+            font-weight:bold;
+            padding: 0px 10px 0px 10px;
+            width: 94%;
+            position: relative;
+            top: -20px;
+            left: 0px;
+        }
+
+        /* Seccion Xbox */
+        main section.xbox{
+            position: relative;
+            border-radius: 30px;
+            background: #107C10;
+            height: 815px;
+        }
+
+        section.xbox div.textos {
+            border: 0px solid white;
+            height: 175px;
+            width: 700px;
+            position: relative;
+            top: 0px;
+        }
+
+        section.xbox div.textos h2 {
+            border: 0px solid black;
+            color:black;
+            text-shadow: 3px 2px 3px #fff;
+            padding-top: 8px;
+            margin-top: 0px;
+            font-size: 36px;
+            text-align: center; 
+        }
+
+        section.xbox div.textos div.parrafo {
+            border: 0px solid black;
+            font-size: 20px;
+            height: 155px;
+            text-align: center;
+            font-weight:bold;
+            padding: 0px 10px 0px 10px;
+            width: 94%;
+            position: relative;
+            top: -20px;
+            left: 0px;
+        }
+
+        section.xbox div.opcion {
+            border: 0px solid purple;
+            display: inline-grid;
+            margin: 50px 0px 0px 30px;
+            height: 260px;
+            width: 300px;
+        }
+
+        section.xbox div.seriesX, section.xbox div.compatibilidad { 
+            background: url(imgs/fondoOpcion14.svg) no-repeat center;
+        }
+
+        section.xbox div.seriesS, section.xbox div.gamePass { 
+            background: url(imgs/fondoOpcion23.svg) no-repeat center;
+        }
+
+        section.xbox div.opcion h3{
+            text-align: center;
+            border: 0px solid black;
+            color:darkblue;
+            text-shadow: 1px 1px 3px #ddd;
+            padding-top: 8px;
+            margin-top: 0px;
+            font-size: 22px;
+        }
+
+        section.xbox div.opcion div.imagen{
+            border: 0px solid red;
+            height: 120px;
+            width: 120px;
+            position: relative;
+            top: 50px;
+            left: 12px
+        }
+
+        section.xbox div.seriesX div.imagen{
+            background: url(imgs/seriesX.svg) no-repeat center;
+        }
+
+        section.xbox div.seriesS div.imagen{
+            background: url(imgs/seriesS.svg) no-repeat center;
+            position: relative;
+            left: 25px;
+        }
+
+        section.xbox div.gamePass div.imagen{
+            background: url(imgs/gamePassXCloud.svg) no-repeat center;
+            height: 85px;
+            width: 190px;
+            top: -10px;
+        }
+
+        section.xbox div.compatibilidad div.imagen{
+            background: url(imgs/compatibilidad.svg) no-repeat center;
+            height: 85px;
+            width: 180px;
+            top: -10px;
+        }
+
+        section.xbox div.opcion div.texto{
+            border: 0px solid black;
+            height: 220px;
+            width: 160px;
+            position: relative;
+            top: -140px;
+            left: 130px;
+            text-align: justify;
+            font-size: 16px;
+        }
+
+        section.xbox div.gamePass div.texto, section.xbox div.compatibilidad div.texto{
+            border: 0px solid black;
+            height: 120px;
+            width: 260px;
+            position: relative;
+            top: -18px;
+            left: 30px;
+        }
+
+        section.xbox div.opcion div.boton{
+            background: url(imgs/botonVerMas.svg);
+            border: 0px solid coral;
+            height: 20px;
+            width: 80px;
+            position: relative;
+            left: 205px;
+            transition: transform 0.3s ease-in;
+        }
+
+        section.xbox div.opcion div.boton:hover{
+            cursor: pointer;
+            transform: scale(1.2) 
+                       rotate(-5deg) 
+                       translate(-10px, -10px)
+        }
+
+        section.xbox div.opcion div.boton a{
+            border: 0px solid black;
+            display: block;
+            position: relative;
+            height: 18px;
+            *width: 200px;
+        }
+
+        section.xbox div.seriesX div.boton, section.xbox div.seriesS div.boton{
+            top: -185px;
+        }
+
+        section.xbox div.gamePass div.boton, section.xbox div.compatibilidad div.boton{
+            top: -45px;
+        }
+
+        /* Seccion Nintendo */
+        main section.nintendo {
+            background: #E50110;
+        }
+
+        section.nintendo div.textos {
+            border: 0px solid white;
+            margin-left: 310px;
+            height: 335px;
+            width: 390px;
+            position: relative;
+            left: -310px;
+        }
+
+        section.nintendo div.textos h2 {
+            border: 0px solid black;
+            color:white;
+            text-shadow: 4px 5px 3px #111;
+            padding-top: 15px;
+            margin-top: -8px;
+            font-size: 36px;
+            text-align: center; 
+        }
+
+        section.nintendo div.textos div.ingresos{
+            border: 0px solid blue;
+            font-size: 20px;
+            height: 225px;
+            text-align: justify;
+            font-weight:bold;
+            padding: 0px 0px 0px 60px;
+            margin-top: 50px;
+            width: 328px;
+            position: relative;
+            top: -20px;
+            left: 0px;
+        }
+
+        section.nintendo div.textos div.ingresos input{
+            background-color: #ddd;
+            border-radius: 10px;
+            *display: block;
+            margin-bottom: 10px;
+            height: 20px;
+            width: 310px;
+        }
+
+        section.nintendo div.textos div.ingresos textarea{
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            height: 140px;
+            width: 310px;
+        }
+
+        section.nintendo div.boton{
+            background: url(imgs/botonEnviar.svg) no-repeat center;
+            border: 0px solid peru;
+            border-radius: 17px;
+            height: 32px;
+            width: 106px;
+            position: relative;
+            left: 60px;
+            top: -20px;
+            transition: transform 0.8s ease-in;
+        }
+
+        section.nintendo div.boton:hover{
+            cursor: pointer;
+            transform: scale(1.2) 
+            rotate(360deg)  
+        }
+
+        section.nintendo div.imagen{
+            background: url(imgs/imagenesSwitch.svg) no-repeat center;
+            border: 0px solid white;
+            height: 375px;
+            width: 308px;
+            position: relative;
+            left: 380px;
+            top: -370px;
+        }
+
+        /* <section class="nintendo">
+            <div class="textos">
+                <h2>Nintendo Switch</h2>
+                <div class="ingresos">
+                    <input type="text" class="ingConsola">
+                    <input type="text" class="ingJuego">
+                    <input type="text" class="ingRazon">
+                </div>
+            </div>
+            <div class="boton"></div>
+            <div class="imagen"></div>
+        </section> */
+        
+    </style>
+
+    
+</head>
+<body>
+    <main>
+        <section class="menu">
+            <div class="menu menuJuegos"><a href="#juegos"></a></div>
+            <div class="menu menuPlay"><a href="#playStation"></a></div>
+            <div class="menu menuXbox"><a href="#xbox"></a></div>
+            <div class="menu menuNintendo"><a href="#nintendo"></a></div>
+        </section>
+
+        <!-- Seccion Juegos -->
+        <section class="juegos" id="juegos">
+            <div class="textos">
+                <div class="titulo">
+                    <h1>Videojuegos</h1>
+                </div>
+                <h2>mas iconicos</h2>
+                <div class="parrafo">
+                    <p>PlayStation y Xbox muestran musculo con sus exclusivas imperdibles y el lanzamiento de una nueva generacion de consolas. Siendo Nintendo Switch una consola Intergeneracional; aun continua en la batalla frente a sus rivales Microsoft y Sony con entregas tan galardonadas como "The Legend Of Zelda" y "Super Smash Bros".</p>
+                </div>
+                <div class="boton"><a href="https://www.xataka.com/videojuegos/juegos-esperados-2021"></a> </div>
+            </div>
+            <div class="imagen"></div>
+        </section>
+
+        <!-- Seccion PlayStation -->
+        <section class="playStation" id="playStation">
+            <div class="imagen"></div>
+            <div class="textos">
+                <h2>PlayStation 5</h2>
+                <div class="parrafo">
+                    <p>Sony lanza dos modelos de su PS5; un modelo estandar con lector de discos (como viene siendo costumbre en cada generación), y un modelo completamente digital, algo nunca antes visto en sus consolas de sobre mesa. Tambien lanza una linea de accesorios exclusivos para sacar el 100% de disfrute de nuestra consola de videojuegos de novena generación. Eso sin mencionar las grandes exclusivas que nos esperan!!!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Xbox -->
+        <section class="xbox" id="xbox">
+            <div class="textos">
+                <h2>Xbox Series X|S</h2>
+                <div class="parrafo">
+                    <p>Microsoft tiene planeado llegar al mayor numero de usuarios, centrando todos sus esfuerzos en cuatro pilares fundamentales para la nueva generacion; dos consolas similarmente diferentes, servicios de vanguardia y permitirnos jugar cuatro generaciones en un solo lugar.</p>
+                </div>
+            </div>
+            <!-- Caja Series X -->
+            <div class="opcion seriesX">
+                <h3>Xbox Series X</h3>
+                <div class="imagen"></div>
+                <div class="texto">
+                    <p>La consola mas potente del mercado; 4K, 120 fps, ray-tracing, lectora de disco... la consola ideal para el usuario mas exigente.</p>
+                </div>
+                <div class="boton"><a href="https://www.xbox.com/es-CO/consoles/xbox-series-x?xr=shellnav"></a></div>
+            </div>
+            <!-- Caja Series S -->
+            <div class="opcion seriesS">
+                <h3>Xbox Series S</h3>
+                <div class="imagen"></div>
+                <div class="texto">
+                    <p>La consola mas pequeña y economica de la nueva generación; 1440p, 120 fps, ray-tracing, solo digital; ideal para dar el salto Next-Gen.</p>
+                </div>
+                <div class="boton"><a href="https://www.xbox.com/es-CO/consoles/xbox-series-s"></a> </div>
+            </div>
+            <!-- Caja Game Pass / xCloud -->
+            <div class="opcion gamePass">
+                <h3>Game Pass / xCloud</h3>
+                <div class="texto">
+                    <p>El juego por stream a otro nivel; llegando a celulares, tv, tables y demas dispositivos... asi como una suscripcion game pass de mas de 200 juegos.</p>
+                </div>
+                <div class="imagen"></div>
+                <div class="boton"><a href="https://www.xbox.com/es-CO/xbox-game-pass/games#"></a></div>
+                
+            </div>
+            <!-- Caja Compatibilidad -->
+            <div class="opcion compatibilidad">
+                <h3>Compatibilidad</h3>
+                <div class="texto">
+                    <p>En Xbox Series X|S, podremos jugar a titulo de Xbox Clasico, 360, One y Series... el catalogo mas grande de la historia de Xbox a nuestro alcance.</p>
+                </div>
+                <div class="imagen"></div>
+                <div class="boton"><a href="https://www.xbox.com/es-CO/games/backward-compatibility?xr=shellnav"></a></div>
+            </div>
+        </section>
+        
+        <!-- Seccion Nintendo -->
+        <section class="nintendo" id="nintendo">
+            <div class="textos">
+                <h2>Nintendo Switch</h2>
+                <div class="ingresos">
+                    <input type="text" class="ingConsola" id="ingConsola" placeholder="Consola Switch Favorita:">
+                    <input type="text" class="ingJuego" id="ingJuego" placeholder="Juego Favorito:">
+                    <textarea name="" id="" placeholder="¿Por que esas elecciones?:"></textarea>
+                </div>
+            </div>
+            <div class="boton"></div>
+            <div class="imagen"></div>
+        </section>
+    </main>
+</body>
+</html>

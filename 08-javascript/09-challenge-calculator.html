@@ -575,6 +575,133 @@
             }
         }
 
+        // Keyboard Events
+        document.onkeyup = function(event){
+            console.log(event.keyCode);
+            switch (event.keyCode) {
+                case 96:
+                    addNumber(0);
+                    break;
+                case 48:
+                    addNumber(0);
+                    break;
+                case 97:
+                    addNumber(1);
+                    break;
+                case 49:
+                    addNumber(1);
+                    break;
+                case 98:
+                    addNumber(2);
+                    break;
+                case 50:
+                    addNumber(2);
+                    break;
+                case 99:
+                    addNumber(3);
+                    break;
+                case 51:
+                    addNumber(3);
+                    break;
+                case 100:
+                    addNumber(4);
+                    break;
+                case 52:
+                    addNumber(4);
+                    break;
+                case 101:
+                    addNumber(5);
+                    break;
+                case 53:
+                    if(event.shiftKey){
+                        addOperator("%");
+                    }else{
+                        addNumber(5);
+                    }
+                    break;
+                case 102:
+                    addNumber(6);
+                    break;
+                case 54:
+                    addNumber(6);
+                    break;
+                case 103:
+                    addNumber(7);
+                    break;
+                case 55:
+                    if(event.shiftKey){
+                        addOperator("/");
+                    }else{
+                        addNumber(7);
+                    }
+                    break;
+                case 104:
+                    addNumber(8);
+                    break;
+                case 56:
+                    addNumber(8);
+                    break;
+                case 105:
+                    addNumber(9);
+                    break;
+                case 57:
+                    addNumber(9);
+                    break;
+                case 106:
+                    addOperator("*");
+                    break;
+                case 107:
+                    addOperator("+");
+                    break;
+                case 187:
+                    if(event.shiftKey){
+                        addOperator("*");
+                    }else{
+                        addNumber("+");
+                    }
+                    addNumber("+");
+                    break;
+                case 109:
+                    addOperator("-");
+                    break;
+                case 189:
+                    addNumber("-");
+                    break;
+                case 111:
+                    addOperator("/");
+                    break;
+                case 110:
+                    addNumber(".");
+                    break;
+                case 188:
+                    addNumber(".");
+                    break;
+                case 190:
+                    addNumber(".");
+                    break;
+                case 186:
+                    if(event.shiftKey){
+                        addOperator("^");
+                    }
+                    break;
+                case 13:
+                    if(operator=="%" || operator=="^"){
+                        resolver();
+                    }else {
+                        resolverSencillo();
+                    }
+                    break;
+                case 8:
+                    delCharacter();
+                    break;
+                case 46:
+                    clearCharacters();
+                    break;
+                default:
+                    break;
+            }
+        }
+
     </script>
 </body>
 </html>
