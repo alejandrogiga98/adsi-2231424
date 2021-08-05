@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators Comparison</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        table tr.box {
+            border-top: 0.5px solid black;
+            border-left: 0.5px solid black;
+            border-right: 0.5px solid black;
+        }
+
+        table tr.box1 {
+            border-bottom: 0.5px solid black;
+            border-left: 0.5px solid black;
+            border-right: 0.5px solid black;
+        }
+
+        table tr th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        table tr th input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 5px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #b49f27;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #3339;
+            background-color: #118cffbb;
+        }
+
+        table tr td {
+            border: 0.5px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Operators Comparison</h1>
+        </header>
+        <section>
+            <table>
+                <tr class="box">
+                    <th colspan="2"><input type="number" id="vx" placeholder="Valor de X"></th>
+                    <th colspan="2"><input type="number" id="vy" placeholder="Valor de Y"></th>
+                </tr>
+                <tr class="box1">
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Comparison</th>
+                    <th>Result</th>
+                </tr>
+                <tr> <!-- Fila -->
+                    <td>==</td> 
+                    <td>Es igual a</td>
+                    <td>x == y</td>
+                    <td id="vx1"></td>
+                </tr>
+                <tr>
+                    <td>===</td>
+                    <td>Es exactamente igual a (valor y tipo)</td>
+                    <td>x === y</td>
+                    <td id="vx2"></td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>No es igual</td>
+                    <td>x != y</td>
+                    <td id="vx3"></td>
+                </tr>
+                <tr>
+                    <td>!==</td>
+                    <td>No es igual(valor y tipo)</td>
+                    <td>x !== y</td>
+                    <td id="vx4"></td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>Es mayor que</td>
+                    <td>x > y</td>
+                    <td id="vx5"></td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>Es menor que</td>
+                    <td>x < y</td>
+                    <td id="vx6"></td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>Es mayor o igual que</td>
+                    <td>x >= y</td>
+                    <td id="vx7"></td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>Es menor o igual que</td>
+                    <td>x <= y</td>
+                    <td id="vx8"></td>
+                </tr>
+                
+            </table>
+        </section>
+    </main>
+    <br>
+    <script>
+        // Variables
+        var vx = document.getElementById("vx");
+        var vy = document.getElementById("vy");
+
+        // X
+        var vx1 = document.getElementById("vx1");
+        var vx2 = document.getElementById("vx2");
+        var vx3 = document.getElementById("vx3");
+        var vx4 = document.getElementById("vx4");
+        var vx5 = document.getElementById("vx5");
+        var vx6 = document.getElementById("vx6");
+        var vx7 = document.getElementById("vx7");
+        var vx8 = document.getElementById("vx8");
+        
+        // Events
+        /* vy.onkeyup = function(){
+            //var vxTemp = parseInt(vx.value);
+            //var vyTemp = parseInt(vy.value);
+            if(vx.value.length > 0 && vx.value.length <= 3 && vy.value.length > 0 && vy.value.length <= 3){
+                // - - - - - -
+                vx1.innerText = parseInt(vx.value) == parseInt(vy.value);
+
+                // - - - - - -
+                vx2.innerText = parseInt(vx.value) === parseInt(vy.value);
+                
+                // - - - - - -
+                vx3.innerText = parseInt(vx.value) != parseInt(vy.value);
+
+                // - - - - - -
+                vx4.innerText = parseInt(vx.value) !== parseInt(vy.value);
+
+                // - - - - - -
+                vx5.innerText = parseInt(vx.value) > parseInt(vy.value);
+                
+                // - - - - - -
+                vx6.innerText = parseInt(vx.value) < parseInt(vy.value);
+
+                // - - - - - -
+                vx7.innerText = parseInt(vx.value) >= parseInt(vy.value);
+
+                // - - - - - -
+                vx8.innerText = parseInt(vx.value) <= parseInt(vy.value);
+            }
+        } */
+
+        // Function
+        function results(vxTemporal, vyTemporal){
+            vxTemporal=parseInt(vxTemporal);
+            vyTemporal=parseInt(vyTemporal);
+            
+            // - - - - - -
+            vx1.innerText = (vxTemporal == vyTemporal);
+
+            // - - - - - -
+            vx2.innerText = (vxTemporal === vyTemporal);
+            
+            // - - - - - -
+            vx3.innerText = (vxTemporal != vyTemporal);
+
+            // - - - - - -
+            vx4.innerText = (vxTemporal !== vyTemporal);
+
+            // - - - - - -
+            vx5.innerText = (vxTemporal > vyTemporal);
+            
+            // - - - - - -
+            vx6.innerText = (vxTemporal < vyTemporal);
+
+            // - - - - - -
+            vx7.innerText = (vxTemporal >= vyTemporal);
+
+            // - - - - - -
+            vx8.innerText = (vxTemporal <= vyTemporal);
+        }
+        
+
+        // Events
+        vx.onkeyup = function(){
+            let vxTemp = this.value;
+            let vyTemp = vy.value;
+            if(vxTemp.length > 0 && vxTemp.length <= 3 && vyTemp.length > 0 && vyTemp.length <= 3){
+                results(vxTemp, vyTemp);
+            }
+        }
+
+        vy.onkeyup = function(){
+            if(vx.value.length > 0 && vx.value.length <= 3 && vy.value.length > 0 && vy.value.length <= 3){
+                results(vx.value, vy.value);
+            }
+        }
+    </script>
+</body>
+</html>

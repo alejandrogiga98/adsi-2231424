@@ -125,47 +125,47 @@
         var vx5 = document.getElementById("vx5");
         var vx6 = document.getElementById("vx6");
         
+        // Function
+        function results(vxTemporal, vyTemporal){
+            vxTemporal=parseInt(vxTemporal);
+            dx = parseInt(vxTemporal);
+            vyTemporal=parseInt(vyTemporal);
+            // - - - - - -
+            vx1.innerText = (vxTemporal = vyTemporal);
+
+            // - - - - - -
+            vxTemporal = dx;
+            vx2.innerText = (vxTemporal += vyTemporal);
+            
+            // - - - - - -
+            vxTemporal = dx;
+            vx3.innerText = (vxTemporal -= vyTemporal);
+
+            // - - - - - -
+            vxTemporal = dx;
+            vx4.innerText = (vxTemporal *= vyTemporal);
+
+            // - - - - - -
+            vxTemporal = dx;
+            vx5.innerText = (vxTemporal /= vyTemporal);
+
+            // - - - - - -
+            vxTemporal = dx;
+            vx6.innerText = (vxTemporal %= vyTemporal);
+        }
+
         // Events
+        vx.onkeyup = function(){
+            let vxTemp = this.value;
+            let vyTemp = vy.value;
+            if(vxTemp.length > 0 && vxTemp.length <= 3 && vyTemp.length > 0 && vyTemp.length <= 3){
+                results(vxTemp, vyTemp);
+            }
+        }
+
         vy.onkeyup = function(){
-            //alert("valor de x: " + vx.value);
-            //alert("valor de y: " + vy.value); 
-            var vxTemp = parseInt(vx.value);
-            var vyTemp = parseInt(vy.value);
             if(vx.value.length > 0 && vx.value.length <= 3 && vy.value.length > 0 && vy.value.length <= 3){
-                vxTemp = vyTemp;
-                vx1.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx1.innerText = parseInt(vy.value);
-
-                // - - - - - -
-                vxTemp += vyTemp;
-                vx2.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx2.innerText = parseInt(vx.value) + parseInt(vy.value);
-                
-                // - - - - - -
-                vxTemp -= vyTemp;
-                vx3.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx3.innerText = parseInt(vx.value) - parseInt(vy.value);
-
-                // - - - - - -
-                vxTemp *= vyTemp;
-                vx4.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx4.innerText = parseInt(vx.value) * parseInt(vy.value);
-
-                // - - - - - -
-                vxTemp /= vyTemp;
-                vx5.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx5.innerText = parseInt(vx.value) / parseInt(vy.value);
-
-                // - - - - - -
-                vxTemp %= vyTemp;
-                vx6.innerText = vxTemp;
-                vxTemp = parseInt(vx.value);
-                //vx6.innerText = parseInt(vx.value) % parseInt(vy.value);
+                results(vx.value, vy.value);
             }
         }
     </script>

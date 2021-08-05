@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators Logical</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        table tr.box {
+            border-top: 0.5px solid black;
+            border-left: 0.5px solid black;
+            border-right: 0.5px solid black;
+        }
+
+        table tr.box1 {
+            border-bottom: 0.5px solid black;
+            border-left: 0.5px solid black;
+            border-right: 0.5px solid black;
+        }
+
+        table tr th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        table tr th input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 5px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #b49f27;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #3339;
+            background-color: #118cffbb;
+        }
+
+        table tr td {
+            border: 0.5px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Operators Logical</h1>
+        </header>
+        <section>
+            <table>
+                <tr class="box">
+                    <th colspan="2"><input type="number" id="vx" placeholder="Valor de X"></th>
+                    <th colspan="2"><input type="number" id="vy" placeholder="Valor de Y"></th>
+                </tr>
+                <tr class="box1">
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+                <tr> <!-- Fila -->
+                    <td>&&</td> 
+                    <td>Y (AND)</td>
+                    <td>x < 10 && y > 1</td>
+                    <td id="rs1"></td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>O (OR)</td>
+                    <td>x == 5 && || y == 5</td>
+                    <td id="rs2"></td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>No (NOT)</td>
+                    <td>!(x == y)</td>
+                    <td id="rs3"></td>
+                </tr>
+                
+            </table>
+        </section>
+    </main>
+    <br>
+    <script>
+        // Variables
+        var vx = document.getElementById("vx");
+        var vy = document.getElementById("vy");
+
+        // Results
+        var rs1 = document.getElementById("rs1");
+        var rs2 = document.getElementById("rs2");
+        var rs3 = document.getElementById("rs3");
+        
+        // Function
+        function results(vxTemporal, vyTemporal){
+            vxTemporal=parseInt(vxTemporal);
+            vyTemporal=parseInt(vyTemporal);
+            // - - - - - -
+            rs1.innerText = (vxTemporal < 10 && vyTemporal > 1);
+
+            // - - - - - -
+            rs2.innerText = (vxTemporal == 5 || vyTemporal == 5);
+            
+            // - - - - - -
+            rs3.innerText =  !(vxTemporal== vyTemporal);
+        }
+
+        // Events
+        vx.onkeyup = function(){
+            let vxTemp = this.value;
+            let vyTemp = vy.value;
+            if(vxTemp.length > 0 && vxTemp.length <= 3 && vyTemp.length > 0 && vyTemp.length <= 3){
+                results(vxTemp, vyTemp);
+            }
+        }
+
+        vy.onkeyup = function(){
+            if(vx.value.length > 0 && vx.value.length <= 3 && vy.value.length > 0 && vy.value.length <= 3){
+                results(vx.value, vy.value);
+            }
+        }
+        
+    </script>
+</body>
+</html>
