@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Conditionals</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        figure {
+            *background: url(/08-javascript/imgs/conditionals/fondo.svg) no-repeat center;
+            background-color: #115FA7;
+            border: 2px solid #800;
+            border-radius: 33px;
+            height: 866px;
+            margin: 0px auto;
+            width: 550px;
+            position: relative;
+        }
+
+        figure.conditional h2, h4 {
+            background: none;
+            font-family: 'Roboto';
+            font-style: normal;
+            letter-spacing: 0.01em;
+            text-align: center;
+            position: absolute;
+        }
+
+        figure.conditional h2 {
+            *color: #b49f27;
+            color: #800;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 46,88px;
+            top: 18px;
+        }
+
+        figure.conditional h4 {
+            color: #333;
+            font-size: 30px;
+            height: 35px;
+            width: 374px;
+            left: 92px;
+            top: 146px;
+        }
+
+        /* Imagenes Genero */
+        figure.conditional input[type=checkbox]{
+            *border: 1px solid white;
+            border-radius: 100px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 246px;
+            transition: all 0.2s ease-in;
+        }
+
+        figure.conditional input[type=checkbox]:hover{
+            transform: scale(1.1);
+        }
+
+        /* Imagen Mujer */
+        figure.conditional input#imageWoman{
+            *background: url(/08-javascript/imgs/conditionals/womanImage.svg) no-repeat center;
+            background: url(/08-javascript/imgs/conditionals/womanImage2.png) no-repeat center;
+
+            left:32px;
+            *top: 35px;
+        }
+
+        figure.conditional input#imageWoman:checked{
+            *background: url(/08-javascript/imgs/conditionals/womanImageSelect.svg) no-repeat center; 
+            background: url(/08-javascript/imgs/conditionals/womanImageSelect2.png) no-repeat center; 
+            height: 245px;
+            width: 245px;
+            top: 223px;
+            left: 18px;
+        }
+
+        figure.conditional h5{
+            *border: 1px solid white;
+            background: none;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            letter-spacing: 0.01em;
+            position: absolute;
+            left: 93px;
+            top: 411px;
+        }
+
+        /* Imagen hombre */
+        figure.conditional input#imageMan{
+            background: url(/08-javascript/imgs/conditionals/manImage.svg) no-repeat center; 
+            left: 312px;
+        }
+
+        figure.conditional input#imageMan:checked{
+            background: url(/08-javascript/imgs/conditionals/manImageSelect.svg) no-repeat center; 
+            height: 245px;
+            width: 245px;
+            top: 223px;
+            left: 301px;
+        }
+
+        /* Texto: Mujer / Hombre */
+        figure.conditional h5{
+            *border: 1px solid white;
+            background: none;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            letter-spacing: 0.01em;
+            text-shadow: 2px 2px 1px white;
+
+            position: absolute;
+            top: 411px;
+        }
+
+        figure.conditional h5.woman{
+            left: 93px;
+        }
+
+        figure.conditional h5.man{
+            left: 392px;
+        }
+
+        /* Ingreso nombre y fecha de nacimiento */
+        figure.conditional label{
+            background: none;
+            color: white;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            *letter-spacing: 0.01em;
+            *text-shadow: 2px 2px 1px white;
+            position: absolute;
+            left: 48px;
+        }
+
+        figure.conditional label[for=boxFullName]{
+            top: 568px;
+        }
+
+        figure.conditional label[for=boxBirthDate]{
+            top: 663px;
+        }
+        
+        figure.conditional input[type=text]{
+            background: url(/08-javascript/imgs/conditionals/boxEnterName.svg) no-repeat center;
+            border-radius: 18px;
+            border-color: #800;
+            color: black;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            height: 38px;
+            outline: none;
+            text-align: center;
+            width: 310px;
+            position: absolute;
+            left: 175px;
+            top: 561px;
+        }
+
+        figure.conditional input#boxFullName::placeholder{
+            text-align: center;
+        }
+
+        figure.conditional input[type=date]{
+            background: url(/08-javascript/imgs/conditionals/boxEnterDate.svg) no-repeat center;
+            border-radius: 18px;
+            border-color: #800;
+            font-family: 'Roboto';
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            height: 38px;
+            outline: none;
+            text-indent: 45px;
+            width: 310px;
+            position: absolute;
+            left: 175px;
+            top: 656px;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+             background: none;
+        }
+
+        /* Boton */
+        figure.conditional button{
+            background-color: #181156;
+            border-radius: 25px;
+            color:white;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            height: 40px;
+            width: 193px;
+            position: absolute;
+            left: 180px;
+            top: 773px;
+            transition: all 0.3s ease-in;
+        }
+
+        figure.conditional button:hover{
+            background-color: #800d;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+
+        /* Modo Respuesta */
+        figure.message{
+            *background: url(/08-javascript/imgs/conditionals/fondoMensaje.svg);
+        }
+
+        figure.disabled{
+            display: none;
+        }
+
+        figure div.image{
+            *border: 1px solid white;
+            *background: url(/08-javascript/imgs/conditionals/womanImage2.png) no-repeat center;
+            background-size: contain;
+            border-radius: 50%;
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            left: 150px;
+            top: 64px;
+        }
+
+        figure div.image.woman{
+            background: url(/08-javascript/imgs/conditionals/womanImage2.png) no-repeat center;
+            background-size: contain;
+        }
+
+        figure div.image.man{
+            background: url(/08-javascript/imgs/conditionals/manImage2.png) no-repeat center;
+            background-size: contain;
+        }
+
+        figure.message h5{
+            *border: 1px solid red;
+            background: none;
+            color: white;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            letter-spacing: 0.0em;
+            text-align: center;
+            position: absolute;
+            width: 548px;
+            top: 288px;
+        }
+
+        figure.message h5.age{
+            *border: 1px solid black;
+            top: 315px;
+        }
+
+        figure.message div.message{
+            background-color: #181156;
+            border-radius: 33px;
+            height: 208px;
+            width: 454px;
+            position: absolute;
+            left: 47px;
+            top: 418px;
+        }
+
+        figure.message div.text{
+            *border: 1px solid white;
+            color: white;
+            font-family: 'Roboto';
+            font-size: 20px;
+            font-style: normal;
+            letter-spacing: 0.0em;
+            height: 115px;
+            text-align: center;
+            width: 400px;
+            position: absolute;
+            left: 25px;
+            top: 25px;
+        }
+
+        figure.message div.logo{
+            background: url(/08-javascript/imgs/conditionals/logo.svg) no-repeat center;
+            *border: 1px solid red;
+            height: 58px;
+            width: 58px;
+            position: absolute;
+            left: 195px;
+            top: 140px;
+        }
+
+        figure.message button{
+            *border: 1px solid white;
+            background-color: #181156;
+            border-radius: 25px;
+            color:white;
+            font-family: 'Roboto';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            height: 40px;
+            width: 193px;
+            position: absolute;
+            left: 178px;
+            top: 773px;
+            transition: all 0.3s ease-in;
+        }
+
+        figure.message button:hover{
+            background-color: #800d;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Challenge Conditionals</h1>
+        </header>
+        <section>
+            <!-- Caja para ingresar la información -->
+            <figure class="conditional">
+                <h2>Please fill in the true information</h2>
+                <h4>Choose your gender:</h4>
+                <input type="checkbox" id="imageWoman">
+                <input type="checkbox" id="imageMan">
+                <h5 class="woman">Woman</h5>
+                <h5 class="man">Man</h5>
+                <label for="boxFullName">Full Name:</label>
+                <input type="text" id="boxFullName">
+                <label for="boxBirthDate">Birth Date:</label>
+                <input type="date" id="boxBirthDate">
+                <button type="button" id="buttonVerify">Verify</button>
+            </figure>
+            
+            <!-- Caja para mostrar el resultado en base a los datos ingresados -->
+            <figure class="message disabled">
+                <div class="image"></div>
+                <h5 class="name"></h5>
+                <h5 class="age"></h5>
+                <div class="message">
+                    <div class="text"></div>
+                    <div class="logo"></div>
+                </div>
+                <button type="button" id="buttonBack">Back</button>
+            </figure>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        const skinConditional = document.querySelector('figure.conditional');
+        const skinMessage = document.querySelector('figure.message');
+        const circles = document.querySelectorAll('input[type=checkbox]');
+        const btnVerify = document.getElementById('buttonVerify');
+        var fullName = document.getElementById('boxFullName');
+        var birthDate = document.getElementById('boxBirthDate');
+
+        var imageBox = document.querySelector('div.image');
+        var nameh = document.querySelector('h5.name');
+        var ageh = document.querySelector('h5.age');
+        var messageText = document.querySelector('div.text');
+        const btnBack = document.getElementById('buttonBack');
+        
+        // Function
+        function getAge(dateString) {
+            var today = new Date();
+            var birthDate = new Date(dateString);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var month = today.getMonth() - birthDate.getMonth();
+            if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate()+1)) {
+                //alert("Entro.");
+                age--;
+            }
+            return age;
+        }
+
+        // Events
+        btnVerify.onclick = function(){
+            let dateString = "";
+            dateString = birthDate.value;
+            if(fullName.value!="" && dateString!="" && (circles[0].checked==true || circles[1].checked==true)){
+                // Todos los datos fueron ingresados.
+                skinConditional.classList.add('disabled');
+                skinMessage.classList.remove('disabled');
+                nameh.innerText = fullName.value;
+                ageh.innerHTML = getAge(dateString) + " años";
+                if(circles[0].checked==true){ // Mujer
+                    imageBox.classList.add('woman');
+                    imageBox.classList.remove('man');
+                    messageText.innerText = "Usted no ha sido elegida para defender a su planeta en la guerra que se avecina.\nPuede entrenar a quienes lucharan en el frente de batalla.";  
+                }
+                else {
+                    if(circles[1].checked==true && getAge(dateString)>=18){ // Hombre mayor de edad
+                        imageBox.classList.add('man');
+                        imageBox.classList.remove('woman');
+                        messageText.innerText = "Usted ha sido elegido para defender a su planeta en la guerra que se avecina.\nPreparase para ser desplegado en el frente de batalla.";  
+                    } 
+                    if(circles[1].checked==true && getAge(dateString)<18){ // Hombre menor de edad
+                        imageBox.classList.add('man');
+                        imageBox.classList.remove('woman');
+                        messageText.innerText = "Usted no ha sido elegido para defender a su planeta en la guerra que se avecina.\nPuede entrenar a quienes lucharan en el frente de batalla.";  
+                    } 
+                }
+            }
+            else {
+                alert("Faltan datos para poder revisar su situación, por favor verifique:\n-Haber seleccionado su Genero.\n-Haber escrito su Nombre.\n-Haber seleccionado su Fecha de nacimiento.");
+            }
+        }
+
+        
+        
+        btnBack.onclick = function(){
+            skinConditional.classList.remove('disabled');
+            skinMessage.classList.add('disabled');
+            imageBox.classList.remove('man');
+            imageBox.classList.remove('woman');
+            messageText.innerText = ""
+            fullName.value = null;
+            birthDate.value= null;
+            circles[0].checked = false;
+            circles[1].checked = false;
+        }
+
+        for (let i = 0; i < circles.length; i++) {
+            circles[i].onclick = function() {
+                if(this.checked) {
+                    circles[0].checked = false;
+                    circles[1].checked = false;
+                    this.checked = true;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
