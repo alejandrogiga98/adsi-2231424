@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Api</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        figure.pokedex{
+            background: #FF0000;
+            border-radius: 40px;
+            height: 720px;
+            margin: 0px auto;
+            margin-bottom: 30px;
+            width: 400px;
+            position: relative;
+            left: 7px;
+            top: 8px;
+        }
+
+        figure.stage01{
+            *display:none;
+            *background: url(imgs/pokedex/01-mockup-index.svg) no-repeat center;
+        }
+
+        figure.pokedex h4 {
+            color: #FFFFFF;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            height: 23px;
+            line-height: 23px;
+            width: 126px;
+            position: absolute;
+            left: 150px;
+            top: 28px;
+        }
+
+        figure.pokedex h1 {
+            color: #FFB800;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 42px;
+            line-height: 49px;
+            height: 49px;
+            width: 164px;
+            position: absolute;
+            left: 123px;
+            top: 47px;
+        }
+
+        figure.pokedex h1 span{
+            color: #FFFFFF;
+            font-weight: 400;
+        }
+
+        figure.pokedex.stage01 img{
+            *background: url(imgs/pokedex/main.svg) no-repeat center;
+            position: absolute;
+            left: 34px;
+            top: 181px;
+        }
+
+        figure.pokedex.stage01 button.btn-letsGo{
+            background: #FFB800;
+            border-radius: 20px;
+            height: 61px;
+            width: 360px;
+            position: absolute;
+            left: 24px;
+            top: 636px;
+            
+            color: #2F2F2F;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 29px;
+            line-height: 34px;
+            transition: all 0.3s ease-in;
+        }
+
+        figure.pokedex.stage01 button.btn-letsGo:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        /* Interface 02 - lista de selección */
+        figure.stage02{
+            *display: none;
+            *background: url(imgs/pokedex/02-mockup-list.svg) no-repeat center;
+            position: relative;
+        }
+
+        figure.pokedex.stage02 button.btn-back{
+            background: url(imgs/pokedex/btn-back.svg) no-repeat center;
+            border: none;
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            left: 27px;
+            top: 32px;
+            transition: all 0.3s ease-in;
+        }
+
+        figure.pokedex.stage02 button.btn-back:hover{
+            cursor: pointer;
+            transform: translateX(-5px) 
+            scale(1.5);
+        }
+
+        figure.pokedex h1 {
+            color: #FFB800;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 35px;
+            line-height: 49px;
+            height: 49px;
+            width: 164px;
+            position: absolute;
+            left: 123px;
+            top: 53px;
+        }
+
+        figure.pokedex section#pokemons-container{
+            *border: 1px solid blue;
+            display:flex;
+            height: 480px;
+            overflow-y: scroll;
+            width: 370px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0px;
+
+            position: absolute;
+            left:15px;
+            top: 185px;
+        }
+
+        figure.pokedex section#pokemons-container div.card{
+            background-color: rgb(51, 63, 93);
+            border: 1px solid white;
+            border-radius: 20px;
+            height: 110px;
+            margin:4px;
+            width: 166px;
+            position: relative;
+        }
+
+        figure.pokedex section#pokemons-container div.card h2{
+            background-color: transparent;
+            color: #FFFFFF;
+            width: 164px;
+            height: 21px;            
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            padding: 0px;
+            position: absolute;
+            left: 122px;
+            top: 01px;
+        }
+
+        figure.pokedex section#pokemons-container div.card h3{
+            background-color: transparent;
+            color: #FFFFFF;
+            width: 164px;
+            height: 21px;            
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            padding: 0px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        figure.pokedex section#pokemons-container div.card ul{
+            position: absolute;
+            left: 5px;
+            top: 40px;
+        }
+
+        figure.pokedex section#pokemons-container div.card.grass{
+            background-color: green;
+        }
+
+        figure.pokedex section#pokemons-container div.card.fire{
+            background-color: red;
+        }
+
+        figure.pokedex section#pokemons-container div.card.water{
+            background-color: blue;
+        }
+
+        figure.pokedex section#pokemons-container div.card.normal{
+            background-color: rgb(102, 101, 55);
+        }
+
+        figure.pokedex section#pokemons-container div.card.fighting{
+            background-color: #771212;
+        }
+
+        /* Interface 03 - Datos del Pokemon */
+        figure.stage03{
+            *display: none;
+            background: url(imgs/pokedex/03-mockup-view.svg) no-repeat center;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Pokedex Api</h1>
+        </header>
+        <section>
+            <figure class="pokedex stage01">
+                <h4>Welcome To</h4>
+                <h1>Pokedex
+                    <span>API</span>
+                </h1>
+                <img class="main" src="imgs/pokedex/main.svg">
+                
+                <button class="btn-letsGo">LET'S GO</button>
+            </figure>
+
+            <!-- interface lista pokemon  -->
+            <figure class="pokedex stage02">
+                <button class="btn-back"></button>
+                <h1>Pokedex
+                    <span>API</span>
+                </h1>
+                <section id="pokemons-container" style-color="white">
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 2 -->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 3-->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 4-->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 5 -->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 6-->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 7-->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Pokemon 8-->
+                    <div class="card">
+                        <h2>#001</h2>
+                        <h3>Bulbasuar</h3>
+                        <ul>
+                            <li>Grass</li>
+                            <li>Poison</li>
+                        </ul>
+                        <figure>
+                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                        </figure>
+                    </div>
+                </section>
+                                
+            </figure>
+
+            <!--  -->
+            <figure class="pokedex stage03">
+                
+            </figure>
+        </section>
+    </main>
+    <br>
+    <script>
+        function fetchPokemon() {
+            fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+            .then(response => response.json())
+            .then(function(allpokemon) {
+                allpokemon.results.forEach(function(pokemon) {
+                    fetchPokemonData(pokemon); 
+                });
+            });
+        }
+ 
+        function fetchPokemonData(pokemon) {
+            let url = pokemon.url;
+                fetch(url).then(response => response.json())
+                .then(function(pokeData) {
+                    //console.log(pokeData)
+                    renderPokemon(pokeData);
+                });
+        }
+ 
+        function renderPokemon(pokeData) {
+            let allPokemonContainer = document.getElementById('pokemons-container');
+            let pokeContainer       = document.createElement("div");
+            let pokeNumber          = document.createElement('h2');
+            let pokeName            = document.createElement('h3');
+            let pokeTypes           = document.createElement('ul');
+            let pokeImg             = document.createElement('figure');
+ 
+            pokeName.innerText      = pokeData.name;
+            pokeNumber.innerText    = '#' + pokeData.id;
+            
+            createTypes(pokeData.types, pokeTypes);
+            createPokeImage(pokeData.id, pokeImg);
+ 
+            let color = colorType(pokeData.types);
+            pokeContainer.classList.add('card');
+            pokeContainer.classList.add(color);
+ 
+            pokeContainer.append(pokeNumber, pokeName, pokeTypes, pokeImg);   
+            allPokemonContainer.appendChild(pokeContainer);       
+        }
+ 
+        function createTypes(types, ul) {
+            types.forEach(function(type) {
+                let typeLi = document.createElement('li');
+                typeLi.innerText = type['type']['name'];
+                ul.append(typeLi);
+            })
+        }
+ 
+        function colorType(types) {
+            let color = null;
+            let cont  = 0;
+            types.forEach(function(type) {
+                if (cont == 0) {
+                    color = type['type']['name'];
+                }
+                cont++;
+            });
+            return color;
+        }
+ 
+        function createPokeImage(pokeID, img){
+            let pokeImage  = document.createElement('img');
+ 
+            if (pokeID < 10) {
+                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/00'+pokeID+'.png';
+            }
+            if (pokeID >= 10 && pokeID < 100) {
+                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/0'+pokeID+'.png';
+            }
+            if (pokeID >= 100) {
+                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/'+pokeID+'.png';
+            }
+ 
+            img.append(pokeImage);
+        }
+ 
+        fetchPokemon();
+        
+    </script>
+</body>
+</html>
