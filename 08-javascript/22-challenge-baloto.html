@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Challenge Baloto</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <style>
+      main section{
+         background: url(/08-javascript/imgs/baloto/fondo.svg) no-repeat center;
+         background-size: contain;
+         *border: 1px solid blue;
+         height: 550px;
+         padding: 0px !important;
+         margin: 10px auto;
+         width: 823px;
+         position: relative;
+      }
+
+      section div{
+         border: 1px solid white;
+         border-radius: 80px;
+         background: linear-gradient(136.66deg, #17347C 19.18%, #6B0E0E 48.41%, #B49F27 85.92%);
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         *box-sizing: border-box;
+         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+         height: 80px;
+         width: 80px;
+         position: absolute;
+         top: 200px;
+      }
+
+      section div.balota1{
+         position: absolute;
+         left: 50px;
+      }
+
+      section div.balota2{
+         position: absolute;
+         left: 150px;
+      }
+
+      section div.balota3{
+         position: absolute;
+         left: 250px;
+      }
+
+      section div.balota4{
+         position: absolute;
+         left: 350px;
+      }
+
+      section div.balota5{
+         position: absolute;
+         left: 450px;
+      }
+
+      section div.superbalota{
+         position: absolute;
+         background: conic-gradient(from 180deg at 50% 50%, rgba(49, 74, 138, 0.9) -125.45deg, rgba(107, 14, 14, 0.9) 0.98deg, rgba(180, 159, 39, 0.9) 124.55deg, rgba(49, 74, 138, 0.9) 234.55deg, rgba(107, 14, 14, 0.9) 360.98deg);
+         border: 1px solid #FFFFFF55;
+         border-radius: 80px;
+         *box-sizing: border-box;
+         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+         height: 115px;
+         width: 115px;
+         position: absolute;
+         top: 180px;
+         left: 595px;
+      }
+
+      section div.balota output{
+         *border: 1px solid white;
+         color: white;
+         font-size: 2.5em;
+         line-height: 2em;
+         text-align: center;
+         height: 80px;
+         width: 80px;
+         *font-family: 'Roboto';
+         font-family: 'Fugaz One';
+         *font-size: 30px;
+         font-style: normal;
+         font-weight: normal;
+         position: absolute;
+      }
+
+      section div.superbalota output{
+         height: 115px;
+         font-size: 3.5em;
+         line-height: 2.1em;
+         width: 115px;
+      }
+
+      button.botonLanzar{
+         background: linear-gradient(96.3deg, #6B0E0E 5.2%, rgba(180, 159, 39, 0.9) 49.81%, #1155BB 90.27%);
+         border: 1px solid rgba(255, 255, 255, 0.5);
+         *box-sizing: border-box;
+         border-radius: 10px;
+         height: 50px;
+         width: 135px;
+         position: absolute;
+         left: 500px;
+         top: 369px;
+         transition: all 0.5s ease-in-out;
+
+         /*font-family: 'Roboto';
+         font-family: Fugaz One;
+         font-size: 30px;
+         font-style: normal;
+         font-weight: normal;
+         color: #333333;*/
+      }
+
+      button.botonLanzar:hover{
+         cursor: pointer;
+         transform: scale(1.2);
+      }
+
+      button.botonLanzar strong{
+         *border: 0.8px solid rgba(180, 159, 39, 0.8);
+         font-family: Fugaz One;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 35px;
+         color: #333333;
+         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+      }
+
+      .animate__flip{
+         animation: flip; /* girar */
+         animation-duration: 1.5s ;
+      }
+      
+      .animate__shakeY{
+         animation: shakeY; /* vibrar en Y */
+         animation-duration: 1.2s ;
+      }
+
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Challenge Baloto</h1>
+      </header>
+      <section>
+         <div class="balota balota1"><output class= "numBalotas" id="bal1"></output></div>
+         <div class="balota balota2"><output class= "numBalotas" id="bal2"></output></div>
+         <div class="balota balota3"><output class= "numBalotas" id="bal3"></output></div>
+         <div class="balota balota4"><output class= "numBalotas" id="bal4"></output>  </div>
+         <div class="balota balota5"><output class= "numBalotas" id="bal5"></output></div>
+         <div class="balota superbalota"><output class= "numBalotas" id="superbal"></output></div>
+         <button class="botonLanzar" id="boton"><strong>Lanzar</strong>   </button>
+      </section>
+   </main>
+
+   <script>
+      var botonLanzar = document.getElementById('boton');
+      const balotas = document.querySelectorAll("div.balota");
+      const numBalotas = document.querySelectorAll('output.numBalotas');
+
+      botonLanzar.onclick = function(){
+         var arrayNumbers = new Array;
+         for(let i=0; i<5; i++){  
+            let num = Math.ceil(Math.random()*43);
+            if(arrayNumbers.indexOf(num)== -1){
+               if(num<10){
+                  arrayNumbers[i] = "0" + num;
+               }else {
+                  arrayNumbers[i] = num;
+               }
+            }else{
+               i--;
+            }
+         }
+
+         //console.log("inicial: " + arrayNumbers[0] + " - " + arrayNumbers[1] + " - " + arrayNumbers[2] + " - " + arrayNumbers[3] + " - " + arrayNumbers[4] + " - " + arrayNumbers[5]);
+         arrayNumbers = arrayNumbers.sort();
+
+         arrayNumbers[5] = Math.ceil(Math.random()*16);
+         
+         if(arrayNumbers[5]<10){
+            arrayNumbers[5] = "0" + arrayNumbers[5];
+         }
+         //console.log("ordenada: " + arrayNumbers[0] + " - " + arrayNumbers[1] + " - " + arrayNumbers[2] + " - " + arrayNumbers[3] + " - " + arrayNumbers[4] + " - " + arrayNumbers[5]);
+         
+         //Eliminar los numeros de los output
+         var g = 100;
+         for(let i = 0; i< balotas.length; i++)
+         {
+            setTimeout(function() {
+               numBalotas[i].innerText = "";
+            }, g);
+            g+=500; 
+         }
+
+         //Girar las balotas
+         for (let i = 0; i< balotas.length; i++)
+         {
+            balotas[i].classList.remove("animate__flip");
+         }
+
+         var k = 0;
+         for(let i = 0; i< balotas.length; i++)
+         {
+            setTimeout(function() {
+               balotas[i].classList.add('animate__flip');
+            }, k);
+            k+=500; 
+         }         
+
+         //Asignar los numeros de las balotas a los output
+         var h = 1100;
+         for(let i = 0; i< numBalotas.length; i++)
+         {
+            setTimeout(function() {
+               numBalotas[i].innerText = arrayNumbers[i];
+            }, h);
+            h+=500; 
+         }
+
+         //Hacer vibrar las balotas
+         for (let i = 0; i< balotas.length; i++)
+         {
+            balotas[i].classList.remove('animate__shakeY');
+         }
+
+         for(let i = 0; i< balotas.length; i++)
+         {
+            setTimeout(function() {
+               balotas[i].classList.add('animate__shakeY');
+            }, h);
+         }
+        
+      }
+   </script>
+</body>
+</html>

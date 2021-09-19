@@ -133,6 +133,7 @@
             display:flex;
             height: 480px;
             overflow-y: scroll;
+            overflow-x: hidden;
             width: 370px;
             justify-content: center;
             flex-wrap: wrap;
@@ -254,90 +255,7 @@
                             <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
                         </figure>
                     </div>
-                    <!-- Pokemon 2 -->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 3-->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 4-->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 5 -->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 6-->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 7-->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
-                    <!-- Pokemon 8-->
-                    <div class="card">
-                        <h2>#001</h2>
-                        <h3>Bulbasuar</h3>
-                        <ul>
-                            <li>Grass</li>
-                            <li>Poison</li>
-                        </ul>
-                        <figure>
-                            <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-                        </figure>
-                    </div>
+                    
                 </section>
                                 
             </figure>
@@ -350,35 +268,34 @@
     </main>
     <br>
     <script>
-        function fetchPokemon() {
-            fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-            .then(response => response.json())
-            .then(function(allpokemon) {
-                allpokemon.results.forEach(function(pokemon) {
-                    fetchPokemonData(pokemon); 
-                });
-            });
+        async function allPokemon() {
+            for (let i = 1; i <= 151; i++) {
+                const res     = await fetch('https://pokeapi.co/api/v2/pokemon/'+i);
+                const pokemon = await res.json();
+                renderPokemon(pokemon); 
+            }
         }
  
-        function fetchPokemonData(pokemon) {
-            let url = pokemon.url;
-                fetch(url).then(response => response.json())
-                .then(function(pokeData) {
-                    //console.log(pokeData)
-                    renderPokemon(pokeData);
-                });
-        }
- 
-        function renderPokemon(pokeData) {
+        function renderAllPokemon(pokeData) {
             let allPokemonContainer = document.getElementById('pokemons-container');
             let pokeContainer       = document.createElement("div");
             let pokeNumber          = document.createElement('h2');
             let pokeName            = document.createElement('h3');
             let pokeTypes           = document.createElement('ul');
             let pokeImg             = document.createElement('figure');
+            let npoke               = null;
  
             pokeName.innerText      = pokeData.name;
-            pokeNumber.innerText    = '#' + pokeData.id;
+            if (pokeData.id < 10) {
+                npoke = '00' + pokeData.id;  
+            }
+            if (pokeData.id >= 10 && pokeData.id < 100) {
+                npoke = '0' + pokeData.id; 
+            }
+            if (pokeData.id >= 100) {
+                npoke = pokeData.id; 
+            }
+            pokeNumber.innerText    = '#' + npoke;
             
             createTypes(pokeData.types, pokeTypes);
             createPokeImage(pokeData.id, pokeImg);
@@ -390,6 +307,39 @@
             pokeContainer.append(pokeNumber, pokeName, pokeTypes, pokeImg);   
             allPokemonContainer.appendChild(pokeContainer);       
         }
+
+        console.log("HP: "      + pokeData.stats[0].base_stat);
+        console.log("Attack: "  + pokeData.stats[1].base_stat);
+        console.log("Defense: " + pokeData.stats[2].base_stat);
+        console.log("Sp. Atk: " + pokeData.stats[3].base_stat);
+        console.log("Sp. Def: " + pokeData.stats[4].base_stat);
+        console.log("Speed: "   + pokeData.stats[5].base_stat);
+
+
+        function renderPokemon(pokeData) {
+            let stage03     = document.querySelector('figure.stage03');
+            let namePokemon = document.querySelector('figure.stage03 h1');
+            let numbPokemon = document.querySelector('figure.stage03 h3');
+
+            if (pokeData.id < 10) {
+                npoke = '00' + pokeData.id;  
+            }
+            if (pokeData.id >= 10 && pokeData.id < 100) {
+                npoke = '0' + pokeData.id; 
+            }
+            if (pokeData.id >= 100) {
+                npoke = pokeData.id; 
+            }
+
+            namePokemon.innerText = pokeData.name
+            numbPokemon.innerText = '#' + npoke;
+
+            let color = colorType(pokeData.types);
+            stage03.classList.remove('grass', 'water', 'fire', 'normal', 'fighting', 'flying', 'poison', 'electric', 'ground', 'psychic', 'rock', 'ice', 'bug', 'ghost', 'dragon', 'fairy');
+            stage03.classList.add(color);
+        }
+
+
  
         function createTypes(types, ul) {
             types.forEach(function(type) {
@@ -413,22 +363,33 @@
  
         function createPokeImage(pokeID, img){
             let pokeImage  = document.createElement('img');
+            let npoke = null;
  
             if (pokeID < 10) {
-                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/00'+pokeID+'.png';
+                npoke = '00' + pokeID;  
             }
             if (pokeID >= 10 && pokeID < 100) {
-                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/0'+pokeID+'.png';
+                npoke = '0' + pokeID; 
             }
             if (pokeID >= 100) {
-                pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/'+pokeID+'.png';
+                npoke = pokeID; 
             }
+            pokeImage.srcset = 'https://www.serebii.net/pokemongo/pokemon/'+npoke+'.png';
  
             img.append(pokeImage);
         }
  
-        fetchPokemon();
-        
+        allPokemon();
+
+        // Events
+        setTimeout(function() {
+            const cards = document.getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].onclick = function() {
+                    onePokemon(i+1);
+                }
+            }
+        }, 2500);
     </script>
 </body>
 </html>

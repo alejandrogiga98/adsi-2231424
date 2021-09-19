@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods String</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span>Methods String</h1>
+      </header>
+      <section>
+         <h3>length: <i id="length"></i> </h3>
+         <h3>substring(): <i id="substring"></i>
+         <h3>replace(): <i id="replace"></i> </h3>
+         <h3>toUpperCase(): <i id="toUpperCase"></i> </h3>
+         <h3>toLowerCase(): <i id="toLowerCase"></i> </h3>
+      </section>
+   </main>
+
+   <script>
+      var txt = "abcdefghijklmnopqrstuvwxyz";
+      var str = "Microsoft, Google, Apple";
+      var texto = "Hola Mundo!";
+      
+      var txtLength = document.getElementById('length');
+      var strSubstring = document.getElementById('substring');
+      var strReplace = document.getElementById('replace');
+      var textoUpperCase = document.getElementById('toUpperCase');
+      var textoLowerCase = document.getElementById('toLowerCase');
+
+      txtLength.innerText = txt.length;
+      strSubstring.innerText = str.substring(11,17);
+      strReplace.innerText = str.replace("Microsoft", "ADSI");
+      textoUpperCase.innerText = texto.toUpperCase();
+      textoLowerCase.innerText = texto.toLowerCase();
+   </script>
+</body>
+</html>

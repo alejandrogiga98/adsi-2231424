@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Methods Mathematics</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <style>
+      button#btn-rand{
+         background-color: #15bd;
+         border-radius: 8px;
+         color: #800;
+         display: block;
+         font-size: 5rem;
+         height: 100px;
+         margin: 0px auto;
+         width: 100px;
+      }
+
+      button#color{
+         display: block;
+         font-size: 1.8rem;
+         font-weight: 900;
+         height: 100px;
+         margin: 0px auto;
+         width: 240px;
+      }
+    </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span>Methods Mathematics</h1>
+      </header>
+      <section>
+         <h3>Math.random() (Roll a Dice) </h3>
+         <button id="btn-rand">¿?</button>
+         <h3>Math.round() (Colors) </h3>
+         <button id="color">white</button>
+         <h3>Math.min() / Math.max()</h3>
+         <p>(10, 5, 9, 12, 1, -6) - <strong id="vmax"></strong></p>
+         <p>(10, 5, 9, 12, 1, -6) - <strong id="vmin"></strong></p>
+         <h3>Math.round() / Math.ceil() / Math.floor() </h3>
+         <input type="number" id = "rnum" placeholder="Enter float number">
+         <button id="btn-round"> Round </button>
+         <ul id="rounds"></ul>
+         <h3>Math.pow()</h3>
+         <input type="number" id = "powX" placeholder="Enter the base">
+         <input type="number" id = "powY" placeholder="Enter the exponent">
+         <button id="btn-pow"> Pow </button>
+         <output id="powRes"> = </output>   
+         <h3>Math.abs() </h3>
+         <input type="number" id = "abs" placeholder="Enter a number">
+         <button id="btn-abs"> Absolute </button>
+         <output id="absRes"> = </output>
+
+         
+         
+      </section>
+   </main>
+
+   <script>
+      const btnRand=document.getElementById('btn-rand');
+      const color = document.getElementById('color');
+      const vmin = document.getElementById('vmin');
+      const vmax = document.getElementById('vmax');
+      const btnr = document.getElementById('btn-round')
+      const rnum = document.getElementById('rnum');
+      const rounds = document.getElementById('rounds');
+      const powX = document.getElementById('powX');
+      const powY = document.getElementById('powY');
+      const btnPow = document.getElementById('btn-pow');
+      const powRes = document.getElementById('powRes');
+      const abs = document.getElementById('abs');
+      const btnAbs = document.getElementById('btn-abs');
+      const absRes = document.getElementById('absRes');
+      const colors = Array ("aqua", "blue", "crimson", "darkorange", "lightseagreen", "steelblue")
+
+      var varMathRandom = document.getElementById('mathRandom');
+      var varMathMin = document.getElementById('mathMin');
+      var varMathMax = document.getElementById('mathMax');
+      var varMathRound = document.getElementById('mathRound');
+      var varMathCeil = document.getElementById('mathCeil');
+      var varMathFloor = document.getElementById('mathFloor');
+      var varMathPow = document.getElementById('mathPow');
+      var varMathAbs = document.getElementById('mathAbs');
+      
+      vmin.innerText = "min: " + Math.min(10, 5, 9, 12, 1, -6);
+      vmax.innerText = "max: " + Math.max(10, 5, 9, 12, 1, -6);
+
+      btnRand.onclick = function(){
+         let num = Math.ceil(Math.random()*6);
+         btnRand.innerText = num;
+      }
+
+      color.onclick =function(){
+         let pos = Math.floor(Math.random()*6);
+         this.innerText = colors[pos];
+         this.style.backgroundColor = colors[pos];
+      }      
+
+      btnr.onclick = function(){
+         rounds.innerHTML = "<li> Math.round: " + Math.round(rnum.value) + "</li>";
+         rounds.innerHTML += "<li> Math.ceil: " + Math.ceil(rnum.value) + "</li>";
+         rounds.innerHTML += "<li> Math.floor: " + Math.floor(rnum.value) + "</li>";
+      }
+
+      btnPow.onclick = function(){
+         powRes.innerText += " " + Math.pow(powX.value, powY.value);
+      }
+
+      btnAbs.onclick = function(){
+         absRes.innerText += " " + Math.abs(abs.value);
+      }
+   </script>
+</body>
+</html>

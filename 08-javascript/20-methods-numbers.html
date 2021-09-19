@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Numbers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span>Methods Numbers</h1>
+      </header>
+      <section>
+         <h3>toString(): <i id="toString"></i> </h3>
+         <h3>toFixed(): <i id="toFixed"></i>
+         <h3>toPrecision(): <i id="toPrecision"></i> </h3>
+         <h3>parseInt(): <i id="parseInt"></i> </h3>
+         <h3>parseFloat(): <i id="parseFloat"></i> </h3>
+      </section>
+   </main>
+
+   <script>
+      var num1 = 789;
+      var num2 = 7.356;
+      var num3 = 7.356;
+      var num4 = "12";
+      var num5 = "15.55";
+      
+      var varToString = document.getElementById('toString');
+      var varToFixed = document.getElementById('toFixed');
+      var varToPrecision = document.getElementById('toPrecision');
+      var varParseInt = document.getElementById('parseInt');
+      var varParseFloat = document.getElementById('parseFloat');
+
+      varToString.innerText = num1.toString();
+      varToFixed.innerText = num2.toFixed(0); // (x) --> x es la cantidad de decimales a mostrar 
+      varToPrecision.innerText = num3.toPrecision(2); // (x) --> x es la cantidad de digitos a mostrar
+      varParseInt.innerText = parseInt(num4);
+      varParseFloat.innerText = parseFloat(num5);
+   </script>
+</body>
+</html>
