@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Events Time</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <style>
+      input#count-down, input#refresh-page{
+         font-size: 1.2rem;
+         padding: 6px;
+         text-align: center;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Events Time</h1>
+      </header>
+      <section>
+           <h3>setInterval (CountDown)</h3>
+           <input type="number" id="count-down" placeholder="Time in seconds">
+           <button id="btn-count-down">CountDown</button>
+           <br><br><br>
+           <h3>setInterval (CountDown)</h3>
+           <input type="number" id="refresh-page" placeholder="Time in seconds">
+           <button id="btn-refresh-page">Refresh Page</button>
+      </section>
+   </main>
+   <br>
+   <script>
+      // Variables
+      const btnCountDown = document.getElementById('btn-count-down');
+      const inputCountDown = document.getElementById('count-down');
+      const btnRefreshPage = document.getElementById('btn-refresh-page');
+
+      //Events
+      btnCountDown.onclick = function(){
+         let countDown = document.getElementById('count-down').value;
+         if(countDown.length>0){
+            let setInterv = setInterval(function(){
+               if(countDown==0){
+                  inputCountDown.value = countDown;
+                  clearInterval(setInterv);
+               } else{
+                  inputCountDown.value = countDown;
+               }
+               countDown--;
+            }, 1000)
+         } else {
+            alert("Please enter a number!");
+         }
+      }
+
+
+      btnRefreshPage.onclick = function(){
+         let refreshPage = document.getElementById('refresh-page').value;
+         if(refreshPage.length>0){
+            refreshPage = parseInt(refreshPage)*1000;
+            setTimeout(function(){
+               alert('Its time to refresh');
+               window.location.replace('26-events-time.html');
+            }, refreshPage);
+         } else {
+            alert("Please enter a number!");
+         }
+      }
+
+      // Ejemplos simples
+      setTimeout(function() {
+         console.log("Han pasado 5 segundos!!!")
+      }, 5000);
+      
+      i=1;
+      setInterval(function() {
+         console.log("Han pasado " + i + " segundos.");
+         i++;
+      } , 1000);
+
+   </script>
+</body>
+</html>

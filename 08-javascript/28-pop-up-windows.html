@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pop Up Windows</title>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <main>
+      <header>
+            <h1> <span> <a href="index.html">&larr;</a> </span> Pop Up Windows</h1>
+      </header>
+      <section>
+           <h3 class="answer"></h3>
+      </section>
+   </main>
+   <br>
+   <script>
+      // Variables
+      var answer = document.querySelector('h3.answer');
+
+      if(confirm('Are you ready for answer the next question?')) {
+         let userAnswer = prompt('5 * 6 is equal to? ');
+         if(userAnswer == 30){
+            answer.innerText = "Congratulations... The answer is correct!!!";
+         } else{
+            answer.innerText = "Sorry... The answer is incorrect!!!";
+         }
+      } else {
+         alert("Ok... have a nice day!!!");
+         answer.innerText = "Please Refresh Page";
+      }
+   </script>
+</body>
+</html>
