@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Challenge Arrays</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <style>
+      div.zone{
+         background: url(imgs/arrays/fondoGuia.svg);
+         *border: 1px solid blue;
+         margin: 0px auto;
+         height: 1000px;
+         width: 600px;
+      }
+
+      div section.title{
+         *border: 1px solid red;
+         background: url(imgs/arrays/titulo.png) center;
+         *background: url(imgs/arrays/tittle.svg) no-repeat center;
+         margin: 20px 135px;
+         height: 60px;
+         width: 370px;
+      }
+
+      section div.zone section.section01{
+         *border: 1px solid red;
+         height: 220px;
+         margin: 45px auto 0px;
+         padding: 0px;
+         width: 480px;
+         position: relative;
+      }
+
+      section div.zone section.section01 h1.firstSection{
+         *border: 1px solid white;
+         color: #3978B8;
+         font-size: 30px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: normal;
+         letter-spacing: 1px;
+         margin: 0px auto 0px;
+         text-align: center;
+         word-spacing: 4px;
+         text-shadow: 0px 0px 1px #000,  0px 0px 2px #000,  0px 0px 5px #000,  0px 0px 6px #000,
+                     0px 0px 10px #000, 0px 0px 12px #000, 0px 0px 13px #000, 0px 0px 14px #000,
+                     0px 0px 15px #000, 0px 0px 16px #000, 0px 0px 17px #000, 0px 0px 18px #000,
+                     0px 0px 19px #000, 0px 0px 20px #000; /* posX - posY - blur*/     
+      }
+
+      section div.zone section.section01 input[type=checkbox] {
+         border-radius: 15px;
+         *border: none;
+         height: 80px;
+         -webkit-appearance: none;
+         margin-top: 9px;
+         margin-right: 11px;
+         width: 80px;
+         transition: all 0.3s ease-in;
+      }
+
+      section div.zone section.section01 input.buttonGames:hover{
+         cursor: url(imgs/arrays/energySword.png), pointer;
+         background-color: #439653;
+         background-color: #235E9A;
+         transform: scale(1.22);
+      }
+
+      section div.zone section.section01 input[type=checkbox].buttonGames:checked{
+         background-color: #235E9A;
+         transform: scale(1.22);
+         
+      }
+
+      section div.zone section.section01 input[type=checkbox].animate{
+         animation: tada;
+         animation-duration: 1s;
+      }
+
+      section div.zone section.section01 input.buttonGame05, section div.zone section.section01 input.buttonGame10{
+         margin-right: 0px;
+      }
+
+      section div.zone section.section01 input.buttonGame01, section div.zone section.section01 input.buttonGame06{
+         margin-left: 1px;
+      }
+
+      section div.zone section.section01 input.buttonGame01{
+         background: #fff5 url(imgs/arrays/AssassinsCreedValhalla.svg) no-repeat center center;
+         *background: url(imgs/arrays/AssassinsCreedValhalla.svg);
+         *background-color: #800;
+         *background-size: contain;
+      }
+
+      section div.zone section.section01 input.buttonGame02{
+         background: #fff5 url(imgs/arrays/Cyberpunk2077.svg) no-repeat center center;
+         background-size: contain;
+      }
+
+      section div.zone section.section01 input.buttonGame03{
+         background: #fff5 url(imgs/arrays/Fallout4.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame04{
+         background: #fff5 url(imgs/arrays/ForzaHorizon4.svg) no-repeat center center;
+         background-size: contain;
+      }
+
+      section div.zone section.section01 input.buttonGame05{
+         background: #fff5 url(imgs/arrays/HaloInfinite.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame06{
+         background: #fff5 url(imgs/arrays/MortalKombat11.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame07{
+         background: #fff5 url(imgs/arrays/ResidentEvil3.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame08{
+         background: #fff5 url(imgs/arrays/RyseSonOfRome.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame09{
+         background: #fff5 url(imgs/arrays/Skyrim.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section01 input.buttonGame10{
+         background: #fff5 url(imgs/arrays/TheWitcherIIIWildHuntGOTY.svg) no-repeat center center;
+         background-size: cover;
+      } 
+
+
+
+      /* Seccion 2 */
+      section div.zone section.section02{
+         *border: 1px solid red;
+         height: 128px;
+         margin: 48px auto 0px;
+         padding: 0px;
+         width: 380px;
+         position: relative;
+      }
+
+      section div.zone section.section02 h1.secondSection{
+         *border: 1px solid white;
+         color: #439653;
+         font-size: 30px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: normal;
+         letter-spacing: 1px;
+         margin: 0px auto 0px;
+         text-align: center;
+         word-spacing: 4px;
+         text-shadow: 0px 0px 1px #000,  0px 0px 2px #000,  0px 0px 5px #000,  0px 0px 6px #000,
+                     0px 0px 10px #000, 0px 0px 12px #000, 0px 0px 13px #000, 0px 0px 14px #000,
+                     0px 0px 15px #000, 0px 0px 16px #000, 0px 0px 17px #000, 0px 0px 18px #000,
+                     0px 0px 19px #000, 0px 0px 20px #000; /* posX - posY - blur*/     
+      }
+
+      section div.zone section.section02 h2.secondSection{
+         background: none;
+         *border: 1px solid white !important;
+         color: #114d31;
+         font-size: 25px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: normal;
+         letter-spacing: 1px;
+         margin: 8px auto 0px;
+         text-align: center;
+         word-spacing: 40px;
+         text-shadow: 0px 0px 1px #fff,  0px 0px 2px #000,  0px 0px 5px #fff,  0px 0px 6px #fff,
+                     0px 0px 10px rgb(167, 160, 160); /* posX - posY - blur*/     
+      }
+
+      section div.zone section.section02 button{
+         border: 1px solid black;
+         border-radius: 25px;
+         height: 50px;
+         width: 100px;
+         cursor: url(imgs/arrays/energySword.png), pointer;
+         transition: all 0.2s ease-in;
+      }
+
+      section div.zone section.section02 button:hover{
+         transform: scale(1.2);
+         *cursor: url(imgs/arrays/energySword.png), pointer;
+      }
+
+      section div.zone section.section02 button.buttonFirst{
+         background-color: #fff8;
+         position: absolute;
+         left: 25px;
+         top: 80px;
+      }
+
+      section div.zone section.section02 input{
+         background-color: #fff8;
+         border-radius: 15px;
+         height: 35px;
+         text-align: center;
+         width: 80px;
+         position: absolute;
+         left: 155px;
+         top: 85px;
+         font-size: 25px;
+      }
+
+      section div.zone section.section02 button.buttonLast{
+         background-color: #fff8;
+         position: absolute;
+         left: 270px;
+         top: 80px;
+      }
+
+      section div.zone section.section02 button div{
+         background-color: #fffa;
+         border: 1px solid #000f;
+         border-radius: 25px;
+         height: 42px;
+         margin-left: 42px;
+         width: 42px;
+         transition: all 0.5s ease-in;
+      }
+
+      section div.zone section.section02 button div.enabled{      
+         background-color: #235E9A;
+         margin-left: 0px;
+      }
+
+      /*section div.zone section.section02 button div.disabled{
+         background-color: #fffa;
+         margin-left: 42px;
+      }*/
+
+
+
+      /* Seccion 3 */
+      section div.zone section.section03{
+         *border: 1px solid red;
+         height: 128px;
+         margin: 82px auto 0px;
+         padding: 0px;
+         width: 380px;
+         position: relative;
+      }
+
+      section div.zone section.section03 h1.thirdSection{
+         *border: 1px solid white;
+         color: #fffd;
+         font-size: 30px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: normal;
+         letter-spacing: 1px;
+         margin: 0px auto 0px;
+         text-align: center;
+         word-spacing: 4px;
+         text-shadow: 0px 0px 1px #000,  0px 0px 2px #000,  0px 0px 5px #000,  0px 0px 6px #000,
+                     0px 0px 10px #000, 0px 0px 12px #000, 0px 0px 13px #000, 0px 0px 14px #000,
+                     0px 0px 15px #000, 0px 0px 16px #000, 0px 0px 17px #000, 0px 0px 18px #000,
+                     0px 0px 19px #000, 0px 0px 20px #000; /* posX - posY - blur*/     
+      }
+
+      section div.zone section.section03 button{
+         border: 1px solid black;
+         border-radius: 50px;
+         font-size: 50px;
+         color: #fffd;
+         height: 65px;
+         width: 65px;
+         position: absolute;
+         top: 45px;
+         transition: all 0.2s ease-in;
+      }
+
+      section div.zone section.section03 button:hover{
+         transform: scale(1.2);
+         cursor: url(imgs/arrays/energySword.png), pointer;
+      }
+
+      section div.zone section.section03 button.buttonAdd{
+         background-color: #439653;
+         left: 120px;
+      }
+
+      section div.zone section.section03 button.buttonRemove{
+         background-color: #800;
+         left: 195px;
+      }
+
+
+      /* Section 04: Result */
+      section div.zone section.section04{
+         background-color: #fff6;
+         border-radius: 18px;
+         *height: 143px;
+         padding: 10px;
+         margin: 43px auto;
+         width: 500px;
+      }
+
+      output.result{
+         border: 1px solid black;
+         border-radius: 18px;
+         height: 143px;
+         margin: 10px auto;
+         margin-left: 3px;
+         width: 5px;
+      }
+
+      section div.zone section.section04 output.result div.game1{
+         background: #fff5 url(imgs/arrays/AssassinsCreedValhalla.svg) no-repeat center center;
+         background-size: cover;
+      }
+
+      section div.zone section.section04 div.res{
+         border-radius: 15px;
+         border: 1px solid red;
+         display: inline-block;
+         height: 86px;
+         margin-top: 9px;
+         margin-right: 12px;
+         width: 86px;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Challenge Arrays</h1>
+      </header>
+      <section>
+         <div class="zone">
+            <section class="title"></section>
+
+            <section class="section01">
+               <h1 class="firstSection"><strong> First... Select a Game</strong></h1>
+               <input type="checkbox" class="buttonGames buttonGame01"></input>
+               <input type="checkbox" class="buttonGames buttonGame02"></input>
+               <input type="checkbox" class="buttonGames buttonGame03"></input>
+               <input type="checkbox" class="buttonGames buttonGame04"></input>
+               <input type="checkbox" class="buttonGames buttonGame05"></input>
+               <input type="checkbox" class="buttonGames buttonGame06"></input>
+               <input type="checkbox" class="buttonGames buttonGame07"></input>
+               <input type="checkbox" class="buttonGames buttonGame08"></input>
+               <input type="checkbox" class="buttonGames buttonGame09"></input>
+               <input type="checkbox" class="buttonGames buttonGame10"></input>
+            </section>
+
+            <section class="section02">
+               <h1 class="secondSection"><strong> Second... choice an option</strong></h1>
+               <h2 class="secondSection"><strong> First Position Last</strong></h2>
+               <button class="buttonFirst">
+                  <div class="" id="circleFirst"></div>
+               </button>
+               <input type="number" min="0" max="9">
+               <button class="buttonLast">
+                  <div class="" id="circleLast"></div>
+               </button>
+            </section>
+
+            <section class="section03">
+               <h1 class="thirdSection"><strong>Third... ¿add or remove?</strong></h1>
+               <button class="buttonAdd">+</button>
+               <button class="buttonRemove">-</button>
+            </section>
+               
+            <section class="section04">
+               <!-- <output class="result"></output> -->
+            </section>
+         </div>
+      </section>
+   </main>
+   <br>
+   <script>
+      var btnsGames = document.querySelectorAll('input[type=checkbox]');
+      var btnFirst = document.querySelector('button.buttonFirst');
+      var btnLast = document.querySelector('button.buttonLast');
+      var circleFirst = document.getElementById('circleFirst');
+      var circleLast = document.getElementById('circleLast');
+      var position = document.querySelector('input[type=number]');
+      var btnAdd = document.querySelector('button.buttonAdd');
+      var btnRemove = document.querySelector('button.buttonRemove');
+      var result = document.querySelector('section.section04');
+      var gameSelected =false;
+      var gamePosActual = "";
+      var gamePosSelected = null;
+      var newGamePosSelected = null;
+      var arrayFinal = new Array();
+
+      btnFirst.onclick = function(){
+         circleFirst.classList.toggle('enabled');
+         circleLast.classList.remove('enabled');
+         position.value="";
+      }
+
+      btnLast.onclick = function(){
+         circleLast.classList.toggle('enabled');
+         circleFirst.classList.remove('enabled');
+         position.value="";
+      }
+
+      btnAdd.onclick = function(){
+         console.log("boton adicionar");
+         for (let i = 0; i< btnsGames.length; i++){
+            if(btnsGames[i].checked==true){
+               gamePosActual=i;
+            }
+         }
+         if(gameSelected == true){
+            //newGamePosSelected = 0;
+            if(circleFirst.classList.contains('enabled')){
+               //alert("First");
+               arrayFinal.unshift(gamePosSelected);
+            } else if (circleLast.classList.contains('enabled')){
+               //alert("Last");
+               arrayFinal.push(gamePosSelected);
+            } else{
+               //alert("Number");
+               arrayFinal.splice(position.value, 0, gamePosSelected)
+            }
+         }else{
+            alert("Please, select a Game!!!");
+         }
+         result.innerHTML = "";
+         for (let i = 0; i < arrayFinal.length; i++) {
+            result.innerHTML += "<div class='res'>" + arrayFinal[i] + "</div>";
+         }
+      }
+
+      btnRemove.onclick = function(){
+         console.log("boton remover");
+         for (let i = 0; i< btnsGames.length; i++){
+            if(btnsGames[i].checked==true){
+               gamePosActual=i;
+            }
+         }
+      }
+
+      position.onclick = function(){ 
+         console.log("number: " + position.value);
+         if(position.value!=""){
+            circleFirst.classList.remove('enabled');
+            circleLast.classList.remove('enabled');
+         }
+      }
+
+      var vectorGames = {
+         //Attributes
+         
+         posGame: null,
+
+         //Methods
+         clickGames: function(){
+            for (let i = 0; i < btnsGames.length; i++) {
+               btnsGames[i].onclick = function() {
+                  vectorGames.removeClassChecked();
+                  this.checked = true;
+                  this.classList.add('animate');
+                  gamePosSelected = i;
+                  gameSelected = true;
+               }
+            } 
+         }, // cierre funcion clickGames
+
+         removeClassChecked: function(){
+            for(let i=0; i<btnsGames.length; i++){
+               btnsGames[i].checked=false;
+               btnsGames[i].classList.remove('animate');
+            }
+         }
+      } // cierre vectorGames
+
+      vectorGames.clickGames();
+
+      
+   </script>
+</body>
+</html>

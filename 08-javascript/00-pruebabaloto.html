@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Write JS</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <style>
+      figure.mariposas{
+         background-color: #15f;
+         display:inline-block;
+         height: 100px;
+         width: 100px;
+      }
+   </style>
+
+   
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Background Size</h1>
+      </header>
+      <section>
+            <figure class="mariposa1 mariposas" id="animated"></figure>
+            <figure class="mariposa2 mariposas" id="animated2"></figure>
+            <figure class="mariposa3 mariposas" id="animated3"></figure>
+            <figure class="mariposa4 mariposas" id="animated4"></figure>
+            <figure class="mariposa5 mariposas" id="animated5"></figure>
+            <figure class="mariposa6 mariposas" id="animated6"></figure>
+
+      </section>
+   </main>
+   <br>
+   <script>
+      let mariposas =document.querySelectorAll('figure.mariposas');
+
+      //mariposas[0].innerHTML = 8;
+      /*var balota1 = Math.ceil(Math.random()*43);
+      console.log("balota1: " + balota1)
+
+      var balota2 = Math.ceil(Math.random()*43);
+      console.log("balota1: " + balota2)
+
+      arraybaloto[0] = balota1;
+      arraybaloto[1] = balota2;
+      console.log("Balotas: " + arraybaloto);
+      
+      */
+     
+      var arraybaloto = new Array();
+
+
+
+      
+      var aleatorio = Math.ceil(Math.random()*43);
+      arraybaloto[0] = aleatorio;
+
+      for(let i=1; i<5; i++){
+         repetido=0;
+         aleatorio = Math.ceil(Math.random()*43);
+         for(let j=0; j< arraybaloto.length; j++){
+            if (aleatorio==arraybaloto[j]){
+               console.log(aleatorio + " repetido.")
+               repetido++;
+            } 
+         }
+         if(repetido==0){
+            arraybaloto[i]=aleatorio;
+         }else{
+            i--;
+         }
+      }
+
+      console.log("Balotas: " + arraybaloto);
+
+      for(let j=0; j< arraybaloto.length; j++)
+      {
+         mariposas[j].innerText = arraybaloto[j];
+      }
+   </script>
+</body>
+</html>

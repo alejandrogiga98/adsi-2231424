@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Balloto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        div.fondo {
+            background: transparent url(imgs/baloto/fondo.png) no-repeat center;
+            background-color: #15b;
+            position: relative;
+            height: 1020px;
+            width: 1748px;
+            left: 0px;
+            top: 0px;
+            border-radius: 0px;
+        }
+        div.fondo figure.titulo{
+            background: transparent url(imgs/baloto/titulo.png) no-repeat center;
+            background-color: rgb(211, 67, 180);
+            position: absolute;
+            height: 143px;
+            width: 835px;
+            left: 390px;
+            top: 20px;
+            border-radius: nullpx;
+        }
+        div.fondo figure.mariposa1{
+            background: transparent url(imgs/baloto/m1.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 289px;
+            width: 345px;
+            left: 20px;
+            top: 300px;
+            border-radius: 0px;
+            font-size: 35px;
+        }
+        div.fondo figure.mariposa2{
+            background: transparent url(imgs/baloto/m2.png) no-repeat center; 
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 289px;
+            width: 345px;
+            left: 625px;
+            top: 295px;
+            border-radius: 0px;
+        }
+        div.fondo figure.mariposa3{
+            background: transparent url(imgs/baloto/m3.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 289px;
+            width: 345px;
+            left: 330px;
+            top: 450px;
+            border-radius: 0px;
+        }
+        div.fondo figure.mariposa4{
+            background: transparent url(imgs/baloto/m4.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 289px;
+            width: 345px;
+            left: 12px;
+            top: 670px;
+            border-radius: 0px;
+        }
+        div.fondo figure.mariposa5{
+            background: transparent url(imgs/baloto/m5.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 289px;
+            width: 345px;
+            left: 550px;
+            top: 680px;
+            border-radius: 0px;
+        }
+        div.fondo figure.mariposa6{
+            background: transparent url(imgs/baloto/m6.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(213, 228, 77);
+            position: absolute;
+            height: 550px;
+            width: 662px;
+            left: 980px;
+            top: 190px;
+            border-radius: 0px;
+        }
+        div.fondo button.star{
+            background: transparent url(imgs/baloto/star.png) no-repeat center;
+            border: 1px solid black;
+            background-color: rgb(151, 38, 38);
+            border: none;
+            height: 500px;
+            left: 1140px;
+            top: 620px;
+            position: absolute;
+            width: 450px;
+        }
+        div.fondo button.star:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Challenge Balloto</h1>
+        </header>
+        <section> 
+            <div class="fondo">
+                <figure class="titulo"></figure>
+                <figure class="mariposa1 mariposas" id="animated"></figure>
+                <figure class="mariposa2 mariposas" id="animated2"></figure>
+                <figure class="mariposa3 mariposas" id="animated3"></figure>
+                <figure class="mariposa4 mariposas" id="animated4"></figure>
+                <figure class="mariposa5 mariposas" id="animated5"></figure>
+                <figure class="mariposa6 mariposas" id="animated6"></figure>
+                <button class="star"></button>  
+            </div>
+        </section>
+    </main>
+    <script>
+         const star = document.querySelector('button.star');
+         const mariposas = document.querySelectorAll('figure.mariposas');
+
+         star.onclick = function() {
+            //alert("hola");
+         let animacion=document.getElementById("animated");
+         let animacion2=document.getElementById("animated2");
+         let animacion3=document.getElementById("animated3");
+         let animacion4=document.getElementById("animated4");
+         let animacion5=document.getElementById("animated5");
+         let animacion6=document.getElementById("animated6");
+         let mariposa1 = Math.random()*43;
+         let mariposa2 = Math.random()*43;
+         let mariposa3 = Math.random()*43;
+         let mariposa4 = Math.random()*43;
+         let mariposa5 = Math.random()*43;
+         let mariposa6 = Math.random()*16;
+         mariposas[0].innerHTML=(Math.round(mariposa1));
+         //let mariposas[0] =document.getElementById("mariposa1");
+         //let mariposas[1] =document.getElementById("mariposa2");
+         //let mariposas[2] =document.getElementById("mariposa3");
+         //let mariposas[3] =document.getElementById("mariposa4");
+         //let mariposas[4] =document.getElementById("mariposa5");
+         //let mariposas[5] =document.getElementById("mariposa6");
+         mariposas[1].innerHTML=(Math.round(mariposa2));
+         mariposas[2].innerHTML=(Math.round(mariposa3));
+         mariposas[3].innerHTML=(Math.round(mariposa4));
+         mariposas[4].innerHTML=(Math.round(mariposa5));
+         mariposas[5].innerHTML=(Math.round(mariposa6));
+         setTimeout(function() {
+            animacion.classList.toggle("animate__flip")
+            animacion2.classList.toggle("animate__flip")
+            animacion3.classList.toggle("animate__flip")
+            animacion4.classList.toggle("animate__flip")
+            animacion5.classList.toggle("animate__flip")
+            animacion6.classList.toggle("animate__backInDown")
+         }, 100);
+      }
+    </script>
+</body>
+</html>
