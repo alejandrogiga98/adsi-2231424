@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Install jQuery</title>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Install jQuery</h1>
+      </header>
+      <section>
+         <h3>1 - First Line</h3>
+         <h3 class="two">Second Line</h3>
+      </section>
+   </main>
+   <!-- CDN -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <!-- Local... es mas recomendada, por si no tenemos acceso a internet -->
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      //Formas para comprobar si el jQuery esta instalado (por CDN o Local)
+      //Forma 1
+      $(function() {
+         alert("jQuery Installed.")
+      });
+
+      //Forma 2... es mas recomendado esta forma, por lo que espera que cargue toda la pagina antes de ejecutar
+      $(document).ready(function(){
+         alert("Yes... jQuery Installed.")
+      })
+
+      //Enviando al HTML
+      $(function() {
+         $('h3.two').text("jQuery Installed");
+      });
+
+   </script>
+</body>
+</html>

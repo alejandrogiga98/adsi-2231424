@@ -6,6 +6,257 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Challenge Events Time</title>
    <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <style>
+      /* Generales */
+      section section{
+         *border: 1px solid red;
+         height: 500px;
+         margin: 0px auto;
+         padding: 0px;
+         width: 800px;
+      }
+
+      .oculto{
+         display: none;
+      }
+
+      /* Pantalla Titulo */
+      section.seccionTitulo{
+         background: url(imgs/times/pantallaTitulo.png) no-repeat center;
+         background-size: contain;
+         position: relative;
+      }
+
+      section.seccionTitulo div.instrucciones{
+         border: 1px solid #FFFFFF;
+         background: #0d2f86dd;
+         border-radius: 15px;
+         box-sizing: border-box;
+         height: 133px;
+         width: 550px;
+         position: absolute;
+         left: 122px;
+         top: 215px; 
+      }
+
+      section.seccionTitulo div.instrucciones h3{
+         *border: 1px solid red;
+         background: none;
+         color: #fff;
+         font-family: Roboto;
+         font-size: 35px;
+         font-style: normal;
+         font-weight: normal;
+         line-height: 29px;
+         text-decoration-line: underline;
+         text-align: center;
+      }
+
+      section.seccionTitulo div.instrucciones h4{
+         *border: 1px solid red;
+         color: #FFFFFF;
+         font-family: Roboto;
+         font-size: 22px;
+         font-style: normal;
+         font-weight: normal;
+         line-height: 25px;
+         margin: -20px auto;
+         text-align: center;
+         width: 540px;
+      }
+
+      section.seccionTitulo button.iniciar{
+         background: #276D89;
+         *background: url(imgs/times/space1.jpg) repeat 0px 0px;
+         border: 1px solid #FFFFFF;
+         border-radius: 26px;
+         box-sizing: border-box;
+         color: #f09e42;
+         font-size: 32px;
+         
+         font-weight: 700;
+         height: 64px;
+         width: 250px;
+         position: absolute;
+         left: 296px;
+         top: 388px;
+         transition: all 0.3s ease;
+      }
+
+      section.seccionTitulo button.iniciar:hover{
+         transform: scale(1.2);
+         background-color: #f09e42;
+         border: 2px solid #800;
+         color: rgb(17, 114, 17);
+         cursor: pointer;
+         *font-family: Arial, Helvetica, sans-serif;
+      }
+
+      section.seccionTitulo div.fondoInstrucciones{
+         *border:1px solid red;
+         border-radius: 15px;
+         height: 133px;
+         overflow: hidden;
+         width: 500px;
+         *z-index: 0;
+         position: absolute;
+         left: 170px;
+         top: 215px;
+      }
+
+      section.seccionTitulo div.instrucciones div.parallax{
+         border: 1px solid red;
+         background: transparent url(imgs/times/space5.png) repeat 0px 110px;
+         background-size: contain;
+         height: 133px;
+         width: 550px;
+         animation: 20s animParallaxTitulo linear infinite;
+         position: absolute;
+         top:0px;
+      }
+
+      @keyframes animParallaxTitulo{
+         0% { background-position: 0px 100px; }
+         100% { background-position: -500px 100px; }
+         /* 0% { background-position: 0px 130px; }
+         100% { background-position: -500px 130px; } */
+      }
+
+      /* Pantalla Juego */
+      section.seccionJuego{
+         *border: 1px solid green;
+         background: url(imgs/times/pantallaJuegoPNG.png) no-repeat center;
+         background-size: cover;
+         overflow: hidden;
+         border-radius: 25px;
+         position: relative;
+      }
+
+      section.seccionJuego div.zonaJuego{
+         *border: 1px solid red;
+         height: 362px;
+         width: 800px;
+      }
+
+      section.seccionJuego div.estadisticas{
+         *border: 1px solid blue;
+         border-top: 10px solid #3583FF;
+         height: 122px;
+         width: 800px;
+      }
+
+      section.seccionJuego div.estadisticas div{
+         *border: 1px solid green;
+         height: 40px;
+         padding: 0;
+         width: 150px;
+         position: absolute;
+         top: 433px;
+      }
+
+      section.seccionJuego div.estadisticas div.puntaje{
+         left: 180px;
+      }
+
+      section.seccionJuego div.estadisticas div.tiempo{
+         left: 416px;
+      }
+
+      section.seccionJuego div.estadisticas div.energia{
+         left: 656px;
+      }
+
+      section.seccionJuego div.estadisticas div h3{
+         background: none;
+         color: white;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 42px;
+         line-height: 40px;
+         margin: 0px auto;
+         padding: 0;
+         text-align: center;
+         text-shadow: #800 1px 1px 1px, #800 -1px -1px 3px;
+      }
+
+      section.seccionJuego div.zonaJuego div.samus{
+         background: transparent url(imgs/times/samus.svg) no-repeat center;
+         background-size: contain;
+         *border: 1px solid red;
+         height: 120px;
+         width: 160px;
+         position: absolute;
+         top: 120px;
+         transition: all 0.1s linear;
+         animation: 0.8s animationSamus ease-in infinite;
+      }
+        
+      @keyframes animationSamus {
+         0%, 100% { left: 0px; }
+         50% { left: 2px; }
+      }
+
+      section.seccionJuego div.zonaJuego div.enemigos{
+         *border:1px solid red;
+         background-size: contain;
+         height: 120px;
+         width: 160px;
+         position: absolute;
+         left: 640px;
+         *left: 160px;
+      }
+
+      section.seccionJuego div.zonaJuego div.parallax{
+         border: 1px solid green;
+         background:transparent url(imgs/times/space1.jpg);
+         height: 362px;
+         width: 800px;
+         animation: 3s animParallaxJuego linear infinite;
+      }
+
+      @keyframes animParallaxJuego {
+         0%   { background-position: 0px 0px; }
+         100% { background-position: -1000px 0px;    }
+      }
+
+      section.seccionJuego div.zonaJuego div.ridley{
+         background: transparent url(imgs/times/enemigoRidley.svg) no-repeat center;
+      }
+
+      section.seccionJuego div.zonaJuego div.metroidVerde{
+         background: transparent url(imgs/times/enemigoMetroidVerde.png) no-repeat center;
+      }
+
+      section.seccionJuego div.zonaJuego div.metroidBlanco{
+         background: transparent url(imgs/times/enemigoMetroidBlanco.svg) no-repeat center;
+      }
+
+      section.seccionJuego div.zonaJuego div.darkSamus{
+         background: transparent url(imgs/times/enemigoDarkSamus.svg) no-repeat center;
+      }
+
+      /* Div Victoria o Derrota */
+      section.seccionJuego div.zonaJuego div.victoria{
+         background: url(imgs/times/samusVictoria.png);
+         *border: 1px solid red;
+         height: 362px;
+         width: 800px;
+         position: absolute;
+         top: 0px;
+      }
+
+      section.seccionJuego div.zonaJuego div.derrota{
+         background: url(imgs/times/samusDerrota.png);
+         *border: 1px solid red;
+         height: 362px;
+         width: 800px;
+         position: absolute;
+         top: 0px;
+      }
+
+   </style>
 </head>
 <body>
    <main>
@@ -13,11 +264,198 @@
             <h1> <span> <a href="index.html">&larr;</a> </span> Challenge Events Time</h1>
       </header>
       <section>
-           
+         <!-- Seccion Titulo -->
+         <section class="seccionTitulo animate__animated">
+            <div class="instrucciones">
+               <h3>Instrucciones</h3>
+               <h4>Usa las flechas  ↑  y  ↓  para controlar el movimiento de Samus y evitar a todos los enemigos. Tienes 100 puntos de energia...  debes sobrevivir hasta que termine el tiempo.</h4>
+               <div class="parallax"></div>
+            </div>
+            <div class="fondoInstrucciones">
+            </div>
+            <button class="iniciar">Iniciar Juego</button>
+         </section> 
+         <!-- Seccion Juego --> 
+         <section class="seccionJuego oculto animate__animated">
+            <div class="zonaJuego">
+               <div class="samus"></div>
+               <div class="enemigos"></div>
+               <div class="parallax"></div>
+               <!-- Pantalla Victoria o Derrota -->
+               <div class="victoria oculto animate__animated"></div>
+               <div class="derrota oculto animate__animated"></div>
+            </div>
+            <div class="estadisticas">
+               <div class="puntaje"><h3 class="puntaje">0</h3></div>
+               <div class="tiempo"><h3 class="tiempo">60</h3></div>
+               <div class="energia"><h3 class="energia">100</h3></div>
+            </div>
+         </section>
+         
       </section>
    </main>
+   <audio src="audio/metroidDreadOSTThemeOfSamusAran.mp3" class="musicaTitulo"></audio>
+   <audio src="audio/metroidDreadOSTCentralUnitPhase2.mp3" class="musicaJuego"></audio>
+   <audio src="audio/colision.mp3" class="sonidoColision"></audio>
+   <audio src="audio/triunfo.mp3" class="musicaVictoria"></audio>
+   <audio src="audio/gameOver.mp3" class="musicaDerrota"></audio>
    <br>
    <script>
+      const botonIniciar = document.querySelector('button.iniciar');
+      const seccionTitulo = document.querySelector('section.seccionTitulo');
+      const seccionJuego = document.querySelector('section.seccionJuego');
+      const samus = document.querySelector('div.samus');
+      const enemigos = document.querySelector('div.enemigos');
+      const posicionEnemigosTop = [0, 120, 240];
+      const posicionEnemigosLeft = [640, 480, 320, 160, 0];
+      const nombreEnemigos = ['ridley', 'metroidVerde', 'darkSamus', 'metroidBlanco'];
+      const musicaTitulo = document.querySelector('audio.musicaTitulo');
+      const musicaJuego = document.querySelector('audio.musicaJuego');
+      const musicaVictoria = document.querySelector('audio.musicaVictoria');
+      const musicaDerrota = document.querySelector('audio.musicaDerrota');
+      const sonidoColision = document.querySelector('audio.sonidoColision')
+      const pantallaVictoria = document.querySelector('div.victoria');
+      const pantallaDerrota = document.querySelector('div.derrota');
+      var puntaje = document.querySelector('h3.puntaje');
+      var tiempo = document.querySelector('h3.tiempo');
+      var energia = document.querySelector('h3.energia');
+      samus.style.top = 120 + 'px';
+      
+      // Objeto
+      const juego = {
+         // Atributos
+         puntos: 0,
+         tiempoRestante: 60,
+         energiaRestante: 100,
+         posicionSamus: 120,
+         posicionLeftEnemigo: 640,
+         // Metodos
+         correTiempo: function() {
+            let intervalo = setInterval(function() {
+               if (juego.tiempoRestante < 60 && juego.tiempoRestante > -1) {
+                  if (juego.tiempoRestante % 10 == 0) {
+                     juego.puntos += 100;
+                  } else {
+                     juego.puntos +=5;
+                  }
+               }
+               if (juego.energiaRestante < 1) {
+                  clearInterval(intervalo);
+               }
+               puntaje.innerText = juego.puntos;
+               if (juego.tiempoRestante < 1) {
+                  tiempo.innerText = '0';
+                  pantallaVictoria.classList.toggle("oculto");
+                  pantallaVictoria.classList.toggle("animate__fadeIn");
+                  musicaJuego.pause();
+                  musicaVictoria.play();
+                 
+                  clearInterval(intervalo);
+                  
+               } else {
+                  tiempo.innerText = juego.tiempoRestante--;
+               }
+
+            }, 1000);
+         },
+         aleatorioEnemigos: function() {
+            let generacionEnemigos = setInterval(function(){
+               //aleatorio entre 0 y <3 para la posicion de la lista de la posicion vertical del enemigo
+               let randPos = Math.floor(Math.random() * posicionEnemigosTop.length);
+               //aleatorio entre 0 y <4 para la posicion de la lista de nombres de enemigos
+               let randNom = Math.floor(Math.random() * nombreEnemigos.length);
+               enemigos.classList.remove(nombreEnemigos[0]);
+               enemigos.classList.remove(nombreEnemigos[1]);
+               enemigos.classList.remove(nombreEnemigos[2]);
+               enemigos.classList.remove(nombreEnemigos[3]);
+               enemigos.classList.add(nombreEnemigos[randNom]);
+               enemigos.style.top = posicionEnemigosTop[randPos] + "px";
+               juego.posicionLeftEnemigo = 640;
+               //console.log(randPos + " - " + randNombre);
+               if (juego.tiempoRestante < 0) {
+                  clearInterval(generacionEnemigos);
+               }
+            }, 840);
+            
+            let movimientoEnemigos = setInterval(function(){
+               enemigos.style.left = juego.posicionLeftEnemigo + "px";
+               juego.posicionLeftEnemigo = juego.posicionLeftEnemigo-10;
+               if (juego.tiempoRestante < 0) {
+                  clearInterval(movimientoEnemigos);
+               }
+            }, 10);
+
+            let compararColision = setInterval(function(){
+               console.log(enemigos.offsetTop);
+               if (juego.tiempoRestante<59 && samus.style.top == enemigos.style.top && (enemigos.style.left <= "160px") ){
+                  console.log("Enemigos: " + enemigos.offsetLeft);
+                  sonidoColision.currentTime = 0;
+                  sonidoColision.play();
+                  juego.energiaRestante--;
+                  energia.innerText= juego.energiaRestante;
+                  if(juego.energiaRestante<=0){
+                     juego.energiaRestante=0;
+                     energia.innerText= juego.energiaRestante;
+                     pantallaDerrota.classList.toggle("oculto");
+                     pantallaDerrota.classList.toggle("animate__fadeInDown");
+                     sonidoColision.pause();
+                     musicaDerrota.play();
+                     clearInterval(compararColision);
+                  }
+                  if (juego.tiempoRestante < 1) {
+                     clearInterval(compararColision);
+                  }
+               }
+            }, 10);
+         },
+         iniciarMusicaJuego: function(){
+            musicaJuego.currentTime = 0;
+            musicaJuego.play();
+            musicaJuego.loop = true;
+         },
+         //musicaTitulo.CurrentTime(15);
+         detenerMusicaTitulo: function(){
+            musicaTitulo.pause();
+         }, 
+      }
+
+      /* Eventos */
+      botonIniciar.onclick = function(){
+         //console.log("Entra al boton Iniciar");
+         seccionTitulo.classList.add('animate__backOutUp');
+         seccionJuego.classList.add('animate__backInUp');
+         setTimeout(function() {
+            seccionTitulo.classList.toggle("oculto");
+            seccionJuego.classList.toggle("oculto");
+         },500);
+         setTimeout(function() {
+            juego.correTiempo();
+            juego.aleatorioEnemigos();
+            juego.iniciarMusicaJuego();
+            juego.detenerMusicaTitulo();
+         },500);
+      }
+
+      musicaTitulo.play();
+      musicaTitulo.currentTime = 7;
+      musicaTitulo.loop = true;    
+      
+      document.onkeydown = function(event) {
+         //console.log(event.keyCode);
+         // left(37)  up(38)  right(39)  down(40)
+         if(event.keyCode == 38) {
+            if ( juego.posicionSamus > 0) {
+               juego.posicionSamus -= 120;
+               samus.style.top = juego.posicionSamus + 'px';
+            }
+         }
+         if(event.keyCode == 40) {
+            if ( juego.posicionSamus < 240) {
+               juego.posicionSamus += 120;
+               samus.style.top = juego.posicionSamus + 'px';
+            }
+         }
+      }
 
    </script>
 </body>

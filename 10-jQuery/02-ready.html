@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Ready</title>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Ready</h1>
+      </header>
+      <section>
+         <h3 class="msj"></h3>
+      </section>
+   </main>
+   <script src="js/jquery-3.6.0.min.js"></script>
+   <script>
+      /* jqDocReady */
+      $(document).ready(function () {
+         $('.msj').text('The document is ready').hide().slideDown('slow');
+      });
+
+   </script>
+</body>
+</html>
