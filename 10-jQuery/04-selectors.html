@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Selectors</title>
+   <style>
+      button{
+         background-color: #2e67a8;
+         border: 2px solid 2e67a8;
+         border-radius: 10px;
+         color: #fff;
+         cursor: pointer;
+         display: block;
+         font-size: 2rem;
+         margin: 40px auto;
+         padding: 20px;
+         transition: 0.3s all ease-in;
+      }
+      button:hover{
+         transform: scale(1.2);
+      }
+      button:active{
+         background-color: #800;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Selectors</h1>
+      </header>
+      <section>
+         <button class="btn">
+            Count Double Clicks: 0
+         </button>
+      </section>
+   </main>
+   <script src="js/jquery-3.6.0.min.js"></script>
+   <script>
+      /* jqDocReady */
+      $(document).ready(function () {
+         $count = 0;
+         $('button.btn').dblclick(function(){
+            $(this).text('Count Double Clicks: ' + ++$count);
+         })
+      });
+
+   </script>
+</body>
+</html>

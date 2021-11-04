@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Selectors</title>
+   <style>
+      
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Selectors</h1>
+      </header>
+      <section>
+         <div>
+            Nintendo
+         </div>
+         <div class="color">
+            PlayStation
+         </div>
+         <div id="prueba">
+            Xbox
+         </div>
+
+         
+         <p>Nintendo sigue dando la batalla con su nuevo modelo de consola, la Nintendo Switch OLED. Una pantalla mas grande y de mas calidad, el doble de almacenamiento interno y un dock con puerto ethernet para mejor conectividad de red.</p>
+         <p>Sony sigue imparable con sus mas de 11 millones de consolas PS5 vendidas a nivel mundial. Se espera que estos numeros aumenten con futuros estrenos como Horizon forbidden West, Gran Turismo 7 y claro esta... God Of War Ragnarok.</p>
+         <p>Microsoft tiene la apuesta mas pro-usuario en el mercado: Dos modelos de consolas, la Xbox Series siendo la consolas mas potente a la fecha y su hermana menor, la Xbox Series S con la apuesta mas economica para entrar a la nueva generacio. Y por supuesto, su sistema de suscripcion Game Pass Ultimate no tiene rival en cuanto a relacion calidad-precio.</p>
+
+         <ul>
+            <ol><strong>Nominados al GOTY 2021:</strong></ol>
+            <li>Final Fantasy VII Remake Intergrade</li>
+            <li>Forza Horizon 5</li>
+            <li>Halo Infinite</li>
+            <li>Metroid Dread</li>
+            <li>Microsoft Flight Simulator</li>
+            <li>Monster Hunter Rise</li>
+            <li>Returnal</li>
+         </ul>
+         <section class="paginas">
+            <a href="https://www.nintendo.com/es_LA/switch/oled-model/">Pagina de Nintendo</a>
+            <a href="https://www.playstation.com/es-co/ps5/" target="_blank">Pagina de PlayStation</a>
+            <a href="https://www.xbox.com/es-CO/consoles">Pagina de Xbox</a>
+         </section>
+      </section>
+   </main>
+   <!-- Local... es mas recomendada, por si no tenemos acceso a internet -->
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      //Espera que cargue toda la pagina antes de ejecutar
+      $(document).ready(function(){
+         $("*").css("font-family", "roboto");
+         $(this).css("color", "#8ff");
+         $("div").css("margin", "5px").css("border", "2px dotted #004").css("text-align", "center");
+         $("#prueba").css("font-size", "30px").css("font-weight", "900");
+         $(".color").css("color", "#15b");
+         $("p:first").css("color", "#f00");
+         $("ul li:last").css("color", "#80d");
+         $("section.paginas a").css("display", "inline-block");
+         $("[href='https://www.nintendo.com/es_LA/switch/oled-model/']").css("background-color", "#800").css("color", "#fff");
+         $("a[target='_blank']").css("background-color", "#008").css("color", "#fff");
+         $("a[target!='_blank']").css("border", "3px solid black").css("padding", "5px")
+         //$(this).parent().css('text-decoration', 'none');
+      })
+      
+   </script>
+</body>
+</html>
