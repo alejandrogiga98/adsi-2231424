@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Chaining</title>
+   <style>
+      button{
+         background-color: #1e4168;
+         border: none;
+         color: #fff;
+         cursor: pointer;
+         margin: 5px;
+         padding: 4px;
+         width: 100px;
+         transition: transform 0.2s ease-out;
+      }
+
+      button:hover{
+         transform: scale(1.06);
+      }
+
+      img.ship {
+         display: block;
+         margin: 70px auto;
+         position: relative;
+        }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Chaining</h1>
+      </header>
+      <section>
+         <button class="btn">Let's do it</button>
+         <img src="images/metroidShip.png" class="ship" width="200px">
+      </section>
+   </main>
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      //$(document).ready(function(){
+         //otra forma de hacer la funcion showChaining:
+         /* function showChaining(){
+
+         } */
+         /* showChaining = () =>{
+            $('.ship').hide()
+            .slideDown(1200)
+            .css({transform: 'scale(2)'})
+            .animate({left: '100px'}, 1000)
+            .animate({left: '-100px'}, 1000)
+            .slideUp(1200);
+         }
+
+         $('.btn').click (function(e){
+            showChaining();
+         });
+
+      }); */
+
+      //otra forma de hacer la funcion showChaining:
+      /* function showChaining(){
+
+      } */
+      $(document).ready(function () {
+
+         showChaining = () =>{
+
+            $('.ship').hide().slideDown(1200)
+                           .css({transform:'scale(2)'})
+                           .animate({left:'300px'}, 1000)
+                           .animate({left:'0px'}, 1000)
+                           .animate({left:'-300px'}, 1000)
+                           .animate({left:'0px'}, 1000)
+                           .slideUp(1200);
+
+         }
+
+         $('.btn').click(function(e){
+            showChaining();
+         });
+      });
+   </script>
+</body>
+</html>

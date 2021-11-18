@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Callback</title>
+   <style>
+      img.ship{
+         position: relative;
+      }
+
+      section{
+         height: 400px;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Callback</h1>
+      </header>
+      <section>
+         <h3>The Animation has started!</h3>
+         <img src="images/metroidShip.png" class="ship" width="200px">
+      </section>
+   </main>
+   <!-- Local... es mas recomendada, por si no tenemos acceso a internet -->
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      $(document).ready(function () {
+            // Callbacks
+            $('.ship').animate({left: '80%'}, 1500, function(){
+                $('.ship').animate({top: '200px'}, 500, function(){
+                    $('.ship').animate({left: '0%'}, 1500, function(){
+                        $('.ship').animate({top: '0px'}, 500, function(){
+                            $('h3').text('The Animation has finished!');
+                        });
+                    });
+                });
+            });
+        });
+   </script>
+</body>
+</html>

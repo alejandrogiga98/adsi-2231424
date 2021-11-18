@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Effects</title>
+   <style>
+      nav button{
+         background-color: #1e4168;
+         border: none;
+         color: #fff;
+         cursor: pointer;
+         margin: 5px;
+         padding: 4px;
+         width: 100px;
+         transition: transform 0.2s ease-out;
+      }
+
+      nav button:hover{
+         transform: scale(1.06);
+      }
+
+      nav button[disabled]{
+         opacity: 0.4;
+         cursor: not-allowed;
+      }
+      
+      figure img.witcher{
+         *border: 1px solid red;
+         display: block;
+         margin: 20px auto;
+         position: relative;
+         width: 320px;
+      }
+   </style>   
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Effects</h1>
+      </header>
+      <section>
+         <nav>
+            <button class="btnHide hide">Hide</button>
+            <button class="btnShow show">Show</button>
+            <button class="btnToggle">Toggle</button>
+            <button class="btnSlideDown show">Slide Down</button>
+            <button class="btnSlideUp hide">Slide Up</button>
+            <button class="btnSlideToggle">Slide Toggle</button>
+            <button class="btnFadeIn show">Fade In</button>
+            <button class="btnFadeOut hide">Fade Out</button>
+            <button class="btnFadeTo show">Fade To</button>
+            <button class="btnFadeToggle">Fade Toggle</button>
+            <button class="btnAnimate">Animate</button>
+            <button class="btnStop">Stop</button>
+         </nav>
+         <figure>
+            <img class="witcher" src="images/theWitcher.jpg" alt="">
+         </figure>
+      </section>
+   </main>
+   <!-- Local... es mas recomendada, por si no tenemos acceso a internet -->
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      $(document).ready(function() {
+         // Variables
+         $witcherIsVisible = true;
+
+         // Events
+         // Hide
+         $('.btnHide').click(function(e) {
+            $('.witcher').hide();
+            $witcherIsVisible = false;
+            witcherVisible($witcherIsVisible);
+         });
+         // Show
+         $('.btnShow').click(function(e) {
+            $('.witcher').show();
+            $witcherIsVisible = true;
+            witcherVisible($witcherIsVisible);
+         });
+         // Toggle
+         $('.btnToggle').click(function(e) {
+            $('.witcher').toggle();
+            if ($('.witcher').attr('style')) {
+               $witcherIsVisible = false;
+            } else {
+               $witcherIsVisible = true;
+            }
+            witcherVisible($witcherIsVisible);
+         });
+         // SlideDown
+         $('.btnSlideDown').click(function(e) {
+            $('.witcher').slideDown(2000);
+            $witcherIsVisible = true;
+            witcherVisible($witcherIsVisible);
+         });
+         // SlideUp
+         $('.btnSlideUp').click(function(e) {
+            $('.witcher').slideUp(2000);
+            $witcherIsVisible = false;
+            witcherVisible($witcherIsVisible);
+         });
+         // SlideToggle
+         $('.btnSlideToggle').click(function(e) {
+            $('.witcher').slideToggle(2000);
+            setTimeout(function() {
+               if ($('.witcher').attr('style')) {
+                     $witcherIsVisible = false;
+               } else {
+                     $witcherIsVisible = true;
+               }
+               witcherVisible($witcherIsVisible);
+            },2500);
+         });
+         // FadeIn
+         $('.btnFadeIn').click(function(e) {
+            $('.witcher').fadeIn(2000);
+            $witcherIsVisible = true;
+            witcherVisible($witcherIsVisible);
+         });
+         // FadeOut
+         $('.btnFadeOut').click(function(e) {
+            $('.witcher').fadeOut(2000);
+            $witcherIsVisible = false;
+            witcherVisible($witcherIsVisible);
+         });
+         // FadeTo
+         $('.btnFadeTo').click(function(e) {
+            $('.witcher').fadeTo(2000, 0.3);
+            $witcherIsVisible = true;
+            witcherVisible($witcherIsVisible);
+         });
+         // FadeToggle
+         $('.btnFadeToggle').click(function(e) {
+            $('.witcher').fadeToggle(2000);
+            setTimeout(function() {
+               if ($('.witcher').attr('style')) {
+                     $witcherIsVisible = false;
+               } else {
+                     $witcherIsVisible = true;
+               }
+               witcherVisible($witcherIsVisible);
+            },2500);
+         });
+         // Animate
+         $('.btnAnimate').click(function(e) {
+            $('.witcher').animate({top: '100px', left: '-100px'}, 1000)
+                        .animate({left: '100px'}, 1000)
+                        .animate({top: '0px', left: "0px"}, 1000);
+         });
+         // Stop
+         $('.btnStop').click(function(e) {
+            $('.witcher').stop();
+         });
+
+         // Functions
+         witcherVisible = ($status) => {
+            if ($status) {
+               $('.hide').prop('disabled', false);
+               $('.show').prop('disabled', true);
+            } else {
+               $('.show').prop('disabled', false);
+               $('.hide').prop('disabled', true);
+            }
+         }
+
+         witcherVisible($witcherIsVisible);
+      });
+   </script>
+</body>
+</html>

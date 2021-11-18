@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Set - Get</title>
+   <style>
+      div{
+         border: 1px solid red;
+         margin: 5px auto;
+         position: relative;
+         width: 215px;
+      }
+      input{
+         *display: inline-flex;
+         margin-top:10px;
+         margin-left: 10%;
+      }
+      button{
+         background-color: #15b;
+         color: #fff;
+         display: inline;
+         margin-left: 35%;
+         margin-top:10px;
+         *position: absolute;
+      }
+      button:hover{
+         color: #ff0;
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <header>
+         <h1> <span> <a href="index.html">&larr;</a> </span> Set - Get</h1>
+      </header>
+      <section>
+         <div class="figure01">
+            <input type="text" id="caja">
+            <button id="btn1">Boton 1</button>
+         </div>
+      </section>
+   </main>
+   <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script>
+      $(document).ready(function(){
+         $('#btn1').click(function(){
+            alert( $('input#caja').text());
+         });
+      })
+
+   </script>
+</body>
+</html>
