@@ -260,58 +260,47 @@
             $time = 0;
             $cntMoves = 0;
             $cntClicks = 0;
-            $con = 0;
             $cntMatch = 0;
             $cards  = document.querySelectorAll('div.card');
             $ccards = ['card01', 'card01', 'card02', 'card02',
                       'card03', 'card03', 'card04', 'card04',
                       'card05', 'card05', 'card06', 'card06'];
+
             
             $('.card').click(function() {
                 if (!$(this).hasClass('active')){
                     console.log("Clicks: " + $cntClicks);
-                    
+                    $(this).addClass('is-flipped active');
                     $cntClicks++;
                     if($cntClicks == 1){
-                        $(this).addClass('is-flipped active');
                         $card1 = $(this);
                     }
-                    else if ($cntClicks == 2){
-                        $card2 = $(this);
-                        $(this).addClass('is-flipped active');   ////////
-                        //$cntClicks = 0;  ///////
-                        checkMatch();
-                    }
-                    /*  else{
+                    else{
                         $card2 = $(this);
                         $cntClicks = 0;
                         checkMatch();
-                    }  */
+                    }
                 }
             });
+        
 
-            const checkMatch = () => {
-                $cntMoves++;
-                $('.moves').text($cntMoves + ' moves');
-                if($card1.attr('class').substring(5,12) == $card2.attr('class').substring(5,12)){
-                    $cntMatch++;
-                    $cntClicks = 0; ///////
-                    if($cntMatch==6){
-                        clearInterval($setInt);
-                        setTimeout(function(){
-                            showResult();
-                        }, 1000);
-                    }
-                }else{
-                    setTimeout(function(){
-                        $card1.removeClass('is-flipped active');
-                        $card2.removeClass('is-flipped active');
-                        $cntClicks = 0; //////
-                    }, 1000);
-                }
-            }
+            /* $('#btnSave').click(function(){
+                let player = {
+                     
+                    username: $('#username').val(),
+                    moves: $cntMoves,
+                    time: $time,
+                };
+                let userPlayer = JSON.stringify(player);
+                localStorage.setItem("player", userPlayer);
+                $('.modal').addClass('hide');
+                setTimeout(function (){
+                    window.location.replace('12-challenge-memory-game.html');
+                }, 1000);
+            }); */
 
-            /* -------------------- */
+            //localStorage.clear(); --> para borrar los datos del almacenamiento local y no crear conflicto 
+            //con los nuevos nuevos datos a ingresar por medio de la lista 'jugadores'
             $('#btnSave').click(function() {
                 var jugadores = [];
                 if (JSON.parse(localStorage.getItem("player")) != null) {
@@ -327,8 +316,9 @@
                 };
                 jugadores.push(player);
                 
-                /* Ordenar Forma Larga */
-                /*jugadores.sort((a, b) => {
+                //jugadores.moves.sort((a, b) => a - b);
+                /*Forma Larga
+                jugadores.sort((a, b) => {
                     const movesA = a.moves;
                     const movesB = b.moves;
                     if (movesA < movesB){
@@ -337,14 +327,15 @@
                     if (movesA > movesB){
                         return 1;
                     }
+
                     return 0;
                 }); */
 
-                /* Ordenar Forma corta */
+                //Forma corta
                 jugadores.sort(function (a, b) {return a.moves - b.moves});
+
                 //jugadores.sort((a, b) => {a.moves - b.moves || a.time -  b.time});
                 
-                /* Limitar los registros a solo 10 */
                 while(true) {
                     if (jugadores.length > 10){
                         jugadores.pop();
@@ -360,6 +351,28 @@
                     window.location.replace('12-challenge-memory-game.html');
                 }, 1000);
             });
+
+            const checkMatch = () => {
+                $cntMoves++;
+                $('.moves').text($cntMoves + ' moves');
+                //console.log($('.card'));
+                if($card1.attr('class').substring(5,12) == $card2.attr('class').substring(5,12)){
+                    //alert('Match');
+                    $cntMatch++;
+                    if($cntMatch==6){
+                        clearInterval($setInt);
+                        setTimeout(function(){
+                            //alert("hi");
+                            showResult();
+                        }, 1000);
+                    }
+                }else{
+                    setTimeout(function(){
+                        $card1.removeClass('is-flipped active');
+                        $card2.removeClass('is-flipped active');
+                    }, 1000);
+                }
+            }
 
             const showResult = () => {
                 $('.fmoves').text($cntMoves + ' moves');
