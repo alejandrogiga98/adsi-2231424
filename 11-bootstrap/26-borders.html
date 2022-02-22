@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Alerts</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/fontawesome.min.css">
+   <link rel="stylesheet" href="css/all.min.css">
+   <style>
+      .size{
+         background-color: #4182e4;
+         border-color: #800 !important;
+         border-width: 4px !important;
+         display: inline-block;
+         height: 155px;
+         margin: 20px;
+         width: 155px;
+      }
+
+      .sizeOp{
+         background-color: #4182e4;
+         border-width: 4px !important;
+         display: inline-block;
+         height: 155px;
+         margin: 20px;
+         width: 155px;
+      }
+
+      .sizeBr{
+         background-color: #4182e4;
+         border-color: #800 !important;
+         display: inline-block;
+         height: 155px;
+         margin: 20px;
+         width: 155px;
+      }
+
+      .sizeRd{
+         background-color: #4182e4;
+         border-color: #800 !important;
+         border-width: 4px !important;
+         display: inline-block;
+         *height: 155px;
+         margin: 20px;
+         *width: 155px;
+      }
+
+   </style>
+</head>
+<body>
+   <main class="container">
+      <div class="row">
+         <div class="col-md-12 mt-5 mb-5">
+            <h1 class="text-center">Borders</h1>
+            <hr>
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a href="index.html">
+                        <i class="fa fa-home"></i>
+                        Main Menu
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <i class="fa fa-file-code"></i>
+                     Borders
+                  </li>
+               </ol>
+            </nav>
+
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Additive:</h3>
+                  <span class="size border "></span>
+                  <span class="size border-top"></span>
+                  <span class="size border-end"></span>
+                  <span class="size border-bottom"></span>
+                  <span class="size border-start"></span>
+
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Subtractive (no funciona):</h3>
+                  <div class="bd-example bd-example-border-utils bd-example-border-utils-0">
+                     <span class="size border-0"></span>
+                     <span class="size border-top-0"></span>
+                     <span class="size border-end-0"></span>
+                     <span class="size border-bottom-0"></span>
+                     <span class="size border-start-0"></span>
+                  </div>
+                  
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Border color:</h3>
+                  <span class="sizeOp border border-primary"></span>
+                  <span class="sizeOp border border-secondary"></span>
+                  <span class="sizeOp border border-success"></span>
+                  <span class="sizeOp border border-danger"></span>
+                  <span class="sizeOp border border-warning"></span>
+                  <span class="sizeOp border border-info"></span>
+                  <span class="sizeOp border border-light"></span>
+                  <span class="sizeOp border border-dark"></span>
+                  <span class="sizeOp border border-white"></span>
+
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Border-width:</h3>
+                  <span class="sizeBr border border-1"></span>
+                  <span class="sizeBr border border-2"></span>
+                  <span class="sizeBr border border-3"></span>
+                  <span class="sizeBr border border-4"></span>
+                  <span class="sizeBr border border-5"></span>
+
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Border-radius:</h3>
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-top" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-end" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-bottom" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-start" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-circle" alt="...">
+                  <img src="http://via.placeholder.com/200x150/800/bbb" class="sizeRd rounded-pill" alt="...">
+
+                  <!--  -->
+                  <h3 class="text-muted mt-5">Sizes:</h3>
+                  <img src="http://via.placeholder.com/200x150/15b/bbb" class="size rounded-0" alt="...">
+                  <img src="http://via.placeholder.com/200x150/15b/bbb" class="size rounded-1" alt="...">
+                  <img src="http://via.placeholder.com/200x150/15b/bbb" class="size rounded-2" alt="...">
+                  <img src="http://via.placeholder.com/200x150/15b/bbb" class="size rounded-3" alt="...">
+            </div>
+         
+            
+            
+         </div>
+      </div>
+   </main>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Challenge Boostrap</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/fontawesome.min.css">
+   <link rel="stylesheet" href="css/all.min.css">
+   <!-- <link rel="stylesheet" href="css/lineicons.css"> -->
+   <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+   <style>
+   /* color verde: 00A78E
+      tipografia: Open Sands
+      tipografia titulos: Monserat 
+   */
+      .bg-cusGreen{
+         background-color: #00A78E;
+      }
+      .prueba{
+         *background-color: #900;
+         border: 3px solid #000;
+      }
+      .pruebaRoja {
+         border: 1px solid #800;
+         background: transparent
+      }
+      .pruebaAzul {
+         border: 2px solid #15b;
+       
+      }
+      strong.free{
+         color: #095247;
+      }
+      strong.lancer{
+         color: #00A78E;
+      }
+      .color-cusGreen{
+         color: #00A78E;
+      }
+      div.size{
+         border-top-left-radius: 25%;
+         border-top-right-radius: 25%;
+         border-bottom-left-radius: 25%;
+      }
+      div.classIcon{
+         *border: 1px solid red;
+         background-color: #aaaa;
+         border-radius: 50%;
+         display: inline-block;
+         height: 60px;
+         padding-top: 10px;
+         width: 60px;
+      }
+      div.classIcon a i{
+         color: #000;
+         font-size: 250%;
+      }
+
+      nav.navbar.fixed-top.scrolled{
+         background-color: #fff !important;
+         transition: background-color 0.5s ease-in
+      }
+      nav.navbar.scrolled div div ul.navbar-nav li.nav-item a:link,
+      nav.navbar.scrolled div div ul.navbar-nav li.nav-item a:visited {
+         color: #800;
+      }
+      nav.navbar.scrolled div div ul.navbar-nav li.nav-item a:hover{
+         border-bottom: 2px solid #00A78E;
+      }
+      #imgHero{
+         width: auto;
+         height: 100%;
+         display: inline-block;
+         background-color: #800;
+      }  
+   </style>
+</head>
+<body>
+   <main class="container-fluid"> <!-- container-fluid para tomar todo el ancho de la pantalla -->
+      
+      <div class="row  mt-auto mb-5 vh-100 pb-5" style="background: url(imgs/fondoChallengeBootstrap.svg) no-repeat; background-size: cover;">
+         <!-- Menu de navegación -->
+         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-transparent">
+            <div class="col-md-10 offset-1 container-fluid">
+               <a class="offset-5 navbar-brand ms-5" href="index.html">
+                  <strong class="free">Free</strong>
+                  <strong class="lancer">lancer</strong>
+               </a>
+               <!-- Boton hamburguesa -->
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <!-- Caja con los enlaces a ocultar en hamburguesa-->
+               <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-5 ms-auto mb-5 mb-lg-0">
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#home">Home</a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#About">About</a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#Services">Services</a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#Portfolio">Portfolio</a>
+                     </li>                     
+                  </ul>
+               </div>   <!-- Cierre caja con los enlaces a ocultar en hamburguesa-->
+            </div>
+         </nav> <!-- Cierre Menu de Navegación -->
+
+         <!-- Caja 1 container-->
+         <a name="home"></a>
+            <div class=" col-10 container-fluid ms-auto me-auto mt-5 mb-0 shadow shadow-bottom p-3 bg-transparent rounded mb-0">
+               <!-- Caja Izquierda presentacion -->
+               <div class="row " style="height: 100%;">
+               <div class=" col-6 offset-0 d-flex align-items:center" >
+                  <div class="card ms-auto my-5 border-0 bg-transparent d-grid align-items-center" >
+                     <div class="card-body">
+                        <h4 class="mt-5 color-cusGreen"> Hello I'm</h4>
+                        <h3 class="card-title"><strong>Alejandro Gil Garcia</strong></h3>
+                        <h5 class="card-title">Student ADSI</h5>
+                        <p class="card-text lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, ullam et minus ducimus dolore laborum omnis illo sit. Dolorem, hic.</p>
+                        <a href="#" class="btn btn-primary bg-cusGreen">Hire me</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Imagen derecha -->
+               <div class=" col-6 offset-0 bg-transparent d-grid align-items-end " >
+                  <div class=" bg-transparent mt-1" style="height: 100%;">
+                     <img src="imgs/hero.png" class="border-0 bg-transparent my-auto mx-auto" id="imgHero">
+                  </div>
+               </div>
+            </div> 
+         
+         </div>
+         
+      <!-- Cierre Caja 1 container -->
+      
+      </div> <!-- Cierre fondo verde -->
+      <a name="About"></a>
+
+      <!-- Caja 2: About -->
+      <div class="row col-10 ms-auto me-auto shadow p-3 my-5 bg-body rounded">
+         <!-- Imagen izquierda -->
+         <div class=" col-md-6 offset-0">
+            <div class="border-0 bg-transparent" >
+               <img src="imgs/about_hero.png" class="border-0 mb-1" >
+            </div>
+         </div>
+
+         <!-- About Text -->
+         <div class=" col-md-6 offset-md-0"  style="display: flex; align-items: center;">
+            <div class="card ms-auto pt-1 mt-auto mb-auto border-0" >
+               <div class="card-body">
+                  <h5 class="mb-0 color-cusGreen"> About</h5>
+                  <h2 class="card-title"><strong>Why You Hire me?</strong></h2>
+                  <div class=" border-bottom border-success col-md-2"></div>
+                  <p class="card-text lh-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, sunt! Vitae ipsa quasi numquam sequi eaque unde quod est reiciendis, officia similique voluptates quisquam eius eos doloribus fugiat delectus rem aliquam. Praesentium, ad voluptas suscipit est nostrum dicta, minus corporis labore quas necessitatibus voluptatum.</p>
+                  <h5 class="mt-3 mb-1"> UI/UX Design</h5>
+                  <div class="progress">
+                     <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                  </div>
+                  <h5 class="mt-3 mb-1"> Web Design</h5>
+                  <div class="progress">
+                     <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                  </div>
+                  <h5 class="mt-3 mb-1"> HTML/CSS</h5>
+                  <div class="progress">
+                     <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                  </div>
+                  <h5 class="mt-3 mb-1"> Sketch</h5>
+                  <div class="progress">
+                     <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      <a name="Services"></a>
+      </div> <!-- Cierre Caja 2 -->
+
+      <!-- Caja 3: Services -->
+      <div class=" row col-10 ms-auto me-auto shadow p-3 mb-5 bg-body rounded">
+         <h5 class="mb-0 color-cusGreen text-center"> Services</h5>
+         <h2 class="mb-0 text-center"> Services | Provide</h2>
+         <div class=" border-bottom border-success col-md-2 offset-md-5 mt-3"></div>
+         <!-- Gutters -->
+         <div class="container w-100 " >
+            
+            <div class="row g-5 mt-1 d-flex" style="align-items: center;
+            justify-content: center;">
+               <!-- laDelG row row-cols-sm-2 -->
+               <!-- Gutter 1 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card border-0 bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class="bg-cusGreen col-4 ms-3 mt-4 size ">
+                        <!-- <i class="fab fa-figma fa-4x ms-4 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/vector.png" class="ms-2 my-2 color-light" alt="">
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">Graphic Design</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 1 Gutter -->
+
+               <!-- Gutter 2 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class=" bg-cusGreen col-4 ms-3 mt-4 size p-2">
+                        <!-- <i class="fas fa-blog fa-4x ms-3 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/layout.png" alt="">
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">Web Design</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 2 Gutter -->
+
+               <!-- Gutter 3 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card border-0 bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class=" bg-cusGreen col-4 ms-3 mt-4 size">
+                        <!-- <i class="fas fa-quidditch fa-4x ms-2 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/ux.png" class="ms-2 my-2 color-light" alt="">
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">UI/UX Design</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 3 Gutter -->
+
+               <!-- Gutter 4 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card border-0 bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class=" bg-cusGreen col-4 ms-3 mt-4 size">
+                        <!-- <i class="fas fa-code fa-4x ms-1 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/code.png" class="ms-2 my-2 color-light" alt="">
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">Frontend Development</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 4 Gutter -->
+
+               <!-- Gutter 5 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card border-0 bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class=" bg-cusGreen col-4 ms-3 mt-4 size ">
+                        <!-- <i class="fas fa-briefcase fa-4x ms-3 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/briefcase.png" class="ms-2 my-2" alt="">
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">Business Analysis</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 5 Gutter -->
+
+               <!-- Gutter 6 -->
+               <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center ">
+                  <div class="card border-0 bg-light bg-opacity-100 shadow p-3 bg-body rounded" style="width: 18rem; height: 24rem;">
+                     <div class=" bg-cusGreen col-4 ms-3 mt-4 size color-white">
+                        <!-- <i class="fab fa-digital-ocean fa-4x ms-3 my-2 text-light"></i> -->
+                        <img src="imgs/lineicons-free-basic-3/png-files/bullhorn.png" class="ms-2 my-2" alt="">
+                        <!-- <i class="lni lni-bullhorn text-white p-1 prueba" style="height: 150px; width: 150px;"></i> -->
+                     </div>
+                     
+                     <div class="card-body">
+                        <h5 class="card-title">Digital Marketing</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sint cum ab eveniet molestias asperiores amet cupiditate.</p>
+                     </div>
+                  </div>
+               </div> <!-- Cierre Caja 6 Gutter -->
+               
+            </div>
+         </div> <!-- Cierre Gutters -->
+         
+      <a name="Portfolio"></a>
+      </div> <!-- Cierre Caja 3 -->
+
+      <!-- Caja 4: Portfolio -->
+      <div class="row col-10 ms-auto me-auto shadow p-3 mb-5 bg-body rounded">
+         <h5 class="mb-0 color-cusGreen"> Portfolio</h5>
+         <h2 class="mb-0 "> Latest Projects</h2>
+         
+         <!-- Carousel -->
+         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators mb-1">
+               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div><!-- Cierre Div indicators-->
+            <div class="carousel-inner d-flex bd-highlight ">
+               <!-- <div class="d-flex justify-content-center bd-highlight mb-3">
+                  <div class="p-2 bd-highlight">Flex item</div>
+                  <div class="p-2 bd-highlight">Flex item</div>
+                  <div class="p-2 bd-highlight">Flex item</div>
+                </div> -->
+               <div class="col-4 carousel-item  active" data-bs-interval="2000">
+                  <img src="imgs/carImg1.png" class="ms-auto me-auto d-block" alt="...">
+                  <div class=" d-none d-md-block carousel-caption">
+                     <h5>Creative Agency Landing Page</h5>
+                     <p>UI/UX Design.</p>
+                  </div>
+               </div>
+               <div class="col-4 carousel-item " data-bs-interval="2000">
+                  <img src="imgs/carImg21.png" class="ms-auto me-auto d-block" alt="...">
+                  <div class=" d-none d-md-block carousel-caption">
+                     <h5>App Landing Page</h5>
+                     <p>Web Design.</p>
+                  </div>
+               </div>
+               <div class="col-4 carousel-item " data-bs-interval="2000">
+                  <img src="imgs/carImg3.jpg" class="ms-auto me-auto d-block" alt="...">
+                  <div class=" d-none d-md-block carousel-caption">
+                     <h5>Search Engine Optimization</h5>
+                     <p>Digital Marketing.</p>
+                  </div>
+               </div>
+            </div><!-- Cierre Div Carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div> <!-- Cierre Carousel -->
+      </div> <!-- Cierrca Caja 4 -->
+
+      <!-- Caja 5: Footer -->
+      <div class="row col-10 ms-auto me-auto shadow p-3 my-5 bg-body rounded">
+         <div class="col-2 offset-5 container-fluid text-center">
+            <a class="navbar-brand" href="index.html"> 
+               <strong class="free">Free</strong>
+               <strong class="lancer">lancer</strong>
+            </a>
+         </div>
+         <section class="col-6 offset-3 container-fluid my-3 text-center">
+            <div class="classIcon">
+               <a href="">
+                  <i class="lni lni-facebook"></i>
+               </a>
+            </div>
+            <div class="classIcon">
+               <a href="">
+                  <i class="lni lni-twitter"></i>
+               </a>
+            </div> 
+            <div class="classIcon">
+               <a href="">
+                  <i class="lni lni-instagram"></i>
+               </a>
+            </div>
+            <div class="classIcon">
+               <a href="">
+                  <i class="lni lni-linkedin"></i>
+               </a>
+            </div>
+         </section>
+         <h2 class="mb-0 text-center"> someone@example.com</h2>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="col-md-10 offset-1 container-fluid">
+               <div class="collapse navbar-collapse my-3 mx-auto" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto mb-5 mb-lg-0">
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#home"><strong>Home</strong></a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#About"><strong>About</strong></a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#Services"><strong>Services</strong></a>
+                     </li>
+                     <li class="nav-item mx-4">
+                        <a class="nav-link active text-black" aria-current="page" href="#Portfolio"><strong>Portfolio</strong></a>
+                     </li>                     
+                  </ul>
+               </div>   <!-- Cierre caja con los enlaces a ocultar en hamburguesa-->
+            </div>
+         </nav> <!-- Cierre Menu de Navegación -->
+         <h6 class="mb-0 text-center"> Template Designed and Developed by <strong class="lancer">Uldeck</strong></h6>
+      </div> <!-- Cierre Caja 5 Footer -->
+
+      
+   </main>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery-3.6.0.min.js"></script>
+   <script>
+      $(function(){
+         $(document).scroll(function(){
+            var $nav = $(".fixed-top");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+         });
+      });
+   </script>
+</body>
+</html>

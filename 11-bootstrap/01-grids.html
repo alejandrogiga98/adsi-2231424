@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Layout (Grids & Columns)</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/fontawesome.min.css">
+   <link rel="stylesheet" href="css/all.min.css">
+   <style>
+      div.col{
+         border: 1px solid #000;
+      }
+      div.row .col, .col-8, .col-4{
+         background-color: #3375da;
+         color: #fff;
+         height: 10vh;
+      }
+
+      div.row .col-8, .col-md-3, .col-md-4, .col-md-8{
+         background-color: #382;
+      }
+
+      div.row .col-12{
+         background-color: #800;
+         color: #fff;
+      }
+   </style>
+</head>
+<body>
+   <main class="container">
+      <div class="row">
+         <div class="col-md-12 mt-5 mb-5">
+            <h1 class="text-center">Layout (Grids & Columns)</h1>
+            <hr>
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a href="index.html">
+                        <i class="fa fa-home"></i>
+                        Main Menu
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <i class="fa fa-file-code"></i>
+                     Layout (Grids & Columns)
+                  </li>
+               </ol>
+            </nav>
+            
+            <!-- 12 Columns -->
+            <div class="container">
+               <div class="row">
+                  <div class="col-12 py-2">
+                     <h4 class="text-center">12 Columns</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col text-center">Col1</div>
+                  <div class="col text-center">Col2</div>
+                  <div class="col text-center">Col3</div>
+                  <div class="col text-center">Col4</div>
+                  <div class="col text-center">Col5</div>
+                  <div class="col text-center">Col6</div>
+                  <div class="col text-center">Col7</div>
+                  <div class="col text-center">Col8</div>
+                  <div class="col text-center">Col9</div>
+                  <div class="col text-center">Col10</div>
+                  <div class="col text-center">Col11</div>
+                  <div class="col text-center">Col12</div>
+               </div>
+            </div>
+
+            <!-- 2 Columns -->
+            <div class="container mt-5">
+               <div class="row">
+                  <div class="col-12 py-2">
+                     <h4 class="text-center">2 Columns (8 - 4)</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col col-8 text-center">Column1</div>
+                  <div class="col col-4 text-center">Column2</div>
+               </div>
+            </div>
+
+            <!-- 4 Columns / 4 Columns Offset -->
+            <div class="container mt-5">
+               <div class="row">
+                  <div class="col-12 py-2">
+                     <h4 class="text-center">1 Column (4  / 4 Offset)</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col col-4 offset-4 text-center">Column1</div>
+               </div>
+            </div>
+
+            <!-- 4 Columns Medium / 2 Columns Small -->
+            <div class="container mt-5">
+               <div class="row">
+                  <div class="col-12 py-2">
+                     <h4 class="text-center">4 Column (md 3  / sm 6)</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col col-md-3 col-sm-6 text-center">Col1</div>
+                  <div class="col col-md-3 col-sm-6 text-center">Col2</div>
+                  <div class="col col-md-3 col-sm-6 text-center">Col3</div>
+                  <div class="col col-md-3 col-sm-6 text-center">Col4</div>
+               </div>
+            </div>
+
+             <!-- 2 Columns Medium / 2 Columns Small -->
+             <div class="container mt-5">
+               <div class="row">
+                  <div class="col-12 py-2">
+                     <h4 class="text-center">2 Column (md 4-8 / sm 8-4)</h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col col-md-4 col-sm-8 text-center">Col1</div>
+                  <div class="col col-md-8 col-sm-4 text-center">Col2</div>
+               </div>
+            </div>
+
+            
+         </div>
+         
+      </div>
+   </main>
+   <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
