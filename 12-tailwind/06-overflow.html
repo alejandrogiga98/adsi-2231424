@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Overflow</title>
+   <link rel="stylesheet" href="css/custom.css">
+   <script src="js/tailwind-3.0.23.js"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-700 to-sky-900 via-sky-600 to-sky-700 min-h-screen">
+   <main class="bg-cyan-900 bg-opacity-50">
+      <header class="bg-teal-100 bg-opacity-30 p-10 shadow-lg flex items-center justify-center">
+         <a class="text-5xl bg-blue-600 rounded-lg px-2 mr-20 transition hover:bg-red-900 hover:-translate-x-5 hover:text-white" href="index.html"> ⬅ </a>
+         <h1 class="text-center text-4xl font-bold text-red-600">Overflow</h1>
+      </header>
+      <section class="p-4 mx-auto text-white my-0 w-10/12">
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Visible</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-visible relative max-w-sm mx-auto bg-red-800 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">
+               <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg object-cover" src="https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png">
+               <div class="flex flex-col py-5 pl-24">
+                  <strong class="text-zinc-300 text-sm font-medium dark:text-slate-200">Kayser</strong>
+                  <span class="text-zinc-400 text-sm font-medium dark:text-slate-400">Dark Wolf</span>
+               </div>
+            </div>
+         </div>
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Hidden</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-hidden relative max-w-sm mx-auto bg-red-800 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">
+               <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg object-cover" src="https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png">
+               <div class="flex flex-col py-5 pl-24">
+                  <strong class="text-zinc-300 text-sm font-medium dark:text-slate-200">Kayser</strong>
+                  <span class="text-zinc-400 text-sm font-medium dark:text-slate-400">Dark Wolf</span>
+               </div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Auto</h2>
+          <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-auto h-72 relative max-w-sm mx-auto bg-red-800 dark:bg-slate-800 dark:highlight-white/5 shadow-lg ring-1 ring-black/5 rounded-xl flex flex-col divide-y dark:divide-slate-200/5">
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2018/09/07/03/27/wolf-3659864__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Andrew Alfred</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical advisor</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2013/07/13/14/02/wolf-161987__340.png">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Debra Houston</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Analyst</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2012/04/12/21/21/wolf-30695__340.png">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Jane White</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Director, Marketing</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2021/11/20/20/54/wolf-6812744__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Ray Flint</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical Advisor</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2022/02/14/16/26/paint-7013439__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Ray Flint</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical Advisor</span>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+
+      </section>
+   </main>
+</body>
+</html>
