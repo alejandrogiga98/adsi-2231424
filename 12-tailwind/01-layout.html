@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Container</title>
+   <link rel="stylesheet" href="css/custom.css">
+   <script src="js/tailwind-3.0.23.js"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-700 to-sky-900 via-sky-600 to-sky-700 min-h-screen">
+   <main class="bg-cyan-900 bg-opacity-50">
+      <header class="bg-teal-100 bg-opacity-30 p-6 shadow-lg flex items-center justify-center">
+         <a class="bg-blue-600 rounded-lg mr-10 transition duration-300 hover:scale-125 hover:bg-red-900 hover:text-white p-2" href="index.html"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 20 20" fill="currentColor">
+               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+             </svg>
+         </a>
+         <h1 class="text-center text-4xl font-bold text-red-600">Container</h1>
+      </header>
+      <section class="p-4 mx-auto text-white my-0 w-10/12">
+         <!-- Container -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80">Container</h2>
+         <div class="container rounded-sm my-10 bg-gray-600 p-10 text-black text-6xl lg:text-9xl sm:bg-red-900 md:bg-green-600 lg:bg-blue-600 xl:bg-yellow-600 2xl:bg-pink-600 flex flex-col items-center justify-center h-96">
+            <p class="uppercase tracking-widest text-center ">
+               container
+               <span class="text-2xl hidden sm:block md:hidden">small</span>
+               <span class="text-2xl hidden md:block lg:hidden">medium</span>
+               <span class="text-4xl hidden lg:block xl:hidden">large</span>
+               <span class="text-4xl hidden xl:block 2xl:hidden">extra large</span>
+               <span class="text-4xl hidden 2xl:block">extra extra large</span>
+            </p>
+         </div>
+
+         <!-- Columns -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Columns</h2>
+         <div class="sm:columns-2 gap-4 md:columns-3 lg:columns-4">
+            <img src="http://via.placeholder.com/200x150/800/ddd" class="w-full border mb-4">
+            <img src="http://via.placeholder.com/200x150/800/ddd" class="w-full border mb-4">
+            <img src="http://via.placeholder.com/200x150/800/ddd" class="w-full border mb-4">
+            <img src="http://via.placeholder.com/200x150/12b/ddd" class="w-full border mb-4">
+            <img src="http://via.placeholder.com/200x150/12b/ddd" class="w-full border mb-4">
+            <img src="http://via.placeholder.com/200x150/12b/ddd" class="w-full border mb-4">
+         </div>
+
+         <!-- Display Flex -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-10 mt-16">Display Flex</h2>
+         <div class="flex flex-col sm:flex-row justify-center gap-10">
+            <div class="flex flex-col items-center p-6 border">
+               <img class="w-24 h-24 rounded-full mb-4" src="http://via.placeholder.com/200x150/800/ddd">
+               <div class="flex flex-col items-center">
+                  <strong>Andrew Alfred</strong>
+                  <span>Technical advisor</span>
+               </div>
+            </div>
+            <div class="flex flex-col items-center p-6 border">
+               <img class="w-24 h-24 rounded-full mb-4" src="http://via.placeholder.com/200x150/800/ddd">
+               <div class="flex flex-col items-center">
+                  <strong>Karol Morfliz</strong>
+                  <span>Supervisor</span>
+               </div>
+            </div>
+            <div class="flex flex-col items-center p-6 border">
+               <img class="w-24 h-24 rounded-full mb-4" src="http://via.placeholder.com/200x150/800/ddd">
+               <div class="flex flex-col items-center">
+                  <strong>Micael Brinstor</strong>
+                  <span>Team leader</span>
+               </div>
+            </div>
+         </div>
+         <!-- Display Grid -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-10 mt-16">Display Grid</h2>
+         <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">1</div>
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">2</div>
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">3</div>
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">4</div>
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">5</div>
+            <div class="p-4 bg-rose-700 shadow-lg rounded-lg">6</div>
+         </div>
+
+         <!-- Floats -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Floats</h2>
+         <p class="leading-8 text-justify w-8/12">
+             <img src="http://via.placeholder.com/200x150/800/ddd" class="float-none sm:float-left mr-5 mt-2 rounded-md">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dignissimos soluta facere quisquam vero fugiat perspiciatis voluptatem adipisci officia sequi id. <br><br> Doloremque molestias nemo cumque, labore, iste ipsam! Saepe explicabo pariatur tempore id sit magni similique voluptatem, labore veniam perferendis. <br><br>
+             Atque voluptate facilis quasi blanditiis quibusdam, eveniet distinctio qui mollitia ad, minima sapiente nemo modi veniam rerum eligendi veritatis aliquid?
+         </p>
+
+         <!-- Object Fit Cover -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Object Fit Cover</h2>
+         <div class="bg-rose-700 rounded-lg p-5 mt-5 w-6/12">
+             <img src="http://placekitten.com/700/500" class="object-cover h-48 w-full">
+         </div>
+         <!-- Object Fit Contain -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-12">Object Fit Contain</h2>
+         <div class="bg-rose-700 rounded-lg p-5 mt-5 w-6/12">
+             <img src="http://placekitten.com/700/500" class="object-contain h-48 w-full">
+         </div>
+         <!-- Object Fit Fill -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-12">Object Fit Fill</h2>
+         <div class="bg-rose-700 rounded-lg p-5 mt-5 w-6/12">
+             <img src="http://placekitten.com/700/500" class="object-fill h-48 w-full">
+         </div>
+         <!-- Object Fit None -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-12">Object Fit None</h2>
+         <div class="bg-rose-700 rounded-lg p-5 mt-5 w-6/12">
+             <img src="http://placekitten.com/700/500" class="object-none h-48 w-full">
+         </div>
+
+         <!-- Overflow Visible -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Overflow Visible</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-visible relative max-w-sm mx-auto bg-red-800 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">
+               <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg object-cover" src="https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png">
+               <div class="flex flex-col py-5 pl-24">
+                  <strong class="text-zinc-300 text-sm font-medium dark:text-slate-200">Kayser</strong>
+                  <span class="text-zinc-400 text-sm font-medium dark:text-slate-400">Dark Wolf</span>
+               </div>
+            </div>
+         </div>
+         <!-- Overflow Hidden -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Overflow Hidden</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-hidden relative max-w-sm mx-auto bg-red-800 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">
+               <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg object-cover" src="https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png">
+               <div class="flex flex-col py-5 pl-24">
+                  <strong class="text-zinc-300 text-sm font-medium dark:text-slate-200">Kayser</strong>
+                  <span class="text-zinc-400 text-sm font-medium dark:text-slate-400">Dark Wolf</span>
+               </div>
+            </div>
+         </div>
+         <!-- Overflow Auto -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Overflow Auto</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="overflow-auto h-72 relative max-w-sm mx-auto bg-red-800 dark:bg-slate-800 dark:highlight-white/5 shadow-lg ring-1 ring-black/5 rounded-xl flex flex-col divide-y dark:divide-slate-200/5">
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2018/09/07/03/27/wolf-3659864__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Andrew Alfred</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical advisor</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2013/07/13/14/02/wolf-161987__340.png">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Debra Houston</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Analyst</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2012/04/12/21/21/wolf-30695__340.png">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Jane White</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Director, Marketing</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2021/11/20/20/54/wolf-6812744__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Ray Flint</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical Advisor</span>
+                  </div>
+               </div>
+               <div class="flex items-center gap-4 p-4">
+                  <img class="w-12 h-12 rounded-full object-cover" src="https://cdn.pixabay.com/photo/2022/02/14/16/26/paint-7013439__340.jpg">
+                  <div class="flex flex-col">
+                     <strong class="text-zinc-300 text-sm font-medium">Ray Flint</strong>
+                     <span class="text-zinc-400 text-sm font-medium">Technical Advisor</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Position Relative/Absolute -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Position Relative/Absolute</h2>
+         <div class="relative p-10 bg-blue-800 rounded-lg h-96">
+            <p class="bg-sky-700 rounded-md mx-auto w-6/12">Relative parent</p>
+            <div class="absolute rounded-xl bg-red-900 p-10 top-2/4 left-48">
+               <p>Absolute child</p>
+            </div>
+         </div>
+         <!-- Position Relative/Absolute -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-10">Position Relative/Absolute</h2>
+         <div class="px-3 rounded-xl">
+            <div class="relative max-w-md mx-auto bg-white dark:bg-slate-800 shadow-lg h-80 overflow-auto ring-1 ring-slate-900/5 -my-px rounded-xl bg-red-800">
+               <div class="relative">
+                  <div class="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50/90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900/10 dark:ring-black/10">A</div>
+                  <div class="divide-y dark:divide-slate-200/5">
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Andrew Alfred</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Aisha Houston</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Anna White</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Andy Flint</strong>
+                     </div>
+                  </div>
+               </div>
+               <div class="relative">
+                  <div class="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50/90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900/10 dark:ring-black/10">B</div>
+                  <div class="divide-y dark:divide-slate-200/5">
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Bob Alfred</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Bianca Houston</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Brianna White</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Bert Flint</strong>
+                     </div>
+                  </div>
+               </div>
+               <div class="relative">
+                  <div class="sticky top-0 px-4 py-3 flex items-center font-semibold text-sm text-slate-900 dark:text-slate-200 bg-slate-50/90 dark:bg-slate-700/90 backdrop-blur-sm ring-1 ring-slate-900/10 dark:ring-black/10">C</div>
+                  <div class="divide-y dark:divide-slate-200/5">
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Colton Alfred</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Cynthia Houston</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Cheyenne White</strong>
+                     </div>
+                     <div class="flex items-center gap-4 p-4">
+                        <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                        <strong class="text-slate-900 text-sm font-medium dark:text-slate-200">Charlie Flint</strong>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Visibility: Visible-Invisible -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Visibility: Invisible</h2>
+         <div class="grid grid-cols-3 gap-4">
+            <div class="invisible bg-red-900 rounded-lg p-5">01</div>
+            <div class="invisible lg:visible bg-red-900 rounded-lg p-5">02</div>
+            <div class="bg-red-900 rounded-lg p-5">03</div>
+         </div>
+
+         <!-- Z index -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5 mt-16">Z index</h2>
+         <div class="relative rounded-xl overflow-auto p-8">
+            <div class="flex justify-center -space-x-3 font-mono text-white text-sm font-bold leading-6">
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-50">z-50</div>
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-40">z-40</div>
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-30">z-30</div>
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-20">z-20</div>
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-10">z-10</div>
+               <div class="w-16 h-16 rounded-full flex items-center justify-center bg-red-500 shadow-lg ring-2 ring-emerald-300 z-0">z-0</div>
+            </div>
+         </div>
+      </section>
+   </main>
+</body>
+</html>

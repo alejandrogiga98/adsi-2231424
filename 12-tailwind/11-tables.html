@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tables</title>
+   <link rel="stylesheet" href="css/custom.css">
+   <script src="js/tailwind-3.0.23.js"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-700 to-sky-900 via-sky-600 to-sky-700 min-h-screen">
+   <main class="bg-cyan-900 bg-opacity-50">
+      <header class="bg-teal-100 bg-opacity-30 p-6 shadow-lg flex items-center justify-center">
+         <a class="bg-blue-600 rounded-lg mr-10 transition duration-300 hover:scale-125 hover:bg-red-900 hover:text-white p-2" href="index.html"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 20 20" fill="currentColor">
+               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+         </a>
+         <h1 class="text-center text-4xl font-bold text-red-600">Tables</h1>
+      </header>
+      <section class="p-4 mx-auto text-white my-0 w-10/12">
+         <!-- Collapse -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Collapse</h2>
+         <div class="relative rounded-xl overflow-auto">
+            <div class="px-4 py-8 sm:px-8">
+                <table class="border-collapse w-full border border-black bg-white/80 text-sm shadow-sm">
+                  <thead class="bg-red-800">
+                     <tr>
+                        <th class="w-1/2 border border-black font-semibold p-4 text-indigo-200 text-left">State</th>
+                        <th class="w-1/2 border border-black font-semibold p-4 text-indigo-200 text-left">City</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="border border-black p-4 text-indigo-800 ">Indiana</td>
+                        <td class="border border-black p-4 text-indigo-800 ">Indianapolis</td>
+                     </tr>
+                     <tr>
+                        <td class="border border-black p-4 text-indigo-800 ">Ohio</td>
+                        <td class="border border-black p-4 text-indigo-800 ">Columbus</td>
+                     </tr>
+                     <tr>
+                        <td class="border border-black p-4 text-indigo-800 ">Michigan</td>
+                        <td class="border border-black p-4 text-indigo-800 ">Detroit</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+         <!-- Auto -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Auto</h2>
+         <div class="relative rounded-xl overflow-auto">
+            <div class="shadow-sm overflow-hidden my-8">
+               <table class="border-collapse table-auto w-full text-sm">
+                  <thead>
+                     <tr>
+                        <th class="border-b bg-red-800 font-medium p-4 pl-8 pt-0 pb-3 text-indigo-200 text-left">Song</th>
+                        <th class="border-b bg-red-800 font-medium p-4 pt-0 pb-3 text-indigo-200 text-left">Artist</th>
+                        <th class="border-b bg-red-800 font-medium p-4 pr-8 pt-0 pb-3 text-indigo-200 text-left">Year</th>
+                     </tr>
+                  </thead>
+                  <tbody class="bg-white/80">
+                     <tr>
+                        <td class="border-b border-black p-4 pl-8 text-indigo-800">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                        <td class="border-b border-black p-4 text-indigo-800">Malcolm Lockyer</td>
+                        <td class="border-b border-black p-4 pr-8 text-indigo-800">1961</td>
+                     </tr>
+                     <tr>
+                        <td class="border-b border-black p-4 pl-8 text-indigo-800">Witchy Woman</td>
+                        <td class="border-b border-black p-4 text-indigo-800">The Eagles</td>
+                        <td class="border-b border-black p-4 pr-8 text-indigo-800">1972</td>
+                     </tr>
+                     <tr>
+                        <td class="border-b border-black p-4 pl-8 text-indigo-800">Shining Star</td>
+                        <td class="border-b border-black p-4 text-indigo-800">Earth, Wind, and Fire</td>
+                        <td class="border-b border-black p-4 pr-8 text-indigo-800">1975</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         
+      </section>
+   </main>
+</body>
+</html>

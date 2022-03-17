@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Filters</title>
+   <link rel="stylesheet" href="css/custom.css">
+   <script src="js/tailwind-3.0.23.js"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-700 to-sky-900 via-sky-600 to-sky-700 min-h-screen">
+   <main class="bg-cyan-900 bg-opacity-50">
+      <header class="bg-teal-100 bg-opacity-30 p-6 shadow-lg flex items-center justify-center">
+         <a class="bg-blue-600 rounded-lg mr-10 transition duration-300 hover:scale-125 hover:bg-red-900 hover:text-white p-2" href="index.html"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 20 20" fill="currentColor">
+               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+         </a>
+         <h1 class="text-center text-4xl font-bold text-red-600">Filters</h1>
+      </header>
+      <section class="p-4 mx-auto text-white my-0 w-10/12">
+         <!-- Blur -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Blur</h2>
+         <div class="relative rounded-xl overflow-auto">
+            <div class="flex sm:block overflow-scroll sm:overflow-visible scroll-p-8">
+               <div class="flex items-center justify-around gap-12 sm:gap-4 font-mono font-bold shrink-0 p-8">
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">blur-none</p>
+                     <div class="relative blur-none">
+                     <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                     <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                  </div>
+               </div>
+               <div class="flex flex-col items-center shrink-0">
+                  <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">blur-sm</p>
+                  <div class="relative blur-sm">
+                     <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                     <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                  </div>
+               </div>
+               <div class="flex flex-col items-center shrink-0">
+                  <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">blur-lg</p>
+                  <div class="relative blur-lg">
+                     <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                     <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                  </div>
+               </div>
+               <div class="flex flex-col items-center shrink-0">
+                  <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">blur-2xl</p>
+                  <div class="relative blur-2xl">
+                     <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                     <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Brightness -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Brightness</h2>
+         <div class="relative rounded-xl overflow-auto">
+            <div class="flex justify-start sm:block overflow-scroll sm:overflow-visible scroll-p-8">
+               <div class="flex items-center justify-around gap-6 sm:gap-4 font-mono font-bold shrink-0 p-8">
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">brightness-50</p>
+                     <div class="relative brightness-50">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">brightness-100</p>
+                     <div class="relative brightness-100">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">brightness-125</p>
+                     <div class="relative brightness-125">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+                  <div class="flex flex-col items-center shrink-0">
+                  <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">brightness-200</p>
+                     <div class="relative brightness-200">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Grayscale -->
+         <h2 class="text-2xl border-b-2 pb-4 opacity-80 mb-5">Grayscale</h2>
+         <div class="relative rounded-xl overflow-auto">
+            <div class="flex justify-center sm:block overflow-scroll sm:overflow-visible scroll-p-8">
+               <div class="flex items-center justify-around gap-6 sm:gap-4 font-mono font-bold shrink-0 p-8">
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">grayscale-0</p>
+                     <div class="relative grayscale-0">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+                  <div class="flex flex-col items-center shrink-0">
+                     <p class="font-medium text-sm text-indigo-200 font-mono text-center mb-3">grayscale</p>
+                     <div class="relative grayscale">
+                        <img class="w-24 h-24 object-cover rounded-lg shadow-xl" src="http://placekitten.com/400/400">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-lg"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </section>
+   </main>
+</body>
+</html>
