@@ -6,11 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Menu (jQuery)</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        header{
+            
+            margin: 2px auto;
+            background-color: #1e4168;
+            border-bottom: 4px solid #333;
+            border-radius: 15px 0px 15px 0px;
+            justify-content: center;
+        }
+
+        header div{
+            margin: 2px auto;
+            width: 370px;
+            border-radius: 15px 0px 15px 0px;
+            justify-content: center;
+            padding:0px 40px;
+        }
+
+        header div h1{
+            display: inline-block;
+            background-color: none;
+            border-bottom: 0;
+            border-radius: 0;
+        }
+
+        main header div a svg { 
+            *border: 1px solid black;  
+            height: 45px;
+            width: 45px;
+            padding: 0;
+            text-align: center;
+            margin-bottom: -10px;
+        }
+
+        main header div a svg:hover { 
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.5);
+            color: #6591d8;
+        }
+
+        main header div a {
+            *border: 1px solid white;
+            color: #801a1a;
+            border-radius: 15px 0px 15px 0px;
+            padding: 0;
+            text-align: center;
+        } 
+        
+        /* main header div a:hover {           
+            color: #6591d8;
+            transition: all 0.5s ease-in;
+        }  */
+    </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Main Menu (jQuery)</h1>
+            <div>
+                <a class="bg-blue-600 rounded-lg mr-10 transition duration-300 hover:scale-125 hover:bg-red-900 hover:text-white p-2" href="../index.html"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                </a>
+                <h1>Main Menu (jQuery)</h1>
+            </div>
         </header>
         <section>
             <nav>
