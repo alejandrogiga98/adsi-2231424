@@ -14,10 +14,22 @@
          <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-5f26462c=""></path>
       </svg>
       <h1 class="text-center text-3xl mb-6 font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
+      <input type="text" v-model="vtext" class="flex mx-auto p-2 rounded-xl shadow-xl outline-none" placeholder="type text" maxlength="10">
+      <output class="flex mx-10 uppercase my-3 bg-[#41B883] rounded-lg p-1 place-content-center"> TEXT: {{ vtext }} </output>
 
-      <h3 class="text-center text-xl mt-4">{{name}}</h3>
-      <img :src="image" :title="name" class="my-1 mx-auto bg-[#34495e] rounded-full h-40 w-40">
-      <h4 class="text-center"><strong>Specifications:</strong> <br> Year {{year}}<br>{{specifications[0]}} <br>{{specifications[1]}} <br>{{specifications[2]}}</h4>
+      <hr class="border-[#34495e]/50 border-dashed">
+      <select v-model="color" class="flex mx-auto p-2 rounded-xl shadow-xl outline-none mt-6 w-36 justify-content" >
+         <option value="Black ⚫">Black</option>
+         <option value="White 🔘">White</option>
+         <option value="Yellow 🟡">Yellow</option>
+         <option value="Blue 🔵">Blue</option>
+         <option value="Red 🔴">Red</option>
+      </select>
+      <output class="flex mx-10 uppercase my-3 bg-[#41B883] rounded-lg items-end p-1 place-content-center"> color Selected: <strong>{{ color }}</strong></output>
+
+      <hr class="border-[#34495e]/50 border-dashed">
+      <input type="checkbox" v-model="active" class="flex mx-auto mt-6 scale-150">
+      <output class="flex mx-10 uppercase my-3 bg-[#41B883] rounded-lg items-end p-1 place-content-center"> Checked: <strong> {{ active }}</strong></output>
 
       <a href="index.html" class="absolute bottom-2 left-[164px] h-14 w-14  text-[#34495e] hover:scale-125 hover:text-[#41b883] transition duration-300">
          <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 20 20" fill="currentColor">
@@ -25,24 +37,20 @@
          </svg>
       </a>
    </main>
-   
 </body>
 </html>
 <script src="js/tailwind-3.0.23.js"></script>
 <script src="js/vue3.2.31.js"></script>
 <script>
-
-   const started = {
+   const form = {
       data(){
-         return {
-            title: 'Started',
-            name: 'Xbox Series S',
-            image: 'imgs/xbox_series_s.png',
-            year: 2020,
-            specifications: ['Faster', 'Smaller', 'Powerfull']
+         return{
+            title : '04 - Form Binding',
+            vtext : '',
+            color: 'Black ⚫',
+            active: false
          }
       }
    }
-   var mountapp = Vue.createApp(started).mount('#app');
-
+   var mountapp = Vue.createApp(form).mount('#app');
 </script>
