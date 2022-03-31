@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vue JS 3</title>
+   <link rel="stylesheet" href="css/fonts.css">
+   <style>
+      div.ol{
+         border: 1px solid red;
+      }
+      img{
+         transform: scale(0.7);
+      }
+
+   </style>
+</head>
+<body class="bg-gradient-to-t from-[#34495E] to-[#41B883] min-h-screen flex justify-center items-center">
+   <main id="app" class="relative bg-white/70 w-96 h-[640px] rounded-xl shadow-xl">
+      <svg class="h-28 w-28 mx-auto my-6" viewBox="0 0 128 128" width="24" height="24" data-v-5f26462c="">
+         <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-5f26462c=""></path>
+         <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-5f26462c=""></path>
+      </svg>
+      <h1 class="text-center text-3xl mb-6 font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
+
+      <section class="grid grid-cols-3 text-center w-10/12 mx-auto">
+         <div class="flex justify-center items-center h-28 w-28 ">1</div>
+         <div class="flex justify-center items-center h-28 w-28 border-x-4 border-[#35495e]"><img src="imgs/o.svg" alt=""></div>
+         <div class="flex justify-center items-center h-28 w-28">3</div>
+         <div class="flex justify-center items-center h-28 w-28 border-y-4 border-[#35495e]">4</div>
+         <div class="flex justify-center items-center h-28 w-28 border-4 border-[#35495e]">5</div>
+         <div class="flex justify-center items-center h-28 w-28 border-y-4 border-[#35495e]">6</div>
+         <div class="flex justify-center items-center h-28 w-28">7</div>
+         <div class="flex justify-center items-center h-28 w-28 border-x-4 border-[#35495e]"><img src="imgs/x.svg" class="text-red-800"></div>
+         <div class="flex justify-center items-center h-28 w-28">9</div>
+      </section>
+
+      <a href="index.html" class="absolute bottom-2 left-[164px] h-14 w-14  text-[#34495e] hover:scale-125 hover:text-[#41b883] transition duration-300">
+         <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+         </svg>
+      </a>
+   </main>
+</body>
+</html>
+<script src="js/tailwind-3.0.23.js"></script>
+<script src="js/vue3.2.31.js"></script>
+<script>
+   let icons = ['imgs/x.svg', 'imgs/o.svg']
+   let boxes = document.querySelectorAll('section div')
+   const tictactoe = {
+      data(){
+         return{
+            title : '08 - Challenge Tic tac toe'
+         }
+      },
+      mounted(){
+         this.clickBoxes()
+      },
+      methods: {
+         addIcon(){
+            boxes[0].innerHTML = '<img src="imgs/x.svg">'
+         },
+         clickBoxes(){
+            boxes.forEach(element => {
+               element.onclick
+               this.addIcon()
+            })
+         }
+      }
+   }
+   var mountapp = Vue.createApp(tictactoe).mount('#app');
+</script>
