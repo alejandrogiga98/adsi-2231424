@@ -7,13 +7,34 @@
    <title>Vue JS 3</title>
    <link rel="stylesheet" href="css/fonts.css">
    <style>
-      div.ol{
-         border: 1px solid red;
+      :root{
+         --border-color: #34495e;
       }
-      img{
+      section div img{
          transform: scale(0.7);
       }
-
+      section figure img{
+         transform: scale(0.7);
+      }
+      section div:nth-child(2){
+         border-left: 4px solid var(--border-color);
+         border-right: 4px solid var(--border-color);
+      }
+      section div:nth-child(4){
+         border-top: 4px solid var(--border-color);
+         border-bottom: 4px solid var(--border-color);
+      }
+      section div:nth-child(5){
+         border: 4px solid var(--border-color);
+      }
+      section div:nth-child(6){
+         border-top: 4px solid var(--border-color);
+         border-bottom: 4px solid var(--border-color);
+      }
+      section div:nth-child(8){
+         border-left: 4px solid var(--border-color);
+         border-right: 4px solid var(--border-color);
+      }
    </style>
 </head>
 <body class="bg-gradient-to-t from-[#34495E] to-[#41B883] min-h-screen flex justify-center items-center">
@@ -24,16 +45,25 @@
       </svg>
       <h1 class="text-center text-3xl mb-6 font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
 
-      <section class="grid grid-cols-3 text-center w-10/12 mx-auto">
-         <div class="flex justify-center items-center h-28 w-28 ">1</div>
-         <div class="flex justify-center items-center h-28 w-28 border-x-4 border-[#35495e]"><img src="imgs/o.svg" alt=""></div>
-         <div class="flex justify-center items-center h-28 w-28">3</div>
-         <div class="flex justify-center items-center h-28 w-28 border-y-4 border-[#35495e]">4</div>
-         <div class="flex justify-center items-center h-28 w-28 border-4 border-[#35495e]">5</div>
-         <div class="flex justify-center items-center h-28 w-28 border-y-4 border-[#35495e]">6</div>
-         <div class="flex justify-center items-center h-28 w-28">7</div>
-         <div class="flex justify-center items-center h-28 w-28 border-x-4 border-[#35495e]"><img src="imgs/x.svg" class="text-red-800"></div>
-         <div class="flex justify-center items-center h-28 w-28">9</div>
+      <!-- Play -->
+      <section v-if="finished==0" class="grid grid-cols-3 text-center w-10/12 mx-auto">
+         <div v-for="(mark, index) in board" v-html="mark" @click="addMark(index)" class="h-24 flex justify-centeritems-center hover:bg-[#41b883]/20 cursor-pointer transition duration-150">
+            {{ mark }}
+         </div>
+      </section>
+      <!-- Win -->
+      <section v-else-if="finished==1">
+         <h3 class="text-center font-bold text-xl mt-20">The Winner is:</h3>
+         <figure class="w-6/12 h-40 my-4 bg-white/40 mx-auto flex items-center justify-center rounded-md" v-html="markwin">
+            {{ markwin }}
+         </figure>
+      </section>
+      <!-- Tie -->
+      <section v-else-if="finished==2">
+         <h3 class="text-center font-bold text-xl mt-20">Tie</h3>
+         <figure class="w-6/12 h-40 my-4 bg-white/40 mx-auto flex items-center justify-center rounded-md">
+            <img src="imgs/tie.svg">
+         </figure>
       </section>
 
       <a href="index.html" class="absolute bottom-2 left-[164px] h-14 w-14  text-[#34495e] hover:scale-125 hover:text-[#41b883] transition duration-300">
@@ -42,33 +72,65 @@
          </svg>
       </a>
    </main>
-</body>
-</html>
+
 <script src="js/tailwind-3.0.23.js"></script>
 <script src="js/vue3.2.31.js"></script>
 <script>
-   let icons = ['imgs/x.svg', 'imgs/o.svg']
-   let boxes = document.querySelectorAll('section div')
    const tictactoe = {
       data(){
          return{
-            title : '08 - Challenge Tic tac toe'
+            title : '08 - Challenge Tic tac toe',
+            board: ['', '', '',
+                    '', '', '', 
+                    '', '', '',],
+            winnerpos: [[0, 1, 2],
+                        [3, 4, 5],
+                        [6, 7, 8],
+                        [0, 3, 6],
+                        [1, 4, 7],
+                        [2, 5, 8],
+                        [0, 4, 8],
+                        [2, 4, 6]],
+            marks: ['<img src="imgs/x.svg">', 
+                    '<img src="imgs/o.svg">'],
+            markwin: '',
+            marked: false,
+            finished: 0
          }
-      },
-      mounted(){
-         this.clickBoxes()
       },
       methods: {
-         addIcon(){
-            boxes[0].innerHTML = '<img src="imgs/x.svg">'
+         addMark(index){
+            if(this.board[index] == ''){
+               if(this.marked) {
+                  this.board[index] = this.marks[1]; // o.svg
+               } else {
+                  this.board[index] = this.marks[0]; // x.svg
+               }
+               this.marked = !this.marked;
+               if(this.checkWinner()){
+                  this.finished = 1;
+               } else {
+                  if(!this.board.includes('')){
+                     this.finished = 2;
+                  }
+               }
+            }
          },
-         clickBoxes(){
-            boxes.forEach(element => {
-               element.onclick
-               this.addIcon()
-            })
+         checkWinner() {
+            for(let i of this.winnerpos){
+               if(this.board[i[0]] != '' &&
+                  this.board[i[1]] != '' && 
+                  this.board[i[2]] != '' &&
+                  this.board[i[0]] === this.board[i[1]] &&
+                  this.board[i[1]] === this.board[i[2]] ){
+                     this.markwin = this.board[i[2]];
+                     return true;
+                  }
+            }
          }
-      }
-   }
+      } // end methods
+   } 
    var mountapp = Vue.createApp(tictactoe).mount('#app');
 </script>
+</body>
+</html>
