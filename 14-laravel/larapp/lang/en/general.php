@@ -34,6 +34,7 @@ return [
     'label-confirm-password' => 'Confirm Password',
     'label-phone' => 'Phone',
     'label-date' => 'Date',
+    'label-role' => 'Role',
     'label-gender' => 'Gender',
     'label-gender-male' => 'Male',
     'label-gender-female' => 'Female',
@@ -41,6 +42,19 @@ return [
     'btn-register' => 'Register',
     'a-registered' => 'Already registered?',
 
+    //user
+    'label-photo' => 'Photo',
+
+    //category
+   'label-name' => 'Name',
+   'label-description' => 'Description',
+   'label-image' => 'Image',
+
+    //Game
+    'label-description' => 'Description',
+    'label-user' => 'User',
+    'label-category' => 'Category',
+    'label-price' => 'Price'
 
 
 ];

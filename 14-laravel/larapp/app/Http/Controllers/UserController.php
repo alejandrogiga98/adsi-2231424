@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use Barryvdh\DomPDF\Facade as PDF;
+use App\Exports\UserExport;
+use App\Imports\UserImport;
 
 class UserController extends Controller
 {
@@ -18,8 +22,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        /* Cuando son muchos usuarios
-        $users = User::paginate(20); */
+        /* Cuando son muchos usuarios */
+        $users = User::paginate(10); 
         return view('users.index')->with('users', $users);
     }
 
@@ -39,9 +43,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //$request->all()
+        //$request->all();
         //Metodo ORM
         $user = new User;
         $user->fullname = $request->fullname;
@@ -50,6 +54,11 @@ class UserController extends Controller
         $user->birthdate =$request->birthdate;
         $user->gender =$request->gender;
         $user->address =$request->address;
+        if ($request->hasFile('photo')) {
+            $file = time() . '.' . $request->photo->extension();
+            $request->photo->move(public_path('images'), $file);
+            $user->photo = 'images/' . $file;
+        }
         $user->role =$request->role;
         $user->password = bcrypt('Customer');
         if($user->save()){
@@ -86,7 +95,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
         $user->fullname = $request->fullname;
         $user->email =$request->email;
@@ -95,6 +104,12 @@ class UserController extends Controller
         $user->gender =$request->gender;
         $user->address =$request->address;
         $user->role =$request->role;
+        $user->active =$request->active;
+        if ($request->hasFile('photo')) {
+            $file = time() . '.' . $request->photo->extension();
+            $request->photo->move(public_path('images'), $file);
+            $user->photo = 'images/' . $file;
+        }
         if($user->save()){
             return redirect('users')->with('message', 'The user: ' . $user->fullname . ' was successfully edited!');
         }
@@ -111,5 +126,29 @@ class UserController extends Controller
         if($user->delete()){
             return redirect('users')->with('message', 'The user: ' . $user->fullname . ' was successfully deleted!');
         }
+    }
+
+    function search(Request $request){
+        $users = User::names($request->q)
+        ->orderBy('id')
+        ->paginate(10);
+
+        return view('users.search')->with('users', $users);
+    }
+
+    public function pdf(){
+        $users = User::all();
+        $pdf = PDF::loadView('users.pdf', compact('users'));
+        return $pdf->download('allusers.pdf');
+    }
+
+    public function excel(){
+        return \Excel::download(new UserExport, 'allusers.xlsx');
+    }
+
+    public function import(Request $request){
+        $file = $request->file('file');
+        \Excel::import(new UserImport, $file);
+        return redirect()->back()->with('message', 'Users importeds successfully!');
     }
 }

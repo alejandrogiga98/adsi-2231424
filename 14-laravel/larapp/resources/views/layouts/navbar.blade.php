@@ -27,14 +27,46 @@
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     {{-- Inicio prueba --}}
 
-                    <button class="text-black font-bold bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center hover:scale-110 hover:bg-gray-200 transition duration-300" type="button">
+                   {{--  <button class="text-black font-bold bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center hover:scale-110 hover:bg-gray-200 transition duration-300" type="button">
                         <h4 class="mr-3">@lang('general.nav-en')</h4>
                         <img src="{{url('/images/en.png')}}" alt="Image"/>
                     </button>
                     <button class="text-black font-bold bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center hover:scale-110 hover:bg-gray-200 transition duration-300" type="button">
                         <h4 class="mr-3">@lang('general.nav-es')</h4>
                         <img src="{{url('/images/es.png')}}" alt="Image"/>
+                    </button> --}}
+                  {{--   <div class="mx-4 bg-red-800">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                        <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+                                @endif
+                            @endforeach
+                            </div>
+                        </li>
+                    </div> --}}
+
+                    <button type="button" class="text-black font-bold bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center hover:scale-110 hover:bg-gray-200 transition duration-300" type="button"> Languages
                     </button>
+                    <div class="hidden origin-top-right absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" id="divLanguage">
+                        <div class="py-1 px-2" role="none">
+                            <a href="{{ url('locale/en') }}" class="text-gray-700 px-4 py-2 text-sm hover:bg-gray-100 hover:text-blue-700 hover:scale-110 flex">
+                                <img src="{{url('/images/en.png')}}" alt="Image"/> 
+                                <p class="ml-2">English</p> 
+                            </a>
+                            <a href="{{ url('locale/es') }}" class="text-gray-700 px-4 py-2 text-sm hover:bg-gray-100 hover:text-blue-700 hover:scale-110 flex">
+                                <img src="{{url('/images/es.png')}}" alt="Image"/>
+                                <p class="ml-2">Spanish</p>
+                            </a>
+                            {{-- <h4 class="mr-3">@lang('general.nav-es')</h4>
+                            <img src="{{url('/images/es.png')}}" alt="Image"/> --}}
+                        </div>
+                    </div> 
+
                    
                     {{-- Fin prueba --}}
                     @guest
@@ -62,4 +94,30 @@
         @yield('content')
     </div>
 </body>
+<script>
+    /* const burgerLogo = document.querySelector('path.burger');
+    const closeLogo = document.querySelector('path.close'); */
+    const divLanguage = document.querySelector('div#divLanguage');
+    /* const click_menu = document.querySelector('a.flex'); */
+    const btn = document.querySelector('button');
+    
+    btn.onclick = function(){
+        console.log('prueba');
+        /* burgerLogo.classList.toggle('hidden');
+        closeLogo.classList.toggle('hidden'); */
+        divLanguage.classList.toggle('hidden')
+    }
+  
+    /* btn.addEventListener()
+
+    btn.classList.toggle('on');
+    imageBox.classList.add('woman');
+    imageBox.classList.remove('man');
+    
+    btn.onclick = function(){
+        console.log('prueba')
+    }
+    */
+
+</script>
 </html>

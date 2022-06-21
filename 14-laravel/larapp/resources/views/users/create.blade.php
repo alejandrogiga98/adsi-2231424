@@ -1,117 +1,227 @@
-@extends('layouts.navbar')
+@extends('layouts.app')
 
 @section('content')
+<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+    <div class="flex">
+        <div class="w-full">
+            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg mx-auto">
 
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+                <header class="font-semibold bg-blue-900 text-white py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    {{ __('Add User') }}
+                </header>
 
-        {{-- Back to Users --}}
-        <a href="{{ url('users') }}"><- User Module</a>
-        
-        <header class="block text-gray-700 text-2xl text-center font-bold bg-gray-300 mt-2 p-1.5 mb-5 rounded-md">
-            {{__('general.title-register')}}
-        </header>
+            <nav class="flex items-center justify-center py-4" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                <a href="{{ url('home') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    Dashboard
+                </a>
+                </li>
+                <li>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <a href="{{ url('users') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Users Module</a>
+                </div>
+                </li>
+                <li>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Add User</a>
+                </div>
+                </li>
+            </ol>
+    </nav>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" enctype="multipart/form-data"
+                    action="{{ url('users') }}">
+                    @csrf
 
-        <form method="POST" action="{{ url('users') }}">
-            @csrf
+                    <div class="flex flex-wrap">
+                        <label for="fullname" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-fullname'):
+                        </label>
 
-            <!-- Name -->
-            <div>
-                <x-label for="fullname"/> @lang('general.label-fullname')
+                        <input id="fullname" type="text" class="form-input w-full @error('fullname')  border-red-500 @enderror"
+                            name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
 
-                <x-input id="fullname" class="block mt-1 w-full" type="text" name="fullname" :value="old('fullname')" required autofocus />
-            </div>
+                        @error('name')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-                <!-- Email Address -->
-                <div class="mt-4">
-                <x-label for="email"/>@lang('general.label-email')
+                    <div class="flex flex-wrap">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-email'):
+                        </label>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" min='1960-01-01' max='1999-12-31' required />
-            </div>
+                        <input id="email" type="email"
+                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                            value="{{ old('email') }}" required autocomplete="email">
 
-            <!-- Phone -->
-            <div class="mt-4">
-                <x-label for="phone"/> @lang('general.label-phone')
+                        @error('email')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-                <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required />
-            </div>
+                    <div class="flex flex-wrap">
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-phone'):
+                        </label>
 
-           <!-- Birthdate -->
-           <div class="mt-4">
-               <x-label for="date"/>@lang('general.label-date')
+                        <input id="phone" type="text"
+                            class="form-input w-full @error('phone') border-red-500 @enderror" name="phone"
+                            value="{{ old('phone') }}" required autocomplete="phone">
 
-               <x-input id="date" class="block mt-1 w-full" type="date" name="birthdate" :value="old('date')" required />
-            </div>
+                        @error('phone')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-            <!-- Gender -->
-            <div class="mt-4">
-               <x-label for="gender"/>@lang('general.label-gender')
-               <select name="gender" id="gender" class="block mt-1 w-full rounded-md border border-red-500" required>
-                  <option value="" @if(!old('gender')) selected @endif disabled>---</option>
-                  <option value="Male" @if(old('gender') == 'Male') selected @endif> @lang('general.label-gender-male') </option>
-                  <option value="Female" @if(old('gender') == 'Female') selected @endif> @lang('general.label-gender-female') </option>
-               </select>
-            </div>
+                    <div class="flex flex-wrap">
+                        <label for="birthdate" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-date'):
+                        </label>
 
-            <!-- address -->    
-            <div class="mt-4">
-                <x-label for="address"/>@lang('general.label-address')
+                        <input id="birthdate" type="date"
+                            class="form-input w-full @error('birthdate') border-red-500 @enderror" name="birthdate"
+                            value="{{ old('birthdate') }}" required autocomplete="birthdate">
 
-                <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus />
-            </div>
+                        @error('birthdate')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-            <!-- Role -->
-            <div class="mt-4">
-               <x-label for="role"/> Role
-               <select name="role" id="role" class="block mt-1 w-full rounded-md border border-red-500" required>
-                   <option value="" @if(!old('role')) selected @endif disabled>---</option>
-                   <option value="Admin" @if(old('role') == 'Male') selected @endif> Admin </option>
-                   <option value="Customer" @if(old('role') == 'Female') selected @endif> Customer </option>
-               </select>
+                    {{-- Gender --}}
+                    <div class="flex flex-wrap">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                             @lang('general.label-gender'):
+                        </label>
+                        
+                        <select name="gender" id="gender" class="form-select w-full @error('gender') border-red-500 @enderror" required>
+                            <option value="" @if(!old('gender')) selected @endif disabled> @lang('general.option-gender')</option>
+                            <option value="Female" @if(old('gender') == "Female") selected @endif>Female</option>
+                            <option value="Male" @if(old('gender') == "Male") selected @endif>Male</option>
+                        </select>
 
-               @error('role')
-               <p class="text-red-500 text-xs italic mt-4">
-                  {{ $message }}
-               </p>
-               @enderror
-           </div>
+                        @error('gender')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password"/>@lang('general.label-password')
+                    <div class="flex flex-wrap">
+                        <label for="address" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-address'):
+                        </label>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
+                        <input id="address" type="text"
+                            class="form-input w-full @error('address') border-red-500 @enderror" name="address"
+                            value="{{ old('address') }}" required autocomplete="address">
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" />  @lang('general.label-confirm-password')
+                        @error('address')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
+                    <div class="flex flex-wrap items-center justify-center bordered  border-2 rounded-lg @error('photo') border-red-500 @enderror">
+                        <img id="preview"  class="rounded-lg" src="{{ asset('images/no-photo.png') }}" width="200px">
+                    </div>
 
-            <div class="flex items-center justify-center mt-4">
-               
-                <x-button class="ml-4">
-                    {{-- {{ __('Register') }} --}}
-                    Add User
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+                    {{-- Photo --}}
+                    <div class="flex flex-wrap">      
+                        <label for="photo" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-photo'):
+                        </label>
 
+                        <button type="button" class="btn-upload w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-900 hover:bg-blue-800 sm:py-4 flex gap-2 items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                            </svg>
+                            Upload Picture
+                        </button>
+
+                        <input id="photo" type="file"
+                            class="hidden form-input w-full @error('photo') border-red-500 @enderror" name="photo"
+                            value="{{ old('photo') }}" accept="image/*" required>
+
+                        @error('photo')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+                    {{-- Role --}}
+                    <div class="flex flex-wrap">
+                        <label for="role" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-role'):
+                        </label>
+                        
+                        <select name="role" id="role" class="form-select w-full @error('role') border-red-500 @enderror" required>
+                            <option value="" @if(!old('role')) selected @endif disabled>Select role...</option>
+                            <option value="Admin" @if(old('role') == "Admin") selected @endif>Admin</option>
+                            <option value="Customer" @if(old('role') == "Customer") selected @endif>Customer</option>
+                        </select>
+
+                        @error('role')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+                    {{-- Password --}}
+                    <div class="flex flex-wrap">
+                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-password'):
+                        </label>
+
+                        <input id="password" type="password"
+                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                            required autocomplete="new-password">
+
+                        @error('password')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+                    {{-- Confirm Password --}}
+                    <div class="flex flex-wrap">
+                        <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            @lang('general.label-confirm-password'):
+                        </label>
+
+                        <input id="password-confirm" type="password" class="form-input w-full"
+                            name="password_confirmation" required autocomplete="new-password">
+                    </div>
+
+                    <div class="flex flex-wrap pb-10">
+                        <button type="submit"
+                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                            Add
+                        </button>
+                    </div>
+                </form>
+
+            </section>
+        </div>
+    </div>
+</main>
 @endsection

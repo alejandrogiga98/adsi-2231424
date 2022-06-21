@@ -36,9 +36,6 @@ class UserFactory extends Factory
         //$ran = random_int(100, 999);
         $gender = $this->faker->randomElement($array = array('Male', 'Female'));
 
-
-        $photo = $this->faker->image('public\images', 800, 600);
-
         return [
             //bluemmb/faker-picsum-photos-provider
             'fullname' => $this->faker->name($gender),
@@ -48,12 +45,12 @@ class UserFactory extends Factory
             'gender' => $gender,
             'address' => $this->faker->address(),
             'email_verified_at' => now(),
-            'password' => $this->faker->password(), // password
+            'photo' => 'images/no-photo.png',
+            'password' => $this->faker->password(),
             'remember_token' => Str::random(10),
             //'photo' => 'https://picsum.photos/200/300.jpg'
             /* 'url' => $this->faker->imageUrl(800,600),
             'file_path' => "public/images" . basename($fakerFileName), */
-            'photo' => $photo,
         ];
     }
 
